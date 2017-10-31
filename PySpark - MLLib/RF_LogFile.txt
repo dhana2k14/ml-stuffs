@@ -1,0 +1,210 @@
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\spark-1.6.1-bin-hadoop2.4\bin>pyspark
+
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 1.6.1
+      /_/
+
+Using Python version 2.7.12 (default, Jun 29 2016 11:07:13)
+SparkContext available as sc, HiveContext available as sqlContext.
+>>> sc.stop()
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> from pyspark.sql.types import *
+>>> sc =SparkContext('local')
+
+>>> sqlContext = SQLContext(sc)
+>>> df = sc.textFile('D:\PythonTutorials\PySpark - MLLib\\train.csv')
+
+>>> header = df.filter(lambda l:'PassengerId' in l)
+>>> header.collect()
+
+[u'PassengerId,Survived,Pclass,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked']
+>>> df_nhead = df.subtract(header)
+>>> df_nhead.count()
+
+891
+>>> df_temp = df_nhead.map(lambda k:k.split(',')).map(lambda p:(p[0],p[1], p[2], str(p[3]),p[4],p[5], p[6], p[7], p[8], p[9], p[10]))
+>>> df_temp.take(2)
+
+[(u'196', u'1', u'1', 'female', u'58', u'0', u'0', u'PC 17569', u'146.5208', u'B80', u'C'), (u'882', u'0', u'3', 'male', u'33', u'0', u'0', u'349257', u'7.8958', u'', u'S')]
+>>> head = df.first()
+
+>>> schemaString  = head
+>>> schemaString
+u'PassengerId,Survived,Pclass,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked'
+>>> fields = [StructField(field_name, StringType(), True) for field_name in schemaString.split(',')]
+>>> fields
+[StructField(PassengerId,StringType,true), StructField(Survived,StringType,true), StructField(Pclass,StringType,true), StructField(Sex,StringType,true), StructField(Age,StringType,true), StructField(SibSp,StringType,true), StructField(Parch,StringType,true), StructField(Ticket,StringType,true), StructField(Fare,StringType,true), StructField(Cabin,StringType,true), StructField(Embarked,StringType,true)]
+>>> schema = StructType(fields)
+>>> schema
+StructType(List(StructField(PassengerId,StringType,true),StructField(Survived,StringType,true),StructField(Pclass,StringType,true),StructField(Sex,StringType,true),StructField(Age,StringType,true),StructField(SibSp,StringType,true),StructField(Parch,StringType,true),StructField(Ticket,StringType,true),StructField(Fare,StringType,true),StructField(Cabin,StringType,true),StructField(Embarked,StringType,true)))
+>>> train_df = sqlContext.createDataFrame(df_nhead, schema)
+
+>>> type(train_df)
+<class 'pyspark.sql.dataframe.DataFrame'>
+
+>>> import pandas as pd
+
+>>> train_df.registerTempTable('train')
+
+>>> df_nhead.take(2)
+
+[u'196,1,1,female,58,0,0,PC 17569,146.5208,B80,C', u'882,0,3,male,33,0,0,349257,7.8958,,S']
+>>> train_df = sqlContext.createDataFrame(df_temp, schema)
+>>> train_df.registerTempTable('train')
+>>> train_pd_df = sqlContext.sql('select Survived, Pclass, Sex, Age, Fare from train').toPandas()
+
+>>> type(train_pd_df)
+<class 'pandas.core.frame.DataFrame'>
+>>> train_pd_df.head()
+  Survived Pclass     Sex Age      Fare
+0        1      1  female  58  146.5208
+1        0      3    male  33    7.8958
+2        1      1    male  42   52.5542
+3        0      1    male  61      33.5
+4        0      3    male         7.225
+>>> train_pd_df['Sex'] = train_pd_df['Sex'].replace('female
+  File "<stdin>", line 1
+    train_pd_df['Sex'] = train_pd_df['Sex'].replace('female
+                                                          ^
+SyntaxError: EOL while scanning string literal
+>>> train_pd_df['Sex'] = train_pd_df['Sex'].replace('female',1)
+>>> train_pd_df['Sex'] = train_pd_df['Sex'].replace('male',0)
+>>> train_pd_df['Age'] = train_pd_df['Age'].replace('NaN',-1)
+>>> train_pd_df.head()
+  Survived Pclass  Sex Age      Fare
+0        1      1    1  58  146.5208
+1        0      3    0  33    7.8958
+2        1      1    0  42   52.5542
+3        0      1    0  61      33.5
+4        0      3    0         7.225
+>>> sdf = sqlContext.createDataFrame(train_pd_df)
+>>> type(sdf)
+<class 'pyspark.sql.dataframe.DataFrame'>
+>>> from pyspark.mllib.tree import RandomForestModel
+>>> from pyspark.mllib.tree import RandomForest
+>>> from pyspark.mllib.regression import LabeledPoint
+>>> temp = sdf.map(lambda x: LabeledPoint (x[0],[x[1:]]))
+>>> type(temp)
+<class 'pyspark.rdd.PipelinedRDD'>
+
+>>> train_pd_df = sqlContext.sql('select cast(Survived as int) as Survived, cast(Pclass as int) as Pclass, Sex,cast(Age as int) as Age, cast(Fare as float) as Fare from train').toPandas()
+
+>>> train_pd_df.head()
+   Survived  Pclass     Sex   Age        Fare
+0         1       1  female  58.0  146.520798
+1         0       3    male  33.0    7.895800
+2         1       1    male  42.0   52.554199
+3         0       1    male  61.0   33.500000
+4         0       3    male   NaN    7.225000
+>>> train_pd_df['Age'] = train_pd_df['Age'].replace('NaN',-1)
+>>> train_pd_df['Sex'] = train_pd_df['Sex'].replace('male',0)
+>>> train_pd_df['Sex'] = train_pd_df['Sex'].replace('female',1)
+>>> train_pd_df.head()
+   Survived  Pclass  Sex   Age        Fare
+0         1       1    1  58.0  146.520798
+1         0       3    0  33.0    7.895800
+2         1       1    0  42.0   52.554199
+3         0       1    0  61.0   33.500000
+4         0       3    0  -1.0    7.225000
+>>> sdf = sqlContext.createDataFrame(train_pd_df)
+>>> temp = sdf.map(lambda x: LabeledPoint (x[0],[x[1:]]))
+>>> model = RandomForest.trainClassifier(temp, 2, {}, 3, seed =42)
+
+16/07/28 16:55:55 INFO RandomForest: Internal timing for DecisionTree:
+16/07/28 16:55:55 INFO RandomForest:   init: 2.095663853
+  total: 2.71527267
+  findSplitsBins: 0.191928284
+  findBestSplits: 0.607629882
+  chooseSplits: 0.601885341
+16/07/28 16:55:55 INFO MapPartitionsRDD: Removing RDD 52 from persistence list
+16/07/28 16:55:55 INFO BlockManager: Removing RDD 52
+>>> model
+TreeEnsembleModel classifier with 3 trees
+
+>>> model.numTrees()
+3
+>>> model.totalNumNodes()
+87
+>>> model.toDebugString()
+u'TreeEnsembleModel classifier with 3 trees\n\n  Tree 0:\n    If (feature 3 <= 9.837499618530273)\n     If (feature 1 <= 0.0)\n      If (feature 3 <= 7.224999904632568)\n       If (feature 3 <= 6.974999904632568)\n        Predict: 0.0\n       Else (feature 3 > 6.974999904632568)\n        Predict: 0.0\n      Else (feature 3 > 7.224999904632568)\n       If (feature 3 <= 7.82919979095459)\n        Predict: 0.0\n       Else (feature 3 > 7.82919979095459)\n        Predict: 0.0\n     Else (feature 1 > 0.0)\n      If (feature 3 <= 8.029199600219727)\n       If (feature 2 <= 28.0)\n        Predict: 1.0\n       Else (feature 2 > 28.0)\n        Predict: 0.0\n      Else (feature 3 > 8.029199600219727)\n       If (feature 2 <= 39.0)\n        Predict: 0.0\n       Else (feature 2 > 39.0)\n        Predict: 1.0\n    Else (feature 3 > 9.837499618530273)\n     If (feature 1 <= 0.0)\n      If (feature 3 <= 26.0)\n       If (feature 2 <= 19.0)\n        Predict: 0.0\n       Else (feature 2 > 19.0)\n        Predict: 0.0\n      Else (feature 3 > 26.0)\n       If (feature 2 <= 36.0)\n        Predict: 0.0\n       Else (feature 2 > 36.0)\n        Predict: 0.0\n     Else (feature 1 > 0.0)\n      If (feature 2 <= 18.0)\n       If (feature 3 <= 12.875)\n        Predict: 1.0\n       Else (feature 3 > 12.875)\n        Predict: 1.0\n      Else (feature 2 > 18.0)\n       If (feature 0 <= 2.0)\n        Predict: 1.0\n       Else (feature 0 > 2.0)\n        Predict: 1.0\n  Tree 1:\n    If (feature 3 <= 10.5)\n     If (feature 3 <= 6.974999904632568)\n      If (feature 2 <= 19.0)\n       Predict: 0.0\n      Else (feature 2 > 19.0)\n       If (feature 2 <= 28.0)\n        Predict: 1.0\n       Else (feature 2 > 28.0)\n        Predict: 0.0\n     Else (feature 3 > 6.974999904632568)\n      If (feature 1 <= 0.0)\n       If (feature 2 <= 18.0)\n        Predict: 0.0\n       Else (feature 2 > 18.0)\n        Predict: 0.0\n      Else (feature 1 > 0.0)\n       If (feature 2 <= 21.0)\n        Predict: 1.0\n       Else (feature 2 > 21.0)\n        Predict: 1.0\n    Else (feature 3 > 10.5)\n     If (feature 3 <= 78.8499984741211)\n      If (feature 0 <= 2.0)\n       If (feature 2 <= 58.0)\n        Predict: 1.0\n       Else (feature 2 > 58.0)\n        Predict: 0.0\n      Else (feature 0 > 2.0)\n       If (feature 3 <= 18.0)\n        Predict: 1.0\n       Else (feature 3 > 18.0)\n        Predict: 0.0\n     Else (feature 3 > 78.8499984741211)\n      If (feature 2 <= 28.0)\n       If (feature 3 <= 146.5207977294922)\n        Predict: 1.0\n       Else (feature 3 > 146.5207977294922)\n        Predict: 0.0\n      Else (feature 2 > 28.0)\n       If (feature 1 <= 0.0)\n        Predict: 0.0\n       Else (feature 1 > 0.0)\n        Predict: 1.0\n  Tree 2:\n    If (feature 0 <= 2.0)\n     If (feature 3 <= 12.875)\n      If (feature 1 <= 0.0)\n       If (feature 2 <= 19.0)\n        Predict: 0.0\n       Else (feature 2 > 19.0)\n        Predict: 0.0\n      Else (feature 1 > 0.0)\n       Predict: 1.0\n     Else (feature 3 > 12.875)\n      If (feature 2 <= 44.0)\n       If (feature 2 <= -1.0)\n        Predict: 0.0\n       Else (feature 2 > -1.0)\n        Predict: 1.0\n      Else (feature 2 > 44.0)\n       If (feature 2 <= 58.0)\n        Predict: 0.0\n       Else (feature 2 > 58.0)\n        Predict: 0.0\n    Else (feature 0 > 2.0)\n     If (feature 2 <= 35.0)\n      If (feature 3 <= 10.5)\n       If (feature 1 <= 0.0)\n        Predict: 0.0\n       Else (feature 1 > 0.0)\n        Predict: 1.0\n      Else (feature 3 > 10.5)\n       If (feature 3 <= 12.875)\n        Predict: 1.0\n       Else (feature 3 > 12.875)\n        Predict: 0.0\n     Else (feature 2 > 35.0)\n      If (feature 3 <= 8.662500381469727)\n       Predict: 0.0\n      Else (feature 3 > 8.662500381469727)\n       If (feature 2 <= 48.0)\n        Predict: 0.0\n       Else (feature 2 > 48.0)\n        Predict: 1.0\n'
+>>>
+>>> import pandas as pd
+>>> test_df = pd.read_csv('D:\PythonTutorials\PySpark - MLLib\\test.csv')
+>>> test_df.head()
+   PassengerId  Pclass     Sex   Age  SibSp  Parch   Ticket     Fare Cabin  \
+0          892       3    male  34.5      0      0   330911   7.8292   NaN
+1          893       3  female  47.0      1      0   363272   7.0000   NaN
+2          894       2    male  62.0      0      0   240276   9.6875   NaN
+3          895       3    male  27.0      0      0   315154   8.6625   NaN
+4          896       3  female  22.0      1      1  3101298  12.2875   NaN
+
+  Embarked
+0        Q
+1        S
+2        Q
+3        S
+4        S
+>>> test_df = pd.DataFrame(test_df, columns = ['Pclass','Age','Sex','Fare'])
+>>> test_df.head()
+   Pclass   Age     Sex     Fare
+0       3  34.5    male   7.8292
+1       3  47.0  female   7.0000
+2       2  62.0    male   9.6875
+3       3  27.0    male   8.6625
+4       3  22.0  female  12.2875
+>>> test_df.dtypes
+Pclass      int64
+Age       float64
+Sex        object
+Fare      float64
+dtype: object
+>>> test_df['Sex'] = test_df['Sex'].replace('female',1)
+>>> test_df['Sex'] = test_df['Sex'].replace('male',0)
+>>> test_df['Age'] = test_df['Age'].replace('NaN',-1)
+>>> test_df.dtypes
+Pclass      int64
+Age       float64 INFO BlockManagerInfo: Removed broadcast_22_piece0 on localhost:59259 in memory (size: 3.7 KB, free: 5
+Sex         int64
+Fare      float64 INFO ContextCleaner: Cleaned accumulator 26
+dtype: object9:13 INFO BlockManagerInfo: Removed broadcast_21_piece0 on localhost:59259 in memory (size: 8.2 KB, free: 5
+>>> test_df.head()
+   Pclass   Age  Sex     FaretCleaner: Cleaned accumulator 25
+0       3  34.5    0   7.8292tCleaner: Cleaned shuffle 3
+1       3  47.0    1   7.0000anagerInfo: Removed broadcast_20_piece0 on localhost:59259 in memory (size: 322.0 B, free:
+2       2  62.0    0   9.6875
+3       3  27.0    0   8.6625anagerInfo: Removed broadcast_19_piece0 on localhost:59259 in memory (size: 3.5 KB, free: 5
+4       3  22.0    1  12.2875
+>>>
+>>>
+>>> test_df.head()
+   Pclass   Age  Sex     Fare
+0       3  34.5    0   7.8292
+1       3  47.0    1   7.0000
+2       2  62.0    0   9.6875
+3       3  27.0    0   8.6625anager: Removing RDD 60
+4       3  22.0    1  12.2875tCleaner: Cleaned RDD 60
+>>>
+>>> test_df.head()
+   Pclass   Age  Sex     Fare
+0       3  34.5    0   7.8292
+1       3  47.0    1   7.0000
+2       2  62.0    0   9.6875
+3       3  27.0    0   8.6625
+4       3  22.0    1  12.2875
+>>> sdf_test = sqlContext.createDataFrame(test_df)
+>>> type(sdf_test)
+<class 'pyspark.sql.dataframe.DataFrame'>
+>>> temp_test =sdf_test.map(lambda x:x[0:])
+>>> type(temp_test)
+<class 'pyspark.rdd.PipelinedRDD'>
+>>> test_pred = model.predict(temp_test)
+>>> test_pred.collect()
+
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0]

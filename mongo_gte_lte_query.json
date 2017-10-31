@@ -1,0 +1,8 @@
+
+db.getCollection('TelemeteryData_June2016').find(
+
+	{
+		'telemeteryData.assetName':'Polo GT',
+//  'telemeteryData.location.speed':{$gte:120}
+		'customData.date': {"$gte": "10/01/2016", "$lte": "10/16/2016"}
+	}).sort({'_id':-1})
