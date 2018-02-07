@@ -1,0 +1,1364 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n#What is SparkSQL and DataFrames?\n## SparkSQL: It\u0027s a Spark module for structured data processing that provides a data abstraction called DataFrames and acts as a distributed SQL query engine \n## DataFrame: It\u0027s a distributed collection of data organized into named columns.",
+      "dateUpdated": "Dec 6, 2015 11:16:11 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449372751618_1838573493",
+      "id": "20151205-193231_710689707",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eWhat is SparkSQL and DataFrames?\u003c/h1\u003e\n\u003ch2\u003eSparkSQL: It\u0027s a Spark module for structured data processing that provides a data abstraction called DataFrames and acts as a distributed SQL query engine\u003c/h2\u003e\n\u003ch2\u003eDataFrame: It\u0027s a distributed collection of data organized into named columns.\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:32:31 PM",
+      "dateStarted": "Dec 6, 2015 11:16:11 AM",
+      "dateFinished": "Dec 6, 2015 11:16:11 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#Constructing DataFrames\n### From RDDs, Hive tables, databases, structured data files",
+      "dateUpdated": "Dec 6, 2015 11:16:15 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449372751620_1836265000",
+      "id": "20151205-193231_1541715221",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eConstructing DataFrames\u003c/h1\u003e\n\u003ch3\u003eFrom RDDs, Hive tables, databases, structured data files\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:32:31 PM",
+      "dateStarted": "Dec 6, 2015 11:16:15 AM",
+      "dateFinished": "Dec 6, 2015 11:16:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Read from Json files",
+      "dateUpdated": "Dec 6, 2015 11:16:18 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449374368887_-970179966",
+      "id": "20151205-195928_1769748814",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRead from Json files\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:59:28 PM",
+      "dateStarted": "Dec 6, 2015 11:16:18 AM",
+      "dateFinished": "Dec 6, 2015 11:16:18 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Read Data from a Json file and then\n* Use \"show\" function to display the contents of the DataFrame */\nval peopleDF \u003d sqlContext.read.json(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/people.json\")\npeopleDF.show()\n",
+      "dateUpdated": "Dec 6, 2015 11:16:22 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449372751621_1835880251",
+      "id": "20151205-193231_1073827235",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "peopleDF: org.apache.spark.sql.DataFrame \u003d [age: bigint, name: string]\n+----+-------+\n| age|   name|\n+----+-------+\n|null|Michael|\n|  30|   Andy|\n|  19| Justin|\n+----+-------+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:32:31 PM",
+      "dateStarted": "Dec 6, 2015 11:16:22 AM",
+      "dateFinished": "Dec 6, 2015 11:16:22 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## DataFrame Operations\n### DataFrames allow for structured data manipulation",
+      "dateUpdated": "Dec 6, 2015 11:16:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449374544621_187173730",
+      "id": "20151205-200224_682997513",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eDataFrame Operations\u003c/h2\u003e\n\u003ch3\u003eDataFrames allow for structured data manipulation\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:02:24 PM",
+      "dateStarted": "Dec 6, 2015 11:16:26 AM",
+      "dateFinished": "Dec 6, 2015 11:16:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Print the schema of the DF in a tree format */\npeopleDF.printSchema()",
+      "dateUpdated": "Dec 6, 2015 11:16:29 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449372751621_1835880251",
+      "id": "20151205-193231_729697742",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- age: long (nullable \u003d true)\n |-- name: string (nullable \u003d true)\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:32:31 PM",
+      "dateStarted": "Dec 6, 2015 11:16:29 AM",
+      "dateFinished": "Dec 6, 2015 11:16:29 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Select only one column */\npeopleDF.select(\"name\").show()",
+      "dateUpdated": "Dec 6, 2015 11:16:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449372751622_1837034497",
+      "id": "20151205-193231_2138341336",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-------+\n|   name|\n+-------+\n|Michael|\n|   Andy|\n| Justin|\n+-------+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 7:32:31 PM",
+      "dateStarted": "Dec 6, 2015 11:16:32 AM",
+      "dateFinished": "Dec 6, 2015 11:16:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Select only people older than 21 */\npeopleDF.filter(\"age \u003e 21\").show()",
+      "dateUpdated": "Dec 6, 2015 11:16:34 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449374992227_1978656554",
+      "id": "20151205-200952_1754253043",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---+----+\n|age|name|\n+---+----+\n| 30|Andy|\n+---+----+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:09:52 PM",
+      "dateStarted": "Dec 6, 2015 11:16:34 AM",
+      "dateFinished": "Dec 6, 2015 11:16:35 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Use \"groupBy\" and \"count\" functions to count people in age groups */\npeopleDF.groupBy(\"age\").count().show()",
+      "dateUpdated": "Dec 6, 2015 11:16:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449375528475_1065401106",
+      "id": "20151205-201848_1927597544",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+----+-----+\n| age|count|\n+----+-----+\n|null|    1|\n|  19|    1|\n|  30|    1|\n+----+-----+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:18:48 PM",
+      "dateStarted": "Dec 6, 2015 11:16:37 AM",
+      "dateFinished": "Dec 6, 2015 11:16:38 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Running SQL queries Programmatically",
+      "dateUpdated": "Dec 6, 2015 11:16:42 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449375993613_-2085264953",
+      "id": "20151205-202633_1718945780",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRunning SQL queries Programmatically\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:26:33 PM",
+      "dateStarted": "Dec 6, 2015 11:16:42 AM",
+      "dateFinished": "Dec 6, 2015 11:16:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Use the \"sql\" function \"sqlContext\" to run SQL queries */\npeopleDF.registerTempTable(\"peopleTable\")\nval adultsDF \u003d sqlContext.sql(\"select * from peopleTable where age \u003e 21\")\nadultsDF.show()",
+      "dateUpdated": "Dec 6, 2015 11:16:44 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449376021733_-1261102161",
+      "id": "20151205-202701_2144609923",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "adultsDF: org.apache.spark.sql.DataFrame \u003d [age: bigint, name: string]\n+---+----+\n|age|name|\n+---+----+\n| 30|Andy|\n+---+----+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:27:01 PM",
+      "dateStarted": "Dec 6, 2015 11:16:44 AM",
+      "dateFinished": "Dec 6, 2015 11:16:45 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Interoperating with RDDs",
+      "dateUpdated": "Dec 6, 2015 11:16:48 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449376613416_-165868706",
+      "id": "20151205-203653_853296383",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eInteroperating with RDDs\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:36:53 PM",
+      "dateStarted": "Dec 6, 2015 11:16:48 AM",
+      "dateFinished": "Dec 6, 2015 11:16:48 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/**Method 1: Using \"reflection\"; use a case class to define the schema of the DF */\nval peopleRDD \u003d sc.textFile(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/people.txt\")\npeopleRDD.collect()\n",
+      "dateUpdated": "Dec 6, 2015 11:16:52 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449377391664_2029660115",
+      "id": "20151205-204951_489689756",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "peopleRDD: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[81] at textFile at \u003cconsole\u003e:24\nres69: Array[String] \u003d Array(Michael, 29, Andy, 30, Justin, 19)\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:49:51 PM",
+      "dateStarted": "Dec 6, 2015 11:16:52 AM",
+      "dateFinished": "Dec 6, 2015 11:16:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class Person(name: String, age: Int)",
+      "dateUpdated": "Dec 6, 2015 11:16:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449377801267_742444061",
+      "id": "20151205-205641_662203100",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "defined class Person\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:56:41 PM",
+      "dateStarted": "Dec 6, 2015 11:16:59 AM",
+      "dateFinished": "Dec 6, 2015 11:16:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val splitRDD \u003d peopleRDD.map(x \u003d\u003e x.split(\",\"))\nsplitRDD.collect()",
+      "dateUpdated": "Dec 6, 2015 11:17:01 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449377936626_1377816092",
+      "id": "20151205-205856_707468457",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "splitRDD: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[82] at map at \u003cconsole\u003e:25\nres72: Array[Array[String]] \u003d Array(Array(Michael, \" 29\"), Array(Andy, \" 30\"), Array(Justin, \" 19\"))\n"
+      },
+      "dateCreated": "Dec 5, 2015 8:58:56 PM",
+      "dateStarted": "Dec 6, 2015 11:17:01 AM",
+      "dateFinished": "Dec 6, 2015 11:17:01 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val caseClassRDD \u003d splitRDD.map(x \u003d\u003e Person(x(0), x(1).trim.toInt))\ncaseClassRDD.collect()",
+      "dateUpdated": "Dec 6, 2015 11:17:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378022550_-1583272740",
+      "id": "20151205-210022_364271146",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "caseClassRDD: org.apache.spark.rdd.RDD[Person] \u003d MapPartitionsRDD[83] at map at \u003cconsole\u003e:29\nres74: Array[Person] \u003d Array(Person(Michael,29), Person(Andy,30), Person(Justin,19))\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:00:22 PM",
+      "dateStarted": "Dec 6, 2015 11:17:02 AM",
+      "dateFinished": "Dec 6, 2015 11:17:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val personDF \u003d caseClassRDD.toDF()\npersonDF.show()",
+      "dateUpdated": "Dec 6, 2015 11:17:05 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378297544_-1169684641",
+      "id": "20151205-210457_572690699",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "personDF: org.apache.spark.sql.DataFrame \u003d [name: string, age: int]\n+-------+---+\n|   name|age|\n+-------+---+\n|Michael| 29|\n|   Andy| 30|\n| Justin| 19|\n+-------+---+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:04:57 PM",
+      "dateStarted": "Dec 6, 2015 11:17:05 AM",
+      "dateFinished": "Dec 6, 2015 11:17:06 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "personDF.registerTempTable(\"personTable\")",
+      "dateUpdated": "Dec 6, 2015 11:17:09 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378456066_-452286641",
+      "id": "20151205-210736_1053228339",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 5, 2015 9:07:36 PM",
+      "dateStarted": "Dec 6, 2015 11:17:09 AM",
+      "dateFinished": "Dec 6, 2015 11:17:09 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val teenagersDF \u003d sqlContext.sql(\"select * from personTable where age \u003c 20\")\nteenagersDF.show()",
+      "dateUpdated": "Dec 6, 2015 11:17:12 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378539474_1014314869",
+      "id": "20151205-210859_770191629",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "teenagersDF: org.apache.spark.sql.DataFrame \u003d [name: string, age: int]\n+------+---+\n|  name|age|\n+------+---+\n|Justin| 19|\n+------+---+\n\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:08:59 PM",
+      "dateStarted": "Dec 6, 2015 11:17:12 AM",
+      "dateFinished": "Dec 6, 2015 11:17:12 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "teenagersDF.map(x \u003d\u003e \"Name: \" + x(0)).collect().foreach(println)",
+      "dateUpdated": "Dec 6, 2015 11:17:16 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378564294_1421409854",
+      "id": "20151205-210924_1615574893",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Name: Justin\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:09:24 PM",
+      "dateStarted": "Dec 6, 2015 11:17:16 AM",
+      "dateFinished": "Dec 6, 2015 11:17:16 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "teenagersDF.map(x \u003d\u003e \"Name: \" + x.getAs[String](\"name\")).collect().foreach(println)",
+      "dateUpdated": "Dec 6, 2015 11:17:19 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378816878_1546805703",
+      "id": "20151205-211336_1638360365",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Name: Justin\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:13:36 PM",
+      "dateStarted": "Dec 6, 2015 11:17:19 AM",
+      "dateFinished": "Dec 6, 2015 11:17:19 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Data Sources",
+      "dateUpdated": "Dec 6, 2015 11:17:22 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378888039_-739479531",
+      "id": "20151205-211448_1943569574",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eData Sources\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:14:48 PM",
+      "dateStarted": "Dec 6, 2015 11:17:22 AM",
+      "dateFinished": "Dec 6, 2015 11:17:22 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 1. Parquet Files",
+      "dateUpdated": "Dec 6, 2015 11:17:24 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449378969606_930654148",
+      "id": "20151205-211609_1076679964",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003e1. Parquet Files\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 5, 2015 9:16:09 PM",
+      "dateStarted": "Dec 6, 2015 11:17:24 AM",
+      "dateFinished": "Dec 6, 2015 11:17:24 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Option 1: Reading data while specifying the data format */\nval parquetDF \u003d sqlContext.read.format(\"parquet\").load(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/users.parquet\")",
+      "dateUpdated": "Dec 6, 2015 11:29:07 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449426463794_-207402139",
+      "id": "20151206-102743_2030296925",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "parquetDF: org.apache.spark.sql.DataFrame \u003d [name: string, favorite_color: string, favorite_numbers: array\u003cint\u003e]\n"
+      },
+      "dateCreated": "Dec 6, 2015 10:27:43 AM",
+      "dateStarted": "Dec 6, 2015 11:17:27 AM",
+      "dateFinished": "Dec 6, 2015 11:17:27 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Option 2: Reading the data automatically */\nval parquetDF2 \u003d sqlContext.read.parquet(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/users.parquet\")",
+      "dateUpdated": "Dec 6, 2015 11:29:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449430101052_519382478",
+      "id": "20151206-112821_1075375347",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "parquetDF2: org.apache.spark.sql.DataFrame \u003d [name: string, favorite_color: string, favorite_numbers: array\u003cint\u003e]\n"
+      },
+      "dateCreated": "Dec 6, 2015 11:28:21 AM",
+      "dateStarted": "Dec 6, 2015 11:29:37 AM",
+      "dateFinished": "Dec 6, 2015 11:29:38 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Writing and saving data as a Parquet file */\nparquetDF.select(\"name\").write.format(\"parquet\").save(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/usersNames.parquet\")",
+      "dateUpdated": "Dec 6, 2015 11:18:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449426748149_-1109226726",
+      "id": "20151206-103228_1555931448",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 6, 2015 10:32:28 AM",
+      "dateStarted": "Dec 6, 2015 11:18:02 AM",
+      "dateFinished": "Dec 6, 2015 11:18:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 2. Json Files",
+      "dateUpdated": "Dec 6, 2015 11:15:33 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449427205083_1886303973",
+      "id": "20151206-104005_85501610",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003e2. Json Files\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 6, 2015 10:40:05 AM",
+      "dateStarted": "Dec 6, 2015 11:15:35 AM",
+      "dateFinished": "Dec 6, 2015 11:15:36 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Option1: Reading the data from Json files while specifying the data type */\nval jsonDF \u003d sqlContext.read.format(\"json\").load(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/people.json\")",
+      "dateUpdated": "Dec 6, 2015 11:29:07 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449427264225_-1002916725",
+      "id": "20151206-104104_35179730",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "jsonDF: org.apache.spark.sql.DataFrame \u003d [age: bigint, name: string]\n"
+      },
+      "dateCreated": "Dec 6, 2015 10:41:04 AM",
+      "dateStarted": "Dec 6, 2015 11:15:53 AM",
+      "dateFinished": "Dec 6, 2015 11:15:54 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Option 2: Reading automatically Json files */\nval jsonDF2 \u003d sqlContext.read.json(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/people.json\")",
+      "dateUpdated": "Dec 6, 2015 11:29:07 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449429954601_1485488611",
+      "id": "20151206-112554_1459131211",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "jsonDF2: org.apache.spark.sql.DataFrame \u003d [age: bigint, name: string]\n"
+      },
+      "dateCreated": "Dec 6, 2015 11:25:54 AM",
+      "dateStarted": "Dec 6, 2015 11:26:54 AM",
+      "dateFinished": "Dec 6, 2015 11:26:54 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "/** Writing and saving data as Json files */\njsonDF.select(\"age\").write.format(\"json\").save(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/peopleAges.json\")",
+      "dateUpdated": "Dec 6, 2015 11:22:53 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449427319133_-1220037698",
+      "id": "20151206-104159_1924959768",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 6, 2015 10:41:59 AM",
+      "dateStarted": "Dec 6, 2015 11:22:53 AM",
+      "dateFinished": "Dec 6, 2015 11:22:53 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 3. CSV Files",
+      "dateUpdated": "Dec 6, 2015 2:40:15 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449441600631_-1941311446",
+      "id": "20151206-144000_343327375",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003e3. CSV Files\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 6, 2015 2:40:00 PM",
+      "dateStarted": "Dec 6, 2015 2:40:15 PM",
+      "dateFinished": "Dec 6, 2015 2:40:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Reading from CSV files\nval flightsDF \u003d sqlContext.read.format(\"com.databricks.spark.csv\").\noption(\"header\", \"true\").\noption(\"inferSchema\", \"true\").\nload(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/flights.csv\")\n\nflightsDF.registerTempTable(\"flightsTable\")",
+      "dateUpdated": "Dec 6, 2015 3:38:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449441634814_-1302430702",
+      "id": "20151206-144034_692024521",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "flightsDF: org.apache.spark.sql.DataFrame \u003d [date: string, hour: string, minute: string, dep: string, arr: string, dep_delay: string, arr_delay: string, carrier: string, flight: int, dest: string, plane: string, cancelled: int, time: string, dist: int]\n"
+      },
+      "dateCreated": "Dec 6, 2015 2:40:34 PM",
+      "dateStarted": "Dec 6, 2015 3:09:11 PM",
+      "dateFinished": "Dec 6, 2015 3:09:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from flightsTable where dest \u003d\u003d\"JFK\" order by arr_delay",
+      "dateUpdated": "Dec 6, 2015 3:53:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "hour",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "hour",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449443796316_1794909026",
+      "id": "20151206-151636_610378198",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "date\thour\tminute\tdep\tarr\tdep_delay\tarr_delay\tcarrier\tflight\tdest\tplane\tcancelled\ttime\tdist\n2011-11-02 12:00:00\t15\t47\t1547\t2018\t-5\t-1\tB6\t622\tJFK\tN605JB\t0\t189\t1428\n2011-04-21 12:00:00\t6\t54\t654\t1120\t-6\t-1\tB6\t620\tJFK\tN192JB\t0\t192\t1428\n2011-11-14 12:00:00\t16\t0\t1600\t2018\t8\t-1\tB6\t622\tJFK\tN585JB\t0\t182\t1428\n2011-07-16 12:00:00\t15\t14\t1514\t1959\t-1\t-1\tB6\t622\tJFK\tN703JB\t0\t204\t1428\n2011-07-18 12:00:00\t6\t24\t624\t1059\t-6\t-1\tB6\t620\tJFK\tN648JB\t0\t194\t1428\n2011-04-23 12:00:00\t6\t55\t655\t1120\t-5\t-1\tB6\t620\tJFK\tN216JB\t0\t192\t1428\n2011-08-20 12:00:00\t6\t29\t629\t1059\t-1\t-1\tB6\t620\tJFK\tN606JB\t0\t190\t1428\n2011-07-27 12:00:00\t15\t15\t1515\t1959\t0\t-1\tB6\t622\tJFK\tN624JB\t0\t199\t1428\n2011-05-09 12:00:00\t7\t1\t701\t1125\t1\t-1\tB6\t620\tJFK\tN296JB\t0\t186\t1428\n2011-03-21 12:00:00\t6\t56\t656\t1120\t-4\t-1\tB6\t620\tJFK\tN317JB\t0\t185\t1428\n2011-10-08 12:00:00\t6\t49\t649\t1111\t-1\t-1\tB6\t620\tJFK\tN527JB\t0\t188\t1428\n2011-04-03 12:00:00\t15\t30\t1530\t2005\t-5\t-1\tB6\t624\tJFK\tN317JB\t0\t198\t1428\n2011-05-15 12:00:00\t7\t6\t706\t1125\t6\t-1\tB6\t620\tJFK\tN266JB\t0\t181\t1428\n2011-12-15 12:00:00\t6\t41\t641\t1053\t1\t-10\tB6\t620\tJFK\tN206JB\t0\t175\t1428\n2011-09-12 12:00:00\t14\t55\t1455\t1931\t-10\t-10\tB6\t622\tJFK\tN649JB\t0\t196\t1428\n2011-10-23 12:00:00\t6\t48\t648\t1102\t-2\t-10\tB6\t620\tJFK\tN324JB\t0\t178\t1428\n2011-04-04 12:00:00\t6\t59\t659\t1111\t-1\t-10\tB6\t620\tJFK\tN317JB\t0\t178\t1428\n2011-08-26 12:00:00\t15\t18\t1518\t1950\t3\t-10\tB6\t622\tJFK\tN706JB\t0\t194\t1428\n2011-04-06 12:00:00\t6\t55\t655\t1111\t-5\t-10\tB6\t620\tJFK\tN323JB\t0\t181\t1428\n2011-04-07 12:00:00\t6\t56\t656\t1111\t-4\t-10\tB6\t620\tJFK\tN324JB\t0\t179\t1428\n2011-11-24 12:00:00\t6\t40\t640\t1053\t0\t-10\tB6\t620\tJFK\tN334JB\t0\t181\t1428\n2011-04-22 12:00:00\t6\t56\t656\t1111\t-4\t-10\tB6\t620\tJFK\tN187JB\t0\t183\t1428\n2011-05-06 12:00:00\t7\t2\t702\t1116\t2\t-10\tB6\t620\tJFK\tN279JB\t0\t173\t1428\n2011-05-25 12:00:00\t6\t56\t656\t1116\t-4\t-10\tB6\t620\tJFK\tN309JB\t0\t181\t1428\n2011-06-10 12:00:00\t6\t51\t651\t1116\t-9\t-10\tB6\t620\tJFK\tN178JB\t0\t191\t1428\n2011-07-14 12:00:00\t6\t25\t625\t1050\t-5\t-10\tB6\t620\tJFK\tN789JB\t0\t187\t1428\n2011-01-28 12:00:00\t6\t55\t655\t1107\t-5\t-10\tB6\t620\tJFK\tN594JB\t0\t172\t1428\n2011-02-14 12:00:00\t15\t32\t1532\t1950\t-3\t-10\tB6\t624\tJFK\tN648JB\t0\t183\t1428\n2011-10-23 12:00:00\t15\t6\t1506\t1931\t1\t-10\tB6\t622\tJFK\tN231JB\t0\t186\t1428\n2011-02-27 12:00:00\t6\t58\t658\t1107\t-2\t-10\tB6\t620\tJFK\tN198JB\t0\t170\t1428\n2011-08-12 12:00:00\t15\t14\t1514\t1949\t-1\t-11\tB6\t622\tJFK\tN527JB\t0\t195\t1428\n2011-09-14 12:00:00\t14\t57\t1457\t1930\t-8\t-11\tB6\t622\tJFK\tN729JB\t0\t194\t1428\n2011-09-22 12:00:00\t6\t46\t646\t1101\t-4\t-11\tB6\t620\tJFK\tN537JB\t0\t176\t1428\n2011-10-05 12:00:00\t15\t2\t1502\t1930\t-3\t-11\tB6\t622\tJFK\tN506JB\t0\t185\t1428\n2011-01-22 12:00:00\t7\t1\t701\t1106\t1\t-11\tB6\t620\tJFK\tN527JB\t0\t161\t1428\n2011-05-06 12:00:00\t15\t39\t1539\t1945\t22\t-11\tB6\t622\tJFK\tN304JB\t0\t175\t1428\n2011-05-13 12:00:00\t6\t53\t653\t1115\t-7\t-11\tB6\t620\tJFK\tN298JB\t0\t188\t1428\n2011-08-03 12:00:00\t6\t22\t622\t1049\t-8\t-11\tB6\t620\tJFK\tN632JB\t0\t190\t1428\n2011-02-22 12:00:00\t15\t35\t1535\t1949\t0\t-11\tB6\t624\tJFK\tN197JB\t0\t171\t1428\n2011-06-02 12:00:00\t15\t10\t1510\t1945\t-7\t-11\tB6\t622\tJFK\tN298JB\t0\t197\t1428\n2011-05-16 12:00:00\t6\t59\t659\t1115\t-1\t-11\tB6\t620\tJFK\tN197JB\t0\t174\t1428\n2011-07-05 12:00:00\t6\t36\t636\t1049\t6\t-11\tB6\t620\tJFK\tN527JB\t0\t179\t1428\n2011-01-30 12:00:00\t6\t51\t651\t1106\t-9\t-11\tB6\t620\tJFK\tN606JB\t0\t175\t1428\n2011-11-29 12:00:00\t6\t34\t634\t1052\t-6\t-11\tB6\t620\tJFK\tN193JB\t0\t178\t1428\n2011-12-25 12:00:00\t6\t38\t638\t1052\t-2\t-11\tB6\t620\tJFK\tN273JB\t0\t170\t1428\n2011-02-21 12:00:00\t6\t57\t657\t1106\t-3\t-11\tB6\t620\tJFK\tN316JB\t0\t170\t1428\n2011-02-23 12:00:00\t7\t0\t700\t1106\t0\t-11\tB6\t620\tJFK\tN318JB\t0\t173\t1428\n2011-10-25 12:00:00\t6\t45\t645\t1100\t-5\t-12\tB6\t620\tJFK\tN279JB\t0\t182\t1428\n2011-12-02 12:00:00\t6\t35\t635\t1051\t-5\t-12\tB6\t620\tJFK\tN184JB\t0\t173\t1428\n2011-04-02 12:00:00\t6\t58\t658\t1109\t-2\t-12\tB6\t620\tJFK\tN187JB\t0\t175\t1428\n2011-02-12 12:00:00\t6\t59\t659\t1105\t-1\t-12\tB6\t620\tJFK\tN612JB\t0\t156\t1428\n2011-04-18 12:00:00\t6\t57\t657\t1109\t-3\t-12\tB6\t620\tJFK\tN309JB\t0\t177\t1428\n2011-03-06 12:00:00\t6\t56\t656\t1109\t-4\t-12\tB6\t620\tJFK\tN197JB\t0\t175\t1428\n2011-07-26 12:00:00\t15\t5\t1505\t1948\t-10\t-12\tB6\t622\tJFK\tN592JB\t0\t204\t1428\n2011-03-10 12:00:00\t7\t6\t706\t1109\t6\t-12\tB6\t620\tJFK\tN307JB\t0\t169\t1428\n2011-06-17 12:00:00\t6\t56\t656\t1123\t-9\t-12\tB6\t620\tJFK\tN238JB\t0\t183\t1428\n2011-08-21 12:00:00\t6\t26\t626\t1048\t-4\t-12\tB6\t620\tJFK\tN503JB\t0\t184\t1428\n2011-12-12 12:00:00\t6\t31\t631\t1051\t-9\t-12\tB6\t620\tJFK\tN228JB\t0\t174\t1428\n2011-10-26 12:00:00\t6\t44\t644\t1059\t-6\t-13\tB6\t620\tJFK\tN267JB\t0\t183\t1428\n2011-10-03 12:00:00\t6\t50\t650\t1059\t0\t-13\tB6\t620\tJFK\tN655JB\t0\t174\t1428\n2011-11-09 12:00:00\t6\t38\t638\t1050\t-2\t-13\tB6\t620\tJFK\tN656JB\t0\t175\t1428\n2011-12-08 12:00:00\t15\t50\t1550\t2004\t0\t-13\tB6\t622\tJFK\tN238JB\t0\t176\t1428\n2011-12-16 12:00:00\t6\t39\t639\t1050\t-1\t-13\tB6\t620\tJFK\tN273JB\t0\t173\t1428\n2011-12-18 12:00:00\t6\t37\t637\t1050\t-3\t-13\tB6\t620\tJFK\tN324JB\t0\t180\t1428\n2011-12-19 12:00:00\t15\t43\t1543\t2004\t-7\t-13\tB6\t622\tJFK\tN292JB\t0\t183\t1428\n2011-12-29 12:00:00\t6\t33\t633\t1050\t-7\t-13\tB6\t620\tJFK\tN274JB\t0\t176\t1428\n2011-08-22 12:00:00\t15\t7\t1507\t1947\t-8\t-13\tB6\t622\tJFK\tN584JB\t0\t196\t1428\n2011-09-14 12:00:00\t6\t41\t641\t1059\t-9\t-13\tB6\t620\tJFK\tN595JB\t0\t180\t1428\n2011-01-21 12:00:00\t6\t56\t656\t1104\t-4\t-13\tB6\t620\tJFK\tN760JB\t0\t164\t1428\n2011-03-16 12:00:00\t15\t38\t1538\t1953\t3\t-13\tB6\t624\tJFK\tN192JB\t0\t172\t1428\n2011-03-11 12:00:00\t15\t29\t1529\t1953\t-6\t-13\tB6\t624\tJFK\tN316JB\t0\t183\t1428\n2011-04-17 12:00:00\t7\t3\t703\t1108\t3\t-13\tB6\t620\tJFK\tN279JB\t0\t169\t1428\n2011-06-04 12:00:00\t15\t16\t1516\t1943\t-1\t-13\tB6\t622\tJFK\tN267JB\t0\t197\t1428\n2011-03-13 12:00:00\t7\t0\t700\t1108\t0\t-13\tB6\t620\tJFK\tN266JB\t0\t172\t1428\n2011-06-23 12:00:00\t7\t6\t706\t1122\t1\t-13\tB6\t620\tJFK\tN267JB\t0\t175\t1428\n2011-06-15 12:00:00\t6\t52\t652\t1113\t-8\t-13\tB6\t620\tJFK\tN307JB\t0\t190\t1428\n2011-07-26 12:00:00\t6\t29\t629\t1047\t-1\t-13\tB6\t620\tJFK\tN505JB\t0\t181\t1428\n2011-09-17 12:00:00\t6\t45\t645\t1058\t-5\t-14\tB6\t620\tJFK\tN586JB\t0\t175\t1428\n2011-11-21 12:00:00\t15\t55\t1555\t2003\t5\t-14\tB6\t622\tJFK\tN309JB\t0\t174\t1428\n2011-10-16 12:00:00\t6\t45\t645\t1058\t-5\t-14\tB6\t620\tJFK\tN586JB\t0\t175\t1428\n2011-11-08 12:00:00\t6\t32\t632\t1049\t-8\t-14\tB6\t620\tJFK\tN526JB\t0\t175\t1428\n2011-02-02 12:00:00\t15\t31\t1531\t1946\t-4\t-14\tB6\t624\tJFK\tN768JB\t0\t167\t1428\n2011-05-08 12:00:00\t7\t1\t701\t1112\t1\t-14\tB6\t620\tJFK\tN306JB\t0\t179\t1428\n2011-05-11 12:00:00\t15\t13\t1513\t1942\t-4\t-14\tB6\t622\tJFK\tN236JB\t0\t199\t1428\n2011-06-03 12:00:00\t15\t9\t1509\t1942\t-8\t-14\tB6\t622\tJFK\tN317JB\t0\t192\t1428\n2011-09-21 12:00:00\t15\t11\t1511\t1927\t6\t-14\tB6\t622\tJFK\tN527JB\t0\t177\t1428\n2011-06-13 12:00:00\t6\t57\t657\t1112\t-3\t-14\tB6\t620\tJFK\tN239JB\t0\t181\t1428\n2011-06-16 12:00:00\t6\t56\t656\t1121\t-9\t-14\tB6\t620\tJFK\tN238JB\t0\t187\t1428\n2011-06-22 12:00:00\t6\t53\t653\t1121\t-12\t-14\tB6\t620\tJFK\tN258JB\t0\t187\t1428\n2011-07-09 12:00:00\t6\t28\t628\t1046\t-2\t-14\tB6\t620\tJFK\tN644JB\t0\t180\t1428\n2011-09-21 12:00:00\t6\t45\t645\t1058\t-5\t-14\tB6\t620\tJFK\tN657JB\t0\t173\t1428\n2011-07-31 12:00:00\t6\t25\t625\t1046\t-5\t-14\tB6\t620\tJFK\tN729JB\t0\t183\t1428\n2011-01-17 12:00:00\t15\t31\t1531\t1946\t-4\t-14\tB6\t624\tJFK\tN779JB\t0\t173\t1428\n2011-01-05 12:00:00\t7\t0\t700\t1103\t0\t-14\tB6\t620\tJFK\tN708JB\t0\t167\t1428\n2011-09-27 12:00:00\t6\t46\t646\t1058\t-4\t-14\tB6\t620\tJFK\tN547JB\t0\t177\t1428\n2011-10-06 12:00:00\t6\t43\t643\t1058\t-7\t-14\tB6\t620\tJFK\tN587JB\t0\t176\t1428\n2011-10-11 12:00:00\t14\t56\t1456\t1927\t-9\t-14\tB6\t622\tJFK\tN627JB\t0\t186\t1428\n2011-10-13 12:00:00\t6\t47\t647\t1058\t-3\t-14\tB6\t620\tJFK\tN531JB\t0\t172\t1428\n2011-10-27 12:00:00\t6\t44\t644\t1058\t-6\t-14\tB6\t620\tJFK\tN296JB\t0\t174\t1428\n2011-09-06 12:00:00\t6\t33\t633\t1046\t3\t-14\tB6\t620\tJFK\tN519JB\t0\t173\t1428\n2011-10-31 12:00:00\t15\t46\t1546\t2005\t-6\t-14\tB6\t622\tJFK\tN643JB\t0\t178\t1428\n2011-03-27 12:00:00\t6\t57\t657\t1107\t-3\t-14\tB6\t620\tJFK\tN283JB\t0\t174\t1428\n2011-11-01 12:00:00\t15\t46\t1546\t2005\t-6\t-14\tB6\t622\tJFK\tN646JB\t0\t181\t1428\n2011-12-12 12:00:00\t15\t47\t1547\t2002\t-3\t-15\tB6\t622\tJFK\tN274JB\t0\t178\t1428\n2011-12-26 12:00:00\t15\t50\t1550\t2002\t0\t-15\tB6\t622\tJFK\tN216JB\t0\t170\t1428\n2011-12-11 12:00:00\t15\t44\t1544\t2002\t-6\t-15\tB6\t622\tJFK\tN247JB\t0\t175\t1428\n2011-08-16 12:00:00\t6\t27\t627\t1045\t-3\t-15\tB6\t620\tJFK\tN639JB\t0\t182\t1428\n2011-09-05 12:00:00\t6\t28\t628\t1045\t-2\t-15\tB6\t620\tJFK\tN599JB\t0\t178\t1428\n2011-01-25 12:00:00\t6\t58\t658\t1102\t-2\t-15\tB6\t620\tJFK\tN589JB\t0\t162\t1428\n2011-09-01 12:00:00\t15\t15\t1515\t1945\t0\t-15\tB6\t622\tJFK\tN641JB\t0\t185\t1428\n2011-02-24 12:00:00\t6\t53\t653\t1102\t-7\t-15\tB6\t620\tJFK\tN179JB\t0\t175\t1428\n2011-03-08 12:00:00\t6\t55\t655\t1106\t-5\t-15\tB6\t620\tJFK\tN228JB\t0\t170\t1428\n2011-04-07 12:00:00\t15\t19\t1519\t1946\t-12\t-15\tB6\t624\tJFK\tN206JB\t0\t191\t1428\n2011-03-14 12:00:00\t6\t52\t652\t1106\t-8\t-15\tB6\t620\tJFK\tN281JB\t0\t174\t1428\n2011-03-30 12:00:00\t6\t55\t655\t1106\t-5\t-15\tB6\t620\tJFK\tN289JB\t0\t172\t1428\n2011-06-28 12:00:00\t7\t1\t701\t1120\t-4\t-15\tB6\t620\tJFK\tN273JB\t0\t187\t1428\n2011-03-31 12:00:00\t15\t31\t1531\t1951\t-4\t-15\tB6\t624\tJFK\tN266JB\t0\t166\t1428\n2011-04-13 12:00:00\t6\t56\t656\t1106\t-4\t-15\tB6\t620\tJFK\tN266JB\t0\t178\t1428\n2011-01-10 12:00:00\t6\t56\t656\t1102\t-4\t-15\tB6\t620\tJFK\tN625JB\t0\t166\t1428\n2011-01-18 12:00:00\t6\t59\t659\t1102\t-1\t-15\tB6\t620\tJFK\tN779JB\t0\t162\t1428\n2011-12-03 12:00:00\t6\t37\t637\t1047\t-3\t-16\tB6\t620\tJFK\tN317JB\t0\t179\t1428\n2011-12-28 12:00:00\t6\t32\t632\t1047\t-8\t-16\tB6\t620\tJFK\tN231JB\t0\t177\t1428\n2011-08-10 12:00:00\t6\t25\t625\t1044\t-5\t-16\tB6\t620\tJFK\tN537JB\t0\t180\t1428\n2011-09-07 12:00:00\t6\t42\t642\t1056\t-8\t-16\tB6\t620\tJFK\tN652JB\t0\t172\t1428\n2011-04-29 12:00:00\t6\t58\t658\t1105\t-2\t-16\tB6\t620\tJFK\tN203JB\t0\t169\t1428\n2011-05-25 12:00:00\t15\t8\t1508\t1940\t-9\t-16\tB6\t622\tJFK\tN184JB\t0\t192\t1428\n2011-03-25 12:00:00\t15\t40\t1540\t1950\t5\t-16\tB6\t624\tJFK\tN316JB\t0\t170\t1428\n2011-01-04 12:00:00\t6\t54\t654\t1103\t-6\t-16\tB6\t620\tJFK\tN267JB\t0\t168\t1428\n2011-08-22 12:00:00\t6\t26\t626\t1043\t-4\t-17\tB6\t620\tJFK\tN584JB\t0\t182\t1428\n2011-09-20 12:00:00\t6\t44\t644\t1055\t-6\t-17\tB6\t620\tJFK\tN634JB\t0\t175\t1428\n2011-09-12 12:00:00\t6\t43\t643\t1055\t-7\t-17\tB6\t620\tJFK\tN570JB\t0\t173\t1428\n2011-11-08 12:00:00\t15\t43\t1543\t2002\t-9\t-17\tB6\t622\tJFK\tN526JB\t0\t178\t1428\n2011-11-15 12:00:00\t6\t40\t640\t1046\t0\t-17\tB6\t620\tJFK\tN537JB\t0\t166\t1428\n2011-11-17 12:00:00\t15\t56\t1556\t2000\t6\t-17\tB6\t622\tJFK\tN203JB\t0\t163\t1428\n2011-12-05 12:00:00\t6\t36\t636\t1046\t-4\t-17\tB6\t620\tJFK\tN304JB\t0\t174\t1428\n2011-12-26 12:00:00\t6\t33\t633\t1046\t-7\t-17\tB6\t620\tJFK\tN216JB\t0\t175\t1428\n2011-08-09 12:00:00\t6\t27\t627\t1043\t-3\t-17\tB6\t620\tJFK\tN524JB\t0\t182\t1428\n2011-03-26 12:00:00\t6\t56\t656\t1104\t-4\t-17\tB6\t620\tJFK\tN283JB\t0\t173\t1428\n2011-03-28 12:00:00\t6\t52\t652\t1104\t-8\t-17\tB6\t620\tJFK\tN236JB\t0\t175\t1428\n2011-05-08 12:00:00\t15\t17\t1517\t1939\t0\t-17\tB6\t622\tJFK\tN216JB\t0\t185\t1428\n2011-05-17 12:00:00\t6\t54\t654\t1109\t-6\t-17\tB6\t620\tJFK\tN283JB\t0\t176\t1428\n2011-02-11 12:00:00\t6\t59\t659\t1100\t-1\t-17\tB6\t620\tJFK\tN580JB\t0\t160\t1428\n2011-06-30 12:00:00\t6\t56\t656\t1118\t-9\t-17\tB6\t620\tJFK\tN323JB\t0\t185\t1428\n2011-01-06 12:00:00\t15\t32\t1532\t1943\t-3\t-17\tB6\t624\tJFK\tN641JB\t0\t175\t1428\n2011-11-14 12:00:00\t6\t37\t637\t1045\t-3\t-18\tB6\t620\tJFK\tN585JB\t0\t168\t1428\n2011-11-22 12:00:00\t6\t31\t631\t1045\t-9\t-18\tB6\t620\tJFK\tN337JB\t0\t172\t1428\n2011-11-26 12:00:00\t6\t35\t635\t1045\t-5\t-18\tB6\t620\tJFK\tN236JB\t0\t175\t1428\n2011-12-29 12:00:00\t15\t41\t1541\t1959\t-9\t-18\tB6\t622\tJFK\tN206JB\t0\t183\t1428\n2011-08-15 12:00:00\t6\t23\t623\t1042\t-7\t-18\tB6\t620\tJFK\tN519JB\t0\t178\t1428\n2011-11-05 12:00:00\t15\t48\t1548\t2001\t-4\t-18\tB6\t622\tJFK\tN643JB\t0\t175\t1428\n2011-01-31 12:00:00\t15\t32\t1532\t1942\t-3\t-18\tB6\t624\tJFK\tN629JB\t0\t169\t1428\n2011-04-29 12:00:00\t15\t29\t1529\t1943\t-2\t-18\tB6\t624\tJFK\tN228JB\t0\t184\t1428\n2011-05-31 12:00:00\t15\t9\t1509\t1938\t-8\t-18\tB6\t622\tJFK\tN296JB\t0\t190\t1428\n2011-06-14 12:00:00\t6\t52\t652\t1108\t-8\t-18\tB6\t620\tJFK\tN216JB\t0\t181\t1428\n2011-01-09 12:00:00\t6\t53\t653\t1059\t-7\t-18\tB6\t620\tJFK\tN599JB\t0\t163\t1428\n2011-01-24 12:00:00\t7\t7\t707\t1059\t7\t-18\tB6\t620\tJFK\tN605JB\t0\t156\t1428\n2011-11-21 12:00:00\t6\t32\t632\t1044\t-8\t-19\tB6\t620\tJFK\tN304JB\t0\t177\t1428\n2011-11-01 12:00:00\t6\t35\t635\t1044\t-5\t-19\tB6\t620\tJFK\tN644JB\t0\t171\t1428\n2011-01-03 12:00:00\t6\t59\t659\t1100\t-1\t-19\tB6\t620\tJFK\tN229JB\t0\t166\t1428\n2011-08-13 12:00:00\t15\t10\t1510\t1941\t-5\t-19\tB6\t622\tJFK\tN570JB\t0\t190\t1428\n2011-03-16 12:00:00\t6\t50\t650\t1102\t-10\t-19\tB6\t620\tJFK\tN192JB\t0\t165\t1428\n2011-01-08 12:00:00\t6\t54\t654\t1058\t-6\t-19\tB6\t620\tJFK\tN630JB\t0\t162\t1428\n2011-01-23 12:00:00\t6\t58\t658\t1058\t-2\t-19\tB6\t620\tJFK\tN580JB\t0\t162\t1428\n2011-06-25 12:00:00\t6\t58\t658\t1116\t-7\t-19\tB6\t620\tJFK\tN239JB\t0\t181\t1428\n2011-01-26 12:00:00\t15\t35\t1535\t1941\t0\t-19\tB6\t624\tJFK\tN659JB\t0\t165\t1428\n2011-06-07 12:00:00\t15\t4\t1504\t1937\t-13\t-19\tB6\t622\tJFK\tN236JB\t0\t204\t1428\n2011-02-28 12:00:00\t6\t55\t655\t1115\t-5\t-2\tB6\t620\tJFK\tN206JB\t0\t184\t1428\n2011-05-22 12:00:00\t15\t30\t1530\t1954\t13\t-2\tB6\t622\tJFK\tN294JB\t0\t188\t1428\n2011-03-01 12:00:00\t6\t57\t657\t1115\t-3\t-2\tB6\t620\tJFK\tN309JB\t0\t176\t1428\n2011-07-27 12:00:00\t6\t28\t628\t1058\t-2\t-2\tB6\t620\tJFK\tN624JB\t0\t193\t1428\n2011-07-12 12:00:00\t6\t30\t630\t1058\t0\t-2\tB6\t620\tJFK\tN640JB\t0\t184\t1428\n2011-07-30 12:00:00\t6\t35\t635\t1058\t5\t-2\tB6\t620\tJFK\tN624JB\t0\t185\t1428\n2011-03-05 12:00:00\t6\t56\t656\t1119\t-4\t-2\tB6\t620\tJFK\tN197JB\t0\t184\t1428\n2011-10-27 12:00:00\t15\t20\t1520\t1939\t15\t-2\tB6\t622\tJFK\tN229JB\t0\t173\t1428\n2011-11-09 12:00:00\t16\t3\t1603\t2017\t11\t-2\tB6\t622\tJFK\tN590JB\t0\t173\t1428\n2011-11-25 12:00:00\t15\t46\t1546\t2015\t-4\t-2\tB6\t622\tJFK\tN641JB\t0\t184\t1428\n2011-11-27 12:00:00\t6\t44\t644\t1101\t4\t-2\tB6\t620\tJFK\tN179JB\t0\t180\t1428\n2011-08-05 12:00:00\t6\t27\t627\t1058\t-3\t-2\tB6\t620\tJFK\tN635JB\t0\t190\t1428\n2011-12-23 12:00:00\t16\t6\t1606\t2015\t16\t-2\tB6\t622\tJFK\tN273JB\t0\t170\t1428\n2011-08-01 12:00:00\t6\t27\t627\t1058\t-3\t-2\tB6\t620\tJFK\tN547JB\t0\t190\t1428\n2011-06-12 12:00:00\t7\t2\t702\t1124\t2\t-2\tB6\t620\tJFK\tN193JB\t0\t186\t1428\n2011-03-20 12:00:00\t6\t57\t657\t1119\t-3\t-2\tB6\t620\tJFK\tN307JB\t0\t181\t1428\n2011-04-14 12:00:00\t6\t52\t652\t1101\t-8\t-20\tB6\t620\tJFK\tN247JB\t0\t176\t1428\n2011-05-07 12:00:00\t6\t59\t659\t1106\t-1\t-20\tB6\t620\tJFK\tN304JB\t0\t173\t1428\n2011-12-03 12:00:00\t15\t51\t1551\t1957\t1\t-20\tB6\t622\tJFK\tN284JB\t0\t174\t1428\n2011-08-12 12:00:00\t6\t24\t624\t1040\t-6\t-20\tB6\t620\tJFK\tN527JB\t0\t175\t1428\n2011-09-16 12:00:00\t6\t41\t641\t1052\t-9\t-20\tB6\t620\tJFK\tN603JB\t0\t174\t1428\n2011-12-30 12:00:00\t15\t41\t1541\t1957\t-9\t-20\tB6\t622\tJFK\tN296JB\t0\t181\t1428\n2011-08-11 12:00:00\t6\t27\t627\t1040\t-3\t-20\tB6\t620\tJFK\tN639JB\t0\t175\t1428\n2011-05-09 12:00:00\t15\t11\t1511\t1936\t-6\t-20\tB6\t622\tJFK\tN236JB\t0\t193\t1428\n2011-05-03 12:00:00\t6\t53\t653\t1101\t-7\t-20\tB6\t620\tJFK\tN192JB\t0\t174\t1428\n2011-06-30 12:00:00\t15\t13\t1513\t1940\t-2\t-20\tB6\t622\tJFK\tN281JB\t0\t191\t1428\n2011-05-29 12:00:00\t15\t9\t1509\t1936\t-8\t-20\tB6\t622\tJFK\tN197JB\t0\t192\t1428\n2011-10-12 12:00:00\t6\t45\t645\t1052\t-5\t-20\tB6\t620\tJFK\tN591JB\t0\t170\t1428\n2011-11-18 12:00:00\t6\t30\t630\t1043\t-10\t-20\tB6\t620\tJFK\tN236JB\t0\t176\t1428\n2011-03-29 12:00:00\t6\t50\t650\t1101\t-10\t-20\tB6\t620\tJFK\tN229JB\t0\t172\t1428\n2011-11-30 12:00:00\t15\t39\t1539\t1957\t-11\t-20\tB6\t622\tJFK\tN184JB\t0\t174\t1428\n2011-10-16 12:00:00\t15\t4\t1504\t1920\t-1\t-21\tB6\t622\tJFK\tN606JB\t0\t178\t1428\n2011-10-17 12:00:00\t15\t11\t1511\t1920\t6\t-21\tB6\t622\tJFK\tN323JB\t0\t178\t1428\n2011-10-30 12:00:00\t15\t51\t1551\t1958\t-1\t-21\tB6\t622\tJFK\tN579JB\t0\t165\t1428\n2011-12-06 12:00:00\t6\t32\t632\t1042\t-8\t-21\tB6\t620\tJFK\tN318JB\t0\t170\t1428\n2011-06-15 12:00:00\t15\t7\t1507\t1935\t-10\t-21\tB6\t622\tJFK\tN298JB\t0\t186\t1428\n2011-06-19 12:00:00\t15\t9\t1509\t1939\t-6\t-21\tB6\t622\tJFK\tN247JB\t0\t191\t1428\n2011-09-25 12:00:00\t6\t41\t641\t1051\t-9\t-21\tB6\t620\tJFK\tN559JB\t0\t176\t1428\n2011-08-24 12:00:00\t15\t16\t1516\t1938\t1\t-22\tB6\t622\tJFK\tN579JB\t0\t188\t1428\n2011-10-17 12:00:00\t6\t45\t645\t1050\t-5\t-22\tB6\t620\tJFK\tN203JB\t0\t171\t1428\n2011-10-20 12:00:00\t6\t46\t646\t1050\t-4\t-22\tB6\t620\tJFK\tN184JB\t0\t164\t1428\n2011-10-10 12:00:00\t14\t56\t1456\t1919\t-9\t-22\tB6\t622\tJFK\tN558JB\t0\t181\t1428\n2011-11-17 12:00:00\t6\t36\t636\t1041\t-4\t-22\tB6\t620\tJFK\tN337JB\t0\t160\t1428\n2011-11-03 12:00:00\t6\t37\t637\t1041\t-3\t-22\tB6\t620\tJFK\tN523JB\t0\t168\t1428\n2011-12-02 12:00:00\t15\t40\t1540\t1955\t-10\t-22\tB6\t622\tJFK\tN190JB\t0\t184\t1428\n2011-08-08 12:00:00\t6\t24\t624\t1038\t-6\t-22\tB6\t620\tJFK\tN665JB\t0\t180\t1428\n2011-10-04 12:00:00\t14\t57\t1457\t1919\t-8\t-22\tB6\t622\tJFK\tN534JB\t0\t181\t1428\n2011-06-13 12:00:00\t15\t24\t1524\t1934\t7\t-22\tB6\t622\tJFK\tN183JB\t0\t179\t1428\n2011-01-13 12:00:00\t15\t22\t1522\t1938\t-13\t-22\tB6\t624\tJFK\tN597JB\t0\t178\t1428\n2011-01-16 12:00:00\t6\t52\t652\t1055\t-8\t-22\tB6\t620\tJFK\tN706JB\t0\t166\t1428\n2011-10-21 12:00:00\t6\t48\t648\t1049\t-2\t-23\tB6\t620\tJFK\tN265JB\t0\t167\t1428\n2011-03-23 12:00:00\t6\t52\t652\t1058\t-8\t-23\tB6\t620\tJFK\tN179JB\t0\t170\t1428\n2011-02-11 12:00:00\t15\t38\t1538\t1937\t3\t-23\tB6\t624\tJFK\tN586JB\t0\t159\t1428\n2011-09-08 12:00:00\t14\t56\t1456\t1918\t-9\t-23\tB6\t622\tJFK\tN588JB\t0\t174\t1428\n2011-05-26 12:00:00\t6\t52\t652\t1103\t-8\t-23\tB6\t620\tJFK\tN294JB\t0\t174\t1428\n2011-09-24 12:00:00\t6\t45\t645\t1049\t-5\t-23\tB6\t620\tJFK\tN523JB\t0\t168\t1428\n2011-10-01 12:00:00\t6\t45\t645\t1049\t-5\t-23\tB6\t620\tJFK\tN579JB\t0\t168\t1428\n2011-12-30 12:00:00\t6\t34\t634\t1040\t-6\t-23\tB6\t620\tJFK\tN317JB\t0\t170\t1428\n2011-10-18 12:00:00\t6\t48\t648\t1049\t-2\t-23\tB6\t620\tJFK\tN323JB\t0\t161\t1428\n2011-12-27 12:00:00\t6\t34\t634\t1040\t-6\t-23\tB6\t620\tJFK\tN339JB\t0\t170\t1428\n2011-02-26 12:00:00\t6\t52\t652\t1054\t-8\t-23\tB6\t620\tJFK\tN292JB\t0\t169\t1428\n2011-09-08 12:00:00\t6\t43\t643\t1048\t-7\t-24\tB6\t620\tJFK\tN579JB\t0\t169\t1428\n2011-04-08 12:00:00\t15\t26\t1526\t1937\t-5\t-24\tB6\t624\tJFK\tN316JB\t0\t177\t1428\n2011-10-15 12:00:00\t6\t43\t643\t1048\t-7\t-24\tB6\t620\tJFK\tN645JB\t0\t168\t1428\n2011-09-18 12:00:00\t6\t37\t637\t1048\t-13\t-24\tB6\t620\tJFK\tN505JB\t0\t178\t1428\n2011-10-22 12:00:00\t15\t1\t1501\t1917\t-4\t-24\tB6\t622\tJFK\tN328JB\t0\t176\t1428\n2011-10-28 12:00:00\t6\t47\t647\t1048\t-3\t-24\tB6\t620\tJFK\tN229JB\t0\t163\t1428\n2011-10-31 12:00:00\t6\t39\t639\t1039\t-1\t-24\tB6\t620\tJFK\tN643JB\t0\t162\t1428\n2011-11-10 12:00:00\t6\t32\t632\t1039\t-8\t-24\tB6\t620\tJFK\tN662JB\t0\t163\t1428\n2011-11-16 12:00:00\t6\t31\t631\t1039\t-9\t-24\tB6\t620\tJFK\tN588JB\t0\t167\t1428\n2011-12-10 12:00:00\t15\t49\t1549\t1953\t-1\t-24\tB6\t622\tJFK\tN328JB\t0\t171\t1428\n2011-12-21 12:00:00\t6\t34\t634\t1039\t-6\t-24\tB6\t620\tJFK\tN267JB\t0\t171\t1428\n2011-12-22 12:00:00\t6\t34\t634\t1039\t-6\t-24\tB6\t620\tJFK\tN231JB\t0\t166\t1428\n2011-09-13 12:00:00\t14\t57\t1457\t1917\t-8\t-24\tB6\t622\tJFK\tN523JB\t0\t188\t1428\n2011-09-09 12:00:00\t6\t44\t644\t1048\t-6\t-24\tB6\t620\tJFK\tN579JB\t0\t168\t1428\n2011-01-11 12:00:00\t6\t53\t653\t1053\t-7\t-24\tB6\t620\tJFK\tN504JB\t0\t161\t1428\n2011-09-25 12:00:00\t14\t55\t1455\t1916\t-10\t-25\tB6\t622\tJFK\tN766JB\t0\t176\t1428\n2011-09-11 12:00:00\t6\t41\t641\t1047\t-9\t-25\tB6\t620\tJFK\tN552JB\t0\t168\t1428\n2011-11-30 12:00:00\t6\t36\t636\t1038\t-4\t-25\tB6\t620\tJFK\tN304JB\t0\t162\t1428\n2011-12-17 12:00:00\t6\t41\t641\t1038\t1\t-25\tB6\t620\tJFK\tN247JB\t0\t162\t1428\n2011-12-23 12:00:00\t6\t33\t633\t1038\t-7\t-25\tB6\t620\tJFK\tN284JB\t0\t163\t1428\n2011-03-31 12:00:00\t6\t52\t652\t1056\t-8\t-25\tB6\t620\tJFK\tN266JB\t0\t164\t1428\n2011-09-09 12:00:00\t14\t58\t1458\t1915\t-7\t-26\tB6\t622\tJFK\tN570JB\t0\t179\t1428\n2011-09-23 12:00:00\t6\t45\t645\t1046\t-5\t-26\tB6\t620\tJFK\tN627JB\t0\t164\t1428\n2011-02-09 12:00:00\t15\t33\t1533\t1934\t-2\t-26\tB6\t624\tJFK\tN618JB\t0\t163\t1428\n2011-10-22 12:00:00\t6\t39\t639\t1046\t-11\t-26\tB6\t620\tJFK\tN231JB\t0\t171\t1428\n2011-06-24 12:00:00\t7\t3\t703\t1109\t-2\t-26\tB6\t620\tJFK\tN266JB\t0\t170\t1428\n2011-09-17 12:00:00\t14\t59\t1459\t1914\t-6\t-27\tB6\t622\tJFK\tN612JB\t0\t173\t1428\n2011-12-10 12:00:00\t6\t36\t636\t1036\t-4\t-27\tB6\t620\tJFK\tN329JB\t0\t163\t1428\n2011-06-20 12:00:00\t6\t56\t656\t1108\t-9\t-27\tB6\t620\tJFK\tN247JB\t0\t180\t1428\n2011-10-21 12:00:00\t14\t57\t1457\t1914\t-8\t-27\tB6\t622\tJFK\tN231JB\t0\t174\t1428\n2011-05-28 12:00:00\t15\t7\t1507\t1929\t-10\t-27\tB6\t622\tJFK\tN203JB\t0\t191\t1428\n2011-01-23 12:00:00\t15\t35\t1535\t1933\t0\t-27\tB6\t624\tJFK\tN599JB\t0\t164\t1428\n2011-11-11 12:00:00\t6\t31\t631\t1036\t-9\t-27\tB6\t620\tJFK\tN595JB\t0\t171\t1428\n2011-12-24 12:00:00\t6\t35\t635\t1035\t-5\t-28\tB6\t620\tJFK\tN323JB\t0\t165\t1428\n2011-03-28 12:00:00\t15\t28\t1528\t1938\t-7\t-28\tB6\t624\tJFK\tN236JB\t0\t174\t1428\n2011-02-08 12:00:00\t6\t54\t654\t1049\t-6\t-28\tB6\t620\tJFK\tN607JB\t0\t159\t1428\n2011-03-27 12:00:00\t15\t37\t1537\t1937\t2\t-29\tB6\t624\tJFK\tN283JB\t0\t164\t1428\n2011-09-10 12:00:00\t6\t41\t641\t1043\t-9\t-29\tB6\t620\tJFK\tN784JB\t0\t165\t1428\n2011-09-10 12:00:00\t14\t57\t1457\t1912\t-8\t-29\tB6\t622\tJFK\tN584JB\t0\t169\t1428\n2011-10-12 12:00:00\t15\t1\t1501\t1912\t-4\t-29\tB6\t622\tJFK\tN588JB\t0\t172\t1428\n2011-06-19 12:00:00\t6\t58\t658\t1106\t-7\t-29\tB6\t620\tJFK\tN273JB\t0\t177\t1428\n2011-10-19 12:00:00\t6\t44\t644\t1043\t-6\t-29\tB6\t620\tJFK\tN249JB\t0\t157\t1428\n2011-04-12 12:00:00\t6\t54\t654\t1118\t-6\t-3\tB6\t620\tJFK\tN318JB\t0\t173\t1428\n2011-12-14 12:00:00\t15\t45\t1545\t2014\t-5\t-3\tB6\t622\tJFK\tN258JB\t0\t189\t1428\n2011-09-24 12:00:00\t15\t3\t1503\t1938\t-2\t-3\tB6\t622\tJFK\tN510JB\t0\t177\t1428\n2011-02-19 12:00:00\t7\t3\t703\t1114\t3\t-3\tB6\t620\tJFK\tN228JB\t0\t171\t1428\n2011-07-10 12:00:00\t15\t9\t1509\t1957\t-6\t-3\tB6\t622\tJFK\tN784JB\t0\t201\t1428\n2011-09-04 12:00:00\t6\t40\t640\t1057\t10\t-3\tB6\t620\tJFK\tN554JB\t0\t181\t1428\n2011-12-16 12:00:00\t16\t8\t1608\t2014\t18\t-3\tB6\t622\tJFK\tN249JB\t0\t170\t1428\n2011-09-18 12:00:00\t15\t24\t1524\t1938\t19\t-3\tB6\t622\tJFK\tN630JB\t0\t181\t1428\n2011-01-15 12:00:00\t7\t0\t700\t1114\t0\t-3\tB6\t620\tJFK\tN503JB\t0\t173\t1428\n2011-07-10 12:00:00\t6\t24\t624\t1057\t-6\t-3\tB6\t620\tJFK\tN784JB\t0\t190\t1428\n2011-03-14 12:00:00\t15\t47\t1547\t2003\t12\t-3\tB6\t624\tJFK\tN229JB\t0\t179\t1428\n2011-07-21 12:00:00\t6\t29\t629\t1057\t-1\t-3\tB6\t620\tJFK\tN635JB\t0\t190\t1428\n2011-07-24 12:00:00\t6\t28\t628\t1057\t-2\t-3\tB6\t620\tJFK\tN592JB\t0\t189\t1428\n2011-03-22 12:00:00\t6\t54\t654\t1118\t-6\t-3\tB6\t620\tJFK\tN198JB\t0\t188\t1428\n2011-06-05 12:00:00\t7\t2\t702\t1123\t2\t-3\tB6\t620\tJFK\tN306JB\t0\t184\t1428\n2011-11-28 12:00:00\t16\t2\t1602\t2014\t12\t-3\tB6\t622\tJFK\tN236JB\t0\t175\t1428\n2011-09-19 12:00:00\t14\t54\t1454\t1938\t-11\t-3\tB6\t622\tJFK\tN517JB\t0\t202\t1428\n2011-11-25 12:00:00\t6\t35\t635\t1100\t-5\t-3\tB6\t620\tJFK\tN231JB\t0\t188\t1428\n2011-05-05 12:00:00\t6\t54\t654\t1056\t-6\t-30\tB6\t620\tJFK\tN231JB\t0\t169\t1428\n2011-05-04 12:00:00\t7\t0\t700\t1056\t0\t-30\tB6\t620\tJFK\tN190JB\t0\t165\t1428\n2011-09-30 12:00:00\t14\t59\t1459\t1911\t-6\t-30\tB6\t622\tJFK\tN579JB\t0\t176\t1428\n2011-06-25 12:00:00\t15\t5\t1505\t1929\t-10\t-31\tB6\t622\tJFK\tN306JB\t0\t190\t1428\n2011-10-25 12:00:00\t14\t57\t1457\t1910\t-8\t-31\tB6\t622\tJFK\tN283JB\t0\t177\t1428\n2011-02-06 12:00:00\t7\t0\t700\t1045\t0\t-32\tB6\t620\tJFK\tN657JB\t0\t151\t1428\n2011-11-23 12:00:00\t6\t36\t636\t1031\t-4\t-32\tB6\t620\tJFK\tN239JB\t0\t161\t1428\n2011-02-07 12:00:00\t6\t59\t659\t1045\t-1\t-32\tB6\t620\tJFK\tN607JB\t0\t147\t1428\n2011-12-07 12:00:00\t15\t48\t1548\t1944\t-2\t-33\tB6\t622\tJFK\tN273JB\t0\t159\t1428\n2011-11-04 12:00:00\t6\t32\t632\t1030\t-8\t-33\tB6\t620\tJFK\tN523JB\t0\t163\t1428\n2011-09-27 12:00:00\t14\t54\t1454\t1905\t-11\t-36\tB6\t622\tJFK\tN554JB\t0\t175\t1428\n2011-01-24 12:00:00\t15\t32\t1532\t1923\t-3\t-37\tB6\t624\tJFK\tN536JB\t0\t156\t1428\n2011-12-09 12:00:00\t6\t34\t634\t1026\t-6\t-37\tB6\t620\tJFK\tN281JB\t0\t160\t1428\n2011-10-01 12:00:00\t14\t58\t1458\t1903\t-7\t-38\tB6\t622\tJFK\tN506JB\t0\t174\t1428\n2011-10-28 12:00:00\t15\t32\t1532\t1937\t27\t-4\tB6\t622\tJFK\tN274JB\t0\t162\t1428\n2011-02-21 12:00:00\t15\t45\t1545\t1956\t10\t-4\tB6\t624\tJFK\tN179JB\t0\t171\t1428\n2011-01-07 12:00:00\t15\t42\t1542\t1956\t7\t-4\tB6\t624\tJFK\tN564JB\t0\t175\t1428\n2011-05-24 12:00:00\t6\t53\t653\t1122\t-7\t-4\tB6\t620\tJFK\tN309JB\t0\t191\t1428\n2011-12-14 12:00:00\t6\t39\t639\t1059\t-1\t-4\tB6\t620\tJFK\tN306JB\t0\t181\t1428\n2011-05-30 12:00:00\t6\t59\t659\t1122\t-1\t-4\tB6\t620\tJFK\tN283JB\t0\t192\t1428\n2011-04-15 12:00:00\t6\t57\t657\t1117\t-3\t-4\tB6\t620\tJFK\tN294JB\t0\t182\t1428\n2011-02-10 12:00:00\t15\t50\t1550\t1956\t15\t-4\tB6\t624\tJFK\tN565JB\t0\t159\t1428\n2011-12-25 12:00:00\t16\t8\t1608\t2013\t18\t-4\tB6\t622\tJFK\tN192JB\t0\t168\t1428\n2011-02-05 12:00:00\t7\t0\t700\t1113\t0\t-4\tB6\t620\tJFK\tN653JB\t0\t153\t1428\n2011-07-25 12:00:00\t6\t27\t627\t1056\t-3\t-4\tB6\t620\tJFK\tN657JB\t0\t189\t1428\n2011-02-14 12:00:00\t6\t55\t655\t1113\t-5\t-4\tB6\t620\tJFK\tN526JB\t0\t178\t1428\n2011-12-20 12:00:00\t6\t47\t647\t1059\t7\t-4\tB6\t620\tJFK\tN292JB\t0\t171\t1428\n2011-08-10 12:00:00\t15\t29\t1529\t1956\t14\t-4\tB6\t622\tJFK\tN630JB\t0\t190\t1428\n2011-10-10 12:00:00\t6\t51\t651\t1108\t1\t-4\tB6\t620\tJFK\tN529JB\t0\t178\t1428\n2011-02-06 12:00:00\t15\t29\t1529\t1917\t-6\t-43\tB6\t624\tJFK\tN531JB\t0\t154\t1428\n2011-09-11 12:00:00\t14\t51\t1451\t1857\t-14\t-44\tB6\t622\tJFK\tN658JB\t0\t161\t1428\n2011-03-22 12:00:00\t15\t34\t1534\t2001\t-1\t-5\tB6\t624\tJFK\tN198JB\t0\t187\t1428\n2011-05-10 12:00:00\t15\t16\t1516\t1951\t-1\t-5\tB6\t622\tJFK\tN216JB\t0\t200\t1428\n2011-05-14 12:00:00\t6\t58\t658\t1121\t-2\t-5\tB6\t620\tJFK\tN203JB\t0\t182\t1428\n2011-02-08 12:00:00\t15\t46\t1546\t1955\t11\t-5\tB6\t624\tJFK\tN606JB\t0\t171\t1428\n2011-09-16 12:00:00\t15\t5\t1505\t1936\t0\t-5\tB6\t622\tJFK\tN621JB\t0\t189\t1428\n2011-03-11 12:00:00\t7\t4\t704\t1116\t4\t-5\tB6\t620\tJFK\tN304JB\t0\t176\t1428\n2011-06-09 12:00:00\t6\t54\t654\t1121\t-6\t-5\tB6\t620\tJFK\tN328JB\t0\t191\t1428\n2011-07-04 12:00:00\t6\t37\t637\t1055\t7\t-5\tB6\t620\tJFK\tN630JB\t0\t183\t1428\n2011-06-20 12:00:00\t15\t14\t1514\t1955\t-1\t-5\tB6\t622\tJFK\tN193JB\t0\t206\t1428\n2011-03-04 12:00:00\t15\t37\t1537\t2001\t2\t-5\tB6\t624\tJFK\tN316JB\t0\t185\t1428\n2011-12-24 12:00:00\t16\t0\t1600\t2012\t10\t-5\tB6\t622\tJFK\tN328JB\t0\t170\t1428\n2011-09-30 12:00:00\t6\t48\t648\t1107\t-2\t-5\tB6\t620\tJFK\tN661JB\t0\t178\t1428\n2011-12-01 12:00:00\t15\t42\t1542\t2012\t-8\t-5\tB6\t622\tJFK\tN229JB\t0\t190\t1428\n2011-01-31 12:00:00\t6\t59\t659\t1111\t-1\t-6\tB6\t620\tJFK\tN661JB\t0\t172\t1428\n2011-08-04 12:00:00\t15\t9\t1509\t1954\t-6\t-6\tB6\t622\tJFK\tN624JB\t0\t201\t1428\n2011-06-11 12:00:00\t6\t55\t655\t1120\t-5\t-6\tB6\t620\tJFK\tN283JB\t0\t189\t1428\n2011-04-19 12:00:00\t7\t1\t701\t1115\t1\t-6\tB6\t620\tJFK\tN216JB\t0\t182\t1428\n2011-01-02 12:00:00\t7\t3\t703\t1113\t3\t-6\tB6\t620\tJFK\tN324JB\t0\t172\t1428\n2011-10-26 12:00:00\t15\t4\t1504\t1935\t-1\t-6\tB6\t622\tJFK\tN184JB\t0\t186\t1428\n2011-12-13 12:00:00\t15\t44\t1544\t2011\t-6\t-6\tB6\t622\tJFK\tN238JB\t0\t186\t1428\n2011-10-29 12:00:00\t7\t6\t706\t1106\t16\t-6\tB6\t620\tJFK\tN316JB\t0\t159\t1428\n2011-11-26 12:00:00\t15\t45\t1545\t2011\t-5\t-6\tB6\t622\tJFK\tN337JB\t0\t190\t1428\n2011-01-05 12:00:00\t15\t44\t1544\t1954\t9\t-6\tB6\t624\tJFK\tN644JB\t0\t166\t1428\n2011-04-25 12:00:00\t6\t53\t653\t1115\t-7\t-6\tB6\t620\tJFK\tN179JB\t0\t184\t1428\n2011-03-20 12:00:00\t15\t30\t1530\t2000\t-5\t-6\tB6\t624\tJFK\tN307JB\t0\t191\t1428\n2011-05-19 12:00:00\t7\t9\t709\t1120\t9\t-6\tB6\t620\tJFK\tN267JB\t0\t177\t1428\n2011-08-23 12:00:00\t6\t26\t626\t1054\t-4\t-6\tB6\t620\tJFK\tN709JB\t0\t189\t1428\n2011-05-12 12:00:00\t15\t11\t1511\t1949\t-6\t-7\tB6\t622\tJFK\tN298JB\t0\t202\t1428\n2011-11-20 12:00:00\t6\t36\t636\t1056\t-4\t-7\tB6\t620\tJFK\tN266JB\t0\t184\t1428\n2011-08-04 12:00:00\t6\t28\t628\t1053\t-2\t-7\tB6\t620\tJFK\tN624JB\t0\t191\t1428\n2011-06-08 12:00:00\t6\t50\t650\t1119\t-10\t-7\tB6\t620\tJFK\tN265JB\t0\t192\t1428\n2011-07-11 12:00:00\t6\t32\t632\t1053\t2\t-7\tB6\t620\tJFK\tN599JB\t0\t188\t1428\n2011-04-05 12:00:00\t15\t33\t1533\t1954\t2\t-7\tB6\t624\tJFK\tN198JB\t0\t179\t1428\n2011-01-12 12:00:00\t15\t32\t1532\t1953\t-3\t-7\tB6\t624\tJFK\tN504JB\t0\t177\t1428\n2011-12-07 12:00:00\t6\t40\t640\t1056\t0\t-7\tB6\t620\tJFK\tN258JB\t0\t159\t1428\n2011-09-13 12:00:00\t6\t41\t641\t1105\t-9\t-7\tB6\t620\tJFK\tN627JB\t0\t182\t1428\n2011-08-26 12:00:00\t6\t27\t627\t1053\t-3\t-7\tB6\t620\tJFK\tN706JB\t0\t184\t1428\n2011-05-18 12:00:00\t7\t0\t700\t1119\t0\t-7\tB6\t620\tJFK\tN192JB\t0\t184\t1428\n2011-03-04 12:00:00\t7\t0\t700\t1114\t0\t-7\tB6\t620\tJFK\tN316JB\t0\t179\t1428\n2011-06-16 12:00:00\t15\t5\t1505\t1953\t-10\t-7\tB6\t622\tJFK\tN187JB\t0\t191\t1428\n2011-07-24 12:00:00\t15\t6\t1506\t1953\t-9\t-7\tB6\t622\tJFK\tN592JB\t0\t207\t1428\n2011-04-14 12:00:00\t15\t24\t1524\t1954\t-7\t-7\tB6\t624\tJFK\tN247JB\t0\t191\t1428\n2011-03-19 12:00:00\t6\t55\t655\t1113\t-5\t-8\tB6\t620\tJFK\tN307JB\t0\t181\t1428\n2011-11-02 12:00:00\t6\t34\t634\t1055\t-6\t-8\tB6\t620\tJFK\tN605JB\t0\t187\t1428\n2011-12-08 12:00:00\t6\t34\t634\t1055\t-6\t-8\tB6\t620\tJFK\tN298JB\t0\t167\t1428\n2011-09-19 12:00:00\t6\t49\t649\t1104\t-1\t-8\tB6\t620\tJFK\tN509JB\t0\t182\t1428\n2011-09-29 12:00:00\t6\t49\t649\t1104\t-1\t-8\tB6\t620\tJFK\tN536JB\t0\t176\t1428\n2011-01-20 12:00:00\t15\t38\t1538\t1952\t3\t-8\tB6\t624\tJFK\tN760JB\t0\t161\t1428\n2011-06-27 12:00:00\t6\t59\t659\t1127\t-6\t-8\tB6\t620\tJFK\tN236JB\t0\t189\t1428\n2011-10-14 12:00:00\t6\t45\t645\t1104\t-5\t-8\tB6\t620\tJFK\tN568JB\t0\t177\t1428\n2011-12-09 12:00:00\t16\t1\t1601\t2009\t11\t-8\tB6\t622\tJFK\tN318JB\t0\t174\t1428\n2011-12-31 12:00:00\t15\t44\t1544\t2009\t-6\t-8\tB6\t622\tJFK\tN323JB\t0\t190\t1428\n2011-10-09 12:00:00\t6\t43\t643\t1104\t-7\t-8\tB6\t620\tJFK\tN565JB\t0\t182\t1428\n2011-02-18 12:00:00\t6\t58\t658\t1109\t-2\t-8\tB6\t620\tJFK\tN228JB\t0\t179\t1428\n2011-10-04 12:00:00\t6\t43\t643\t1104\t-7\t-8\tB6\t620\tJFK\tN520JB\t0\t184\t1428\n2011-02-07 12:00:00\t15\t37\t1537\t1952\t2\t-8\tB6\t624\tJFK\tN607JB\t0\t176\t1428\n2011-03-15 12:00:00\t15\t42\t1542\t1958\t7\t-8\tB6\t624\tJFK\tN317JB\t0\t177\t1428\n2011-05-20 12:00:00\t6\t54\t654\t1118\t-6\t-8\tB6\t620\tJFK\tN247JB\t0\t188\t1428\n2011-06-29 12:00:00\t6\t57\t657\t1127\t-8\t-8\tB6\t620\tJFK\tN306JB\t0\t191\t1428\n2011-07-30 12:00:00\t15\t17\t1517\t1952\t2\t-8\tB6\t622\tJFK\tN624JB\t0\t197\t1428\n2011-10-18 12:00:00\t15\t8\t1508\t1932\t3\t-9\tB6\t622\tJFK\tN265JB\t0\t184\t1428\n2011-05-22 12:00:00\t6\t57\t657\t1117\t-3\t-9\tB6\t620\tJFK\tN247JB\t0\t181\t1428\n2011-10-05 12:00:00\t6\t42\t642\t1103\t-8\t-9\tB6\t620\tJFK\tN503JB\t0\t188\t1428\n2011-04-08 12:00:00\t6\t52\t652\t1112\t-8\t-9\tB6\t620\tJFK\tN203JB\t0\t179\t1428\n2011-02-22 12:00:00\t6\t59\t659\t1108\t-1\t-9\tB6\t620\tJFK\tN197JB\t0\t170\t1428\n2011-07-04 12:00:00\t15\t12\t1512\t1951\t-3\t-9\tB6\t622\tJFK\tN630JB\t0\t194\t1428\n2011-02-26 12:00:00\t15\t38\t1538\t1951\t3\t-9\tB6\t624\tJFK\tN292JB\t0\t178\t1428\n2011-04-22 12:00:00\t15\t26\t1526\t1952\t-5\t-9\tB6\t624\tJFK\tN216JB\t0\t184\t1428\n2011-07-13 12:00:00\t6\t31\t631\t1051\t1\t-9\tB6\t620\tJFK\tN608JB\t0\t185\t1428\n2011-03-09 12:00:00\t7\t0\t700\t1112\t0\t-9\tB6\t620\tJFK\tN296JB\t0\t174\t1428\n2011-09-05 12:00:00\t15\t6\t1506\t1951\t-9\t-9\tB6\t622\tJFK\tN599JB\t0\t192\t1428\n2011-05-27 12:00:00\t6\t56\t656\t1117\t-4\t-9\tB6\t620\tJFK\tN267JB\t0\t181\t1428\n2011-11-03 12:00:00\t15\t51\t1551\t2010\t-1\t-9\tB6\t622\tJFK\tN587JB\t0\t172\t1428\n2011-11-18 12:00:00\t15\t46\t1546\t2008\t-4\t-9\tB6\t622\tJFK\tN183JB\t0\t181\t1428\n2011-08-07 12:00:00\t6\t23\t623\t1051\t-7\t-9\tB6\t620\tJFK\tN565JB\t0\t187\t1428\n2011-03-25 12:00:00\t6\t53\t653\t1112\t-7\t-9\tB6\t620\tJFK\tN316JB\t0\t172\t1428\n2011-05-01 12:00:00\t7\t1\t701\t1121\t1\t0\tB6\t620\tJFK\tN231JB\t0\t187\t1428\n2011-02-04 12:00:00\t15\t47\t1547\t2000\t12\t0\tB6\t624\tJFK\tN570JB\t0\t171\t1428\n2011-11-20 12:00:00\t15\t45\t1545\t2017\t-5\t0\tB6\t622\tJFK\tN304JB\t0\t183\t1428\n2011-09-01 12:00:00\t6\t31\t631\t1100\t1\t0\tB6\t620\tJFK\tN641JB\t0\t189\t1428\n2011-02-20 12:00:00\t15\t30\t1530\t2000\t-5\t0\tB6\t624\tJFK\tN190JB\t0\t186\t1428\n2011-03-08 12:00:00\t15\t55\t1555\t2006\t20\t0\tB6\t624\tJFK\tN228JB\t0\t176\t1428\n2011-01-07 12:00:00\t6\t54\t654\t1117\t-6\t0\tB6\t620\tJFK\tN641JB\t0\t172\t1428\n2011-07-01 12:00:00\t15\t5\t1505\t2000\t-10\t0\tB6\t622\tJFK\tN228JB\t0\t208\t1428\n2011-10-02 12:00:00\t6\t48\t648\t1112\t-2\t0\tB6\t620\tJFK\tN657JB\t0\t184\t1428\n2011-12-01 12:00:00\t6\t35\t635\t1103\t-5\t0\tB6\t620\tJFK\tN337JB\t0\t190\t1428\n2011-07-06 12:00:00\t6\t27\t627\t1100\t-3\t0\tB6\t620\tJFK\tN768JB\t0\t191\t1428\n2011-05-12 12:00:00\t6\t56\t656\t1126\t-4\t0\tB6\t620\tJFK\tN184JB\t0\t198\t1428\n2011-03-02 12:00:00\t6\t59\t659\t1121\t-1\t0\tB6\t620\tJFK\tN236JB\t0\t178\t1428\n2011-11-19 12:00:00\t6\t37\t637\t1104\t-3\t1\tB6\t620\tJFK\tN198JB\t0\t178\t1428\n2011-05-31 12:00:00\t6\t57\t657\t1127\t-3\t1\tB6\t620\tJFK\tN198JB\t0\t192\t1428\n2011-11-22 12:00:00\t15\t55\t1555\t2018\t5\t1\tB6\t622\tJFK\tN304JB\t0\t175\t1428\n2011-10-24 12:00:00\t6\t49\t649\t1113\t-1\t1\tB6\t620\tJFK\tN284JB\t0\t179\t1428\n2011-07-19 12:00:00\t6\t26\t626\t1101\t-4\t1\tB6\t620\tJFK\tN559JB\t0\t198\t1428\n2011-02-15 12:00:00\t6\t58\t658\t1118\t-2\t1\tB6\t620\tJFK\tN648JB\t0\t178\t1428\n2011-07-07 12:00:00\t6\t28\t628\t1101\t-2\t1\tB6\t620\tJFK\tN585JB\t0\t189\t1428\n2011-04-03 12:00:00\t6\t55\t655\t1122\t-5\t1\tB6\t620\tJFK\tN229JB\t0\t184\t1428\n2011-08-06 12:00:00\t15\t12\t1512\t2001\t-3\t1\tB6\t622\tJFK\tN593JB\t0\t204\t1428\n2011-04-26 12:00:00\t6\t56\t656\t1122\t-4\t1\tB6\t620\tJFK\tN316JB\t0\t192\t1428\n2011-01-10 12:00:00\t15\t54\t1554\t2001\t19\t1\tB6\t624\tJFK\tN504JB\t0\t170\t1428\n2011-05-23 12:00:00\t6\t57\t657\t1127\t-3\t1\tB6\t620\tJFK\tN294JB\t0\t190\t1428\n2011-10-13 12:00:00\t15\t6\t1506\t1942\t1\t1\tB6\t622\tJFK\tN534JB\t0\t177\t1428\n2011-08-19 12:00:00\t6\t26\t626\t1110\t-4\t10\tB6\t620\tJFK\tN524JB\t0\t192\t1428\n2011-07-01 12:00:00\t7\t0\t700\t1145\t-5\t10\tB6\t620\tJFK\tN316JB\t0\t206\t1428\n2011-07-16 12:00:00\t6\t32\t632\t1110\t2\t10\tB6\t620\tJFK\tN703JB\t0\t199\t1428\n2011-06-09 12:00:00\t16\t18\t1618\t2137\t61\t101\tB6\t622\tJFK\tN307JB\t0\t226\t1428\n2011-04-20 12:00:00\t8\t49\t849\t1306\t109\t105\tB6\t620\tJFK\tN183JB\t0\t186\t1428\n2011-02-28 12:00:00\t17\t10\t1710\t2145\t95\t105\tB6\t624\tJFK\tN206JB\t0\t194\t1428\n2011-12-31 12:00:00\t8\t31\t831\t1251\t111\t108\tB6\t620\tJFK\tN247JB\t0\t175\t1428\n2011-01-29 12:00:00\t6\t57\t657\t1128\t-3\t11\tB6\t620\tJFK\tN508JB\t0\t180\t1428\n2011-07-14 12:00:00\t15\t15\t1515\t2011\t0\t11\tB6\t622\tJFK\tN789JB\t0\t210\t1428\n2011-07-15 12:00:00\t6\t30\t630\t1111\t0\t11\tB6\t620\tJFK\tN641JB\t0\t205\t1428\n2011-04-13 12:00:00\t16\t24\t1624\t2151\t53\t110\tB6\t624\tJFK\tN298JB\t0\t188\t1428\n2011-01-03 12:00:00\t18\t1\t1801\t2200\t136\t111\tB6\t622\tJFK\tN206JB\t0\t165\t1428\n2011-08-18 12:00:00\t8\t33\t833\t1252\t123\t112\tB6\t620\tJFK\tN615JB\t0\t182\t1428\n2011-05-27 12:00:00\t16\t55\t1655\t2150\t98\t114\tB6\t622\tJFK\tN274JB\t0\t202\t1428\n2011-03-17 12:00:00\t6\t55\t655\t1133\t-5\t12\tB6\t620\tJFK\tN323JB\t0\t201\t1428\n2011-07-22 12:00:00\t6\t29\t629\t1112\t-1\t12\tB6\t620\tJFK\tN779JB\t0\t200\t1428\n2011-02-13 12:00:00\t15\t29\t1529\t2012\t-6\t12\tB6\t624\tJFK\tN630JB\t0\t204\t1428\n2011-06-02 12:00:00\t6\t48\t648\t1138\t-12\t12\tB6\t620\tJFK\tN306JB\t0\t211\t1428\n2011-11-04 12:00:00\t15\t46\t1546\t2031\t-6\t12\tB6\t622\tJFK\tN523JB\t0\t203\t1428\n2011-06-04 12:00:00\t7\t5\t705\t1138\t5\t12\tB6\t620\tJFK\tN307JB\t0\t194\t1428\n2011-11-07 12:00:00\t6\t46\t646\t1115\t6\t12\tB6\t620\tJFK\tN529JB\t0\t190\t1428\n2011-02-17 12:00:00\t17\t42\t1742\t2200\t127\t120\tB6\t624\tJFK\tN289JB\t0\t181\t1428\n2011-07-05 12:00:00\t17\t20\t1720\t2205\t125\t125\tB6\t622\tJFK\tN527JB\t0\t195\t1428\n2011-02-19 12:00:00\t16\t53\t1653\t2207\t78\t127\tB6\t624\tJFK\tN228JB\t0\t208\t1428\n2011-07-17 12:00:00\t15\t11\t1511\t2013\t-4\t13\tB6\t622\tJFK\tN746JB\t0\t221\t1428\n2011-02-24 12:00:00\t15\t45\t1545\t2013\t10\t13\tB6\t624\tJFK\tN179JB\t0\t193\t1428\n2011-02-25 12:00:00\t6\t53\t653\t1130\t-7\t13\tB6\t620\tJFK\tN292JB\t0\t197\t1428\n2011-08-16 12:00:00\t15\t13\t1513\t2013\t-2\t13\tB6\t622\tJFK\tN639JB\t0\t214\t1428\n2011-09-03 12:00:00\t6\t34\t634\t1113\t4\t13\tB6\t620\tJFK\tN709JB\t0\t190\t1428\n2011-07-12 12:00:00\t15\t12\t1512\t2013\t-3\t13\tB6\t622\tJFK\tN621JB\t0\t209\t1428\n2011-01-28 12:00:00\t15\t38\t1538\t2013\t3\t13\tB6\t624\tJFK\tN655JB\t0\t196\t1428\n2011-11-07 12:00:00\t15\t59\t1559\t2032\t7\t13\tB6\t622\tJFK\tN529JB\t0\t192\t1428\n2011-12-21 12:00:00\t17\t56\t1756\t2230\t126\t133\tB6\t622\tJFK\tN316JB\t0\t183\t1428\n2011-05-18 12:00:00\t17\t58\t1758\t2212\t161\t136\tB6\t622\tJFK\tN267JB\t0\t182\t1428\n2011-08-15 12:00:00\t17\t37\t1737\t2217\t142\t137\tB6\t622\tJFK\tN519JB\t0\t203\t1428\n2011-07-31 12:00:00\t15\t18\t1518\t2014\t3\t14\tB6\t622\tJFK\tN598JB\t0\t204\t1428\n2011-07-17 12:00:00\t6\t23\t623\t1114\t-7\t14\tB6\t620\tJFK\tN746JB\t0\t204\t1428\n2011-05-02 12:00:00\t15\t21\t1521\t2015\t-10\t14\tB6\t624\tJFK\tN316JB\t0\t198\t1428\n2011-11-15 12:00:00\t16\t24\t1624\t2033\t32\t14\tB6\t622\tJFK\tN632JB\t0\t170\t1428\n2011-12-04 12:00:00\t16\t7\t1607\t2031\t17\t14\tB6\t622\tJFK\tN318JB\t0\t190\t1428\n2011-01-14 12:00:00\t15\t34\t1534\t2015\t-1\t15\tB6\t624\tJFK\tN729JB\t0\t189\t1428\n2011-10-07 12:00:00\t15\t11\t1511\t1956\t6\t15\tB6\t622\tJFK\tN659JB\t0\t203\t1428\n2011-07-29 12:00:00\t17\t37\t1737\t2237\t142\t157\tB6\t622\tJFK\tN592JB\t0\t213\t1428\n2011-03-18 12:00:00\t16\t3\t1603\t2022\t28\t16\tB6\t624\tJFK\tN258JB\t0\t182\t1428\n2011-12-17 12:00:00\t16\t16\t1616\t2033\t26\t16\tB6\t622\tJFK\tN247JB\t0\t170\t1428\n2011-08-17 12:00:00\t6\t23\t623\t1116\t-7\t16\tB6\t620\tJFK\tN516JB\t0\t199\t1428\n2011-08-07 12:00:00\t15\t47\t1547\t2016\t32\t16\tB6\t622\tJFK\tN625JB\t0\t183\t1428\n2011-08-30 12:00:00\t15\t14\t1514\t2016\t-1\t16\tB6\t622\tJFK\tN586JB\t0\t221\t1428\n2011-06-21 12:00:00\t15\t23\t1523\t2017\t8\t17\tB6\t622\tJFK\tN281JB\t0\t215\t1428\n2011-07-28 12:00:00\t15\t38\t1538\t2017\t23\t17\tB6\t622\tJFK\tN535JB\t0\t195\t1428\n2011-09-03 12:00:00\t15\t27\t1527\t2018\t12\t18\tB6\t622\tJFK\tN709JB\t0\t209\t1428\n2011-09-15 12:00:00\t7\t9\t709\t1130\t19\t18\tB6\t620\tJFK\tN509JB\t0\t180\t1428\n2011-01-17 12:00:00\t7\t30\t730\t1135\t30\t18\tB6\t620\tJFK\tN523JB\t0\t168\t1428\n2011-07-25 12:00:00\t17\t59\t1759\t2307\t164\t187\tB6\t622\tJFK\tN657JB\t0\t195\t1428\n2011-04-12 12:00:00\t15\t31\t1531\t2020\t0\t19\tB6\t624\tJFK\tN183JB\t0\t198\t1428\n2011-11-11 12:00:00\t16\t5\t1605\t2038\t13\t19\tB6\t622\tJFK\tN598JB\t0\t189\t1428\n2011-08-27 12:00:00\t6\t47\t647\t1119\t17\t19\tB6\t620\tJFK\tN568JB\t0\t194\t1428\n2011-07-02 12:00:00\t15\t22\t1522\t2019\t7\t19\tB6\t622\tJFK\tN519JB\t0\t208\t1428\n2011-04-18 12:00:00\t15\t31\t1531\t2020\t0\t19\tB6\t624\tJFK\tN216JB\t0\t216\t1428\n2011-09-20 12:00:00\t15\t24\t1524\t2000\t19\t19\tB6\t622\tJFK\tN705JB\t0\t184\t1428\n2011-02-25 12:00:00\t18\t24\t1824\t2314\t169\t194\tB6\t624\tJFK\tN273JB\t0\t168\t1428\n2011-05-15 12:00:00\t18\t10\t1810\t2312\t173\t196\tB6\t622\tJFK\tN203JB\t0\t216\t1428\n2011-04-27 12:00:00\t6\t57\t657\t1123\t-3\t2\tB6\t620\tJFK\tN323JB\t0\t184\t1428\n2011-04-24 12:00:00\t7\t1\t701\t1123\t1\t2\tB6\t620\tJFK\tN178JB\t0\t185\t1428\n2011-02-23 12:00:00\t15\t46\t1546\t2002\t11\t2\tB6\t624\tJFK\tN318JB\t0\t175\t1428\n2011-08-24 12:00:00\t6\t30\t630\t1102\t0\t2\tB6\t620\tJFK\tN579JB\t0\t192\t1428\n2011-09-29 12:00:00\t15\t1\t1501\t1943\t-4\t2\tB6\t622\tJFK\tN536JB\t0\t197\t1428\n2011-09-28 12:00:00\t6\t48\t648\t1114\t-2\t2\tB6\t620\tJFK\tN569JB\t0\t183\t1428\n2011-10-03 12:00:00\t15\t3\t1503\t1943\t-2\t2\tB6\t622\tJFK\tN655JB\t0\t191\t1428\n2011-06-06 12:00:00\t15\t10\t1510\t2016\t-7\t20\tB6\t622\tJFK\tN292JB\t0\t231\t1428\n2011-02-27 12:00:00\t16\t6\t1606\t2020\t31\t20\tB6\t624\tJFK\tN198JB\t0\t179\t1428\n2011-07-02 12:00:00\t6\t43\t643\t1120\t13\t20\tB6\t620\tJFK\tN519JB\t0\t203\t1428\n2011-07-19 12:00:00\t15\t50\t1550\t2021\t35\t21\tB6\t622\tJFK\tN559JB\t0\t190\t1428\n2011-06-05 12:00:00\t15\t7\t1507\t2017\t-10\t21\tB6\t622\tJFK\tN283JB\t0\t219\t1428\n2011-07-03 12:00:00\t15\t42\t1542\t2021\t27\t21\tB6\t622\tJFK\tN595JB\t0\t200\t1428\n2011-08-02 12:00:00\t15\t45\t1545\t2021\t30\t21\tB6\t622\tJFK\tN703JB\t0\t197\t1428\n2011-03-01 12:00:00\t16\t8\t1608\t2022\t33\t22\tB6\t624\tJFK\tN316JB\t0\t181\t1428\n2011-03-13 12:00:00\t15\t26\t1526\t2028\t-9\t22\tB6\t624\tJFK\tN298JB\t0\t187\t1428\n2011-06-08 12:00:00\t15\t37\t1537\t2018\t20\t22\tB6\t622\tJFK\tN206JB\t0\t205\t1428\n2011-04-21 12:00:00\t15\t27\t1527\t2023\t-4\t22\tB6\t624\tJFK\tN187JB\t0\t196\t1428\n2011-02-03 12:00:00\t19\t38\t1938\t2341\t243\t221\tB6\t624\tJFK\tN552JB\t0\t162\t1428\n2011-03-24 12:00:00\t10\t40\t1040\t1504\t220\t223\tB6\t620\tJFK\tN198JB\t0\t189\t1428\n2011-08-14 12:00:00\t18\t47\t1847\t2343\t212\t223\tB6\t622\tJFK\tN606JB\t0\t218\t1428\n2011-05-13 12:00:00\t15\t26\t1526\t2019\t9\t23\tB6\t622\tJFK\tN228JB\t0\t212\t1428\n2011-04-19 12:00:00\t15\t41\t1541\t2024\t10\t23\tB6\t624\tJFK\tN316JB\t0\t195\t1428\n2011-10-24 12:00:00\t15\t29\t1529\t2004\t24\t23\tB6\t622\tJFK\tN323JB\t0\t197\t1428\n2011-06-01 12:00:00\t15\t9\t1509\t2019\t-8\t23\tB6\t622\tJFK\tN318JB\t0\t209\t1428\n2011-10-30 12:00:00\t7\t14\t714\t1126\t34\t23\tB6\t620\tJFK\tN585JB\t0\t164\t1428\n2011-03-06 12:00:00\t18\t39\t1839\t5\t184\t239\tB6\t624\tJFK\tN192JB\t0\t254\t1428\n2011-02-18 12:00:00\t15\t34\t1534\t2024\t-1\t24\tB6\t624\tJFK\tN228JB\t0\t186\t1428\n2011-07-07 12:00:00\t15\t11\t1511\t2024\t-4\t24\tB6\t622\tJFK\tN585JB\t0\t221\t1428\n2011-02-20 12:00:00\t11\t7\t1107\t1517\t247\t240\tB6\t620\tJFK\tN766JB\t0\t177\t1428\n2011-07-23 12:00:00\t10\t46\t1046\t1503\t256\t243\tB6\t620\tJFK\tN663JB\t0\t184\t1428\n2011-08-25 12:00:00\t17\t45\t1745\t3\t150\t243\tB6\t622\tJFK\tN638JB\t0\t223\t1428\n2011-01-04 12:00:00\t16\t8\t1608\t2034\t23\t25\tB6\t622\tJFK\tN267JB\t0\t175\t1428\n2011-04-01 12:00:00\t7\t34\t734\t1146\t34\t25\tB6\t620\tJFK\tN236JB\t0\t170\t1428\n2011-08-30 12:00:00\t10\t41\t1041\t1518\t251\t258\tB6\t620\tJFK\tN663JB\t0\t192\t1428\n2011-06-12 12:00:00\t15\t34\t1534\t2022\t17\t26\tB6\t622\tJFK\tN239JB\t0\t198\t1428\n2011-08-17 12:00:00\t15\t45\t1545\t2026\t30\t26\tB6\t622\tJFK\tN527JB\t0\t197\t1428\n2011-12-27 12:00:00\t19\t55\t1955\t39\t245\t262\tB6\t622\tJFK\tN294JB\t0\t175\t1428\n2011-07-15 12:00:00\t15\t13\t1513\t2027\t-2\t27\tB6\t622\tJFK\tN641JB\t0\t233\t1428\n2011-03-29 12:00:00\t16\t24\t1624\t2033\t49\t27\tB6\t624\tJFK\tN236JB\t0\t176\t1428\n2011-10-11 12:00:00\t7\t28\t728\t1139\t38\t27\tB6\t620\tJFK\tN598JB\t0\t175\t1428\n2011-07-13 12:00:00\t15\t13\t1513\t2027\t-2\t27\tB6\t622\tJFK\tN608JB\t0\t234\t1428\n2011-03-03 12:00:00\t6\t59\t659\t1148\t-1\t27\tB6\t620\tJFK\tN266JB\t0\t186\t1428\n2011-12-20 12:00:00\t16\t24\t1624\t2044\t34\t27\tB6\t622\tJFK\tN306JB\t0\t183\t1428\n2011-08-03 12:00:00\t15\t11\t1511\t2027\t-4\t27\tB6\t622\tJFK\tN663JB\t0\t234\t1428\n2011-10-29 12:00:00\t20\t15\t2015\t17\t310\t276\tB6\t622\tJFK\tN231JB\t0\t163\t1428\n2011-05-19 12:00:00\t15\t45\t1545\t2025\t28\t29\tB6\t622\tJFK\tN281JB\t0\t183\t1428\n2011-01-25 12:00:00\t16\t23\t1623\t2029\t48\t29\tB6\t624\tJFK\tN621JB\t0\t167\t1428\n2011-05-16 12:00:00\t15\t31\t1531\t2025\t14\t29\tB6\t622\tJFK\tN267JB\t0\t178\t1428\n2011-08-19 12:00:00\t19\t58\t1958\t52\t283\t292\tB6\t622\tJFK\tN709JB\t0\t208\t1428\n2011-07-29 12:00:00\t6\t31\t631\t1103\t1\t3\tB6\t620\tJFK\tN592JB\t0\t190\t1428\n2011-07-08 12:00:00\t6\t28\t628\t1103\t-2\t3\tB6\t620\tJFK\tN531JB\t0\t192\t1428\n2011-04-10 12:00:00\t15\t29\t1529\t2004\t-2\t3\tB6\t624\tJFK\tN239JB\t0\t194\t1428\n2011-07-18 12:00:00\t15\t7\t1507\t2003\t-8\t3\tB6\t622\tJFK\tN648JB\t0\t206\t1428\n2011-08-13 12:00:00\t6\t16\t616\t1103\t-14\t3\tB6\t620\tJFK\tN503JB\t0\t194\t1428\n2011-04-15 12:00:00\t15\t29\t1529\t2004\t-2\t3\tB6\t624\tJFK\tN265JB\t0\t193\t1428\n2011-04-11 12:00:00\t6\t57\t657\t1124\t-3\t3\tB6\t620\tJFK\tN304JB\t0\t182\t1428\n2011-02-16 12:00:00\t15\t27\t1527\t2003\t-8\t3\tB6\t624\tJFK\tN661JB\t0\t196\t1428\n2011-07-09 12:00:00\t15\t10\t1510\t2003\t-5\t3\tB6\t622\tJFK\tN644JB\t0\t202\t1428\n2011-10-02 12:00:00\t15\t4\t1504\t1944\t-1\t3\tB6\t622\tJFK\tN655JB\t0\t190\t1428\n2011-12-19 12:00:00\t6\t40\t640\t1106\t0\t3\tB6\t620\tJFK\tN247JB\t0\t186\t1428\n2011-09-04 12:00:00\t15\t29\t1529\t2003\t14\t3\tB6\t622\tJFK\tN625JB\t0\t197\t1428\n2011-07-22 12:00:00\t15\t19\t1519\t2003\t4\t3\tB6\t622\tJFK\tN629JB\t0\t205\t1428\n2011-03-17 12:00:00\t15\t32\t1532\t2009\t-3\t3\tB6\t624\tJFK\tN323JB\t0\t207\t1428\n2011-05-10 12:00:00\t6\t54\t654\t1129\t-6\t3\tB6\t620\tJFK\tN316JB\t0\t194\t1428\n2011-06-26 12:00:00\t7\t5\t705\t1138\t0\t3\tB6\t620\tJFK\tN306JB\t0\t197\t1428\n2011-10-08 12:00:00\t15\t7\t1507\t1944\t2\t3\tB6\t622\tJFK\tN565JB\t0\t191\t1428\n2011-08-23 12:00:00\t15\t42\t1542\t2030\t27\t30\tB6\t622\tJFK\tN649JB\t0\t208\t1428\n2011-05-03 12:00:00\t16\t18\t1618\t2031\t47\t30\tB6\t624\tJFK\tN283JB\t0\t180\t1428\n2011-11-27 12:00:00\t16\t11\t1611\t2047\t21\t30\tB6\t622\tJFK\tN298JB\t0\t197\t1428\n2011-01-02 12:00:00\t16\t4\t1604\t2040\t19\t31\tB6\t622\tJFK\tN324JB\t0\t176\t1428\n2011-04-04 12:00:00\t15\t37\t1537\t2037\t2\t31\tB6\t624\tJFK\tN317JB\t0\t207\t1428\n2011-05-05 12:00:00\t15\t30\t1530\t2028\t13\t32\tB6\t622\tJFK\tN279JB\t0\t199\t1428\n2011-09-15 12:00:00\t15\t43\t1543\t2013\t38\t32\tB6\t622\tJFK\tN509JB\t0\t194\t1428\n2011-10-19 12:00:00\t16\t10\t1610\t2013\t65\t32\tB6\t622\tJFK\tN236JB\t0\t161\t1428\n2011-03-30 12:00:00\t16\t6\t1606\t2039\t31\t33\tB6\t624\tJFK\tN289JB\t0\t194\t1428\n2011-11-13 12:00:00\t16\t16\t1616\t2052\t24\t33\tB6\t622\tJFK\tN559JB\t0\t184\t1428\n2011-07-21 12:00:00\t15\t29\t1529\t2033\t14\t33\tB6\t622\tJFK\tN635JB\t0\t192\t1428\n2011-08-14 12:00:00\t6\t19\t619\t1133\t-11\t33\tB6\t620\tJFK\tN612JB\t0\t218\t1428\n2011-03-10 12:00:00\t20\t13\t2013\t141\t278\t335\tB6\t624\tJFK\tN307JB\t0\t238\t1428\n2011-06-29 12:00:00\t16\t9\t1609\t2035\t54\t35\tB6\t622\tJFK\tN247JB\t0\t184\t1428\n2011-08-11 12:00:00\t16\t11\t1611\t2036\t56\t36\tB6\t622\tJFK\tN625JB\t0\t182\t1428\n2011-12-22 12:00:00\t16\t40\t1640\t2053\t50\t36\tB6\t622\tJFK\tN306JB\t0\t174\t1428\n2011-07-06 12:00:00\t15\t29\t1529\t2037\t14\t37\tB6\t622\tJFK\tN768JB\t0\t197\t1428\n2011-11-28 12:00:00\t7\t23\t723\t1140\t43\t37\tB6\t620\tJFK\tN265JB\t0\t175\t1428\n2011-08-31 12:00:00\t15\t19\t1519\t2004\t4\t4\tB6\t622\tJFK\tN507JB\t0\t209\t1428\n2011-09-02 12:00:00\t6\t30\t630\t1104\t0\t4\tB6\t620\tJFK\tN527JB\t0\t190\t1428\n2011-01-16 12:00:00\t15\t51\t1551\t2004\t16\t4\tB6\t624\tJFK\tN565JB\t0\t176\t1428\n2011-04-09 12:00:00\t6\t56\t656\t1125\t-4\t4\tB6\t620\tJFK\tN274JB\t0\t186\t1428\n2011-11-16 12:00:00\t16\t7\t1607\t2023\t15\t4\tB6\t622\tJFK\tN564JB\t0\t177\t1428\n2011-05-29 12:00:00\t6\t59\t659\t1130\t-1\t4\tB6\t620\tJFK\tN267JB\t0\t195\t1428\n2011-07-03 12:00:00\t6\t22\t622\t1104\t-8\t4\tB6\t620\tJFK\tN595JB\t0\t199\t1428\n2011-06-27 12:00:00\t15\t49\t1549\t2041\t34\t41\tB6\t622\tJFK\tN279JB\t0\t214\t1428\n2011-11-12 12:00:00\t16\t39\t1639\t2101\t47\t42\tB6\t622\tJFK\tN520JB\t0\t179\t1428\n2011-04-06 12:00:00\t15\t56\t1556\t2043\t25\t42\tB6\t624\tJFK\tN238JB\t0\t185\t1428\n2011-04-01 12:00:00\t16\t15\t1615\t2048\t40\t42\tB6\t624\tJFK\tN296JB\t0\t188\t1428\n2011-10-15 12:00:00\t15\t26\t1526\t2023\t21\t42\tB6\t622\tJFK\tN709JB\t0\t186\t1428\n2011-07-11 12:00:00\t15\t55\t1555\t2044\t40\t44\tB6\t622\tJFK\tN599JB\t0\t196\t1428\n2011-11-29 12:00:00\t15\t57\t1557\t2101\t7\t44\tB6\t622\tJFK\tN334JB\t0\t178\t1428\n2011-08-05 12:00:00\t15\t31\t1531\t2046\t16\t46\tB6\t622\tJFK\tN708JB\t0\t224\t1428\n2011-03-09 12:00:00\t15\t51\t1551\t2052\t16\t46\tB6\t624\tJFK\tN296JB\t0\t224\t1428\n2011-06-11 12:00:00\t15\t38\t1538\t2043\t21\t47\tB6\t622\tJFK\tN249JB\t0\t202\t1428\n2011-05-30 12:00:00\t16\t11\t1611\t2044\t54\t48\tB6\t622\tJFK\tN190JB\t0\t197\t1428\n2011-06-22 12:00:00\t16\t24\t1624\t2048\t69\t48\tB6\t622\tJFK\tN178JB\t0\t184\t1428\n2011-05-17 12:00:00\t16\t20\t1620\t2045\t63\t49\tB6\t622\tJFK\tN197JB\t0\t179\t1428\n2011-05-23 12:00:00\t15\t52\t1552\t2045\t35\t49\tB6\t622\tJFK\tN309JB\t0\t191\t1428\n2011-06-18 12:00:00\t16\t17\t1617\t2049\t62\t49\tB6\t622\tJFK\tN273JB\t0\t188\t1428\n2011-04-11 12:00:00\t15\t52\t1552\t2050\t21\t49\tB6\t624\tJFK\tN318JB\t0\t210\t1428\n2011-06-07 12:00:00\t7\t2\t702\t1131\t2\t5\tB6\t620\tJFK\tN258JB\t0\t194\t1428\n2011-01-01 12:00:00\t6\t54\t654\t1124\t-6\t5\tB6\t620\tJFK\tN324JB\t0\t181\t1428\n2011-09-28 12:00:00\t14\t53\t1453\t1946\t-12\t5\tB6\t622\tJFK\tN536JB\t0\t195\t1428\n2011-06-01 12:00:00\t7\t7\t707\t1131\t7\t5\tB6\t620\tJFK\tN258JB\t0\t187\t1428\n2011-12-06 12:00:00\t16\t12\t1612\t2107\t22\t50\tB6\t622\tJFK\tN273JB\t0\t180\t1428\n2011-05-24 12:00:00\t16\t9\t1609\t2052\t52\t56\tB6\t622\tJFK\tN228JB\t0\t196\t1428\n2011-01-18 12:00:00\t16\t47\t1647\t2056\t72\t56\tB6\t624\tJFK\tN729JB\t0\t164\t1428\n2011-01-09 12:00:00\t16\t18\t1618\t2057\t43\t57\tB6\t624\tJFK\tN625JB\t0\t196\t1428\n2011-05-21 12:00:00\t7\t41\t741\t1225\t41\t59\tB6\t620\tJFK\tN236JB\t0\t208\t1428\n2011-03-15 12:00:00\t6\t59\t659\t1127\t-1\t6\tB6\t620\tJFK\tN317JB\t0\t179\t1428\n2011-05-02 12:00:00\t7\t2\t702\t1127\t2\t6\tB6\t620\tJFK\tN206JB\t0\t187\t1428\n2011-08-31 12:00:00\t6\t31\t631\t1106\t1\t6\tB6\t620\tJFK\tN507JB\t0\t198\t1428\n2011-03-18 12:00:00\t6\t51\t651\t1127\t-9\t6\tB6\t620\tJFK\tN289JB\t0\t192\t1428\n2011-04-10 12:00:00\t7\t4\t704\t1127\t4\t6\tB6\t620\tJFK\tN317JB\t0\t187\t1428\n2011-10-06 12:00:00\t16\t12\t1612\t2041\t67\t60\tB6\t622\tJFK\tN661JB\t0\t187\t1428\n2011-01-01 12:00:00\t16\t39\t1639\t2110\t54\t61\tB6\t622\tJFK\tN324JB\t0\t188\t1428\n2011-06-26 12:00:00\t16\t14\t1614\t2103\t59\t63\tB6\t622\tJFK\tN178JB\t0\t198\t1428\n2011-12-05 12:00:00\t16\t54\t1654\t2120\t64\t63\tB6\t622\tJFK\tN203JB\t0\t178\t1428\n2011-04-26 12:00:00\t16\t18\t1618\t2104\t47\t63\tB6\t624\tJFK\tN323JB\t0\t203\t1428\n2011-06-23 12:00:00\t15\t26\t1526\t2104\t11\t64\tB6\t622\tJFK\tN266JB\t0\t227\t1428\n2011-05-20 12:00:00\t15\t27\t1527\t2100\t10\t64\tB6\t622\tJFK\tN273JB\t0\t208\t1428\n2011-06-28 12:00:00\t15\t46\t1546\t2106\t31\t66\tB6\t622\tJFK\tN273JB\t0\t219\t1428\n2011-07-08 12:00:00\t16\t40\t1640\t2106\t85\t66\tB6\t622\tJFK\tN531JB\t0\t186\t1428\n2011-11-12 12:00:00\t6\t43\t643\t1110\t3\t7\tB6\t620\tJFK\tN520JB\t0\t186\t1428\n2011-10-07 12:00:00\t6\t49\t649\t1119\t-1\t7\tB6\t620\tJFK\tN637JB\t0\t194\t1428\n2011-04-25 12:00:00\t15\t26\t1526\t2008\t-5\t7\tB6\t624\tJFK\tN316JB\t0\t184\t1428\n2011-07-20 12:00:00\t6\t28\t628\t1107\t-2\t7\tB6\t620\tJFK\tN659JB\t0\t195\t1428\n2011-11-05 12:00:00\t6\t42\t642\t1110\t2\t7\tB6\t620\tJFK\tN643JB\t0\t190\t1428\n2011-04-30 12:00:00\t6\t54\t654\t1128\t-6\t7\tB6\t620\tJFK\tN190JB\t0\t187\t1428\n2011-02-15 12:00:00\t15\t41\t1541\t2007\t6\t7\tB6\t624\tJFK\tN615JB\t0\t178\t1428\n2011-03-03 12:00:00\t15\t53\t1553\t2013\t18\t7\tB6\t624\tJFK\tN266JB\t0\t184\t1428\n2011-05-26 12:00:00\t15\t14\t1514\t2003\t-3\t7\tB6\t622\tJFK\tN267JB\t0\t198\t1428\n2011-03-12 12:00:00\t6\t51\t651\t1128\t-9\t7\tB6\t620\tJFK\tN266JB\t0\t191\t1428\n2011-03-24 12:00:00\t17\t3\t1703\t2116\t88\t70\tB6\t624\tJFK\tN267JB\t0\t174\t1428\n2011-09-26 12:00:00\t16\t35\t1635\t2051\t90\t70\tB6\t622\tJFK\tN590JB\t0\t180\t1428\n2011-01-14 12:00:00\t8\t8\t808\t1229\t68\t72\tB6\t620\tJFK\tN597JB\t0\t185\t1428\n2011-09-23 12:00:00\t16\t40\t1640\t2053\t95\t72\tB6\t622\tJFK\tN593JB\t0\t165\t1428\n2011-08-01 12:00:00\t15\t11\t1511\t2113\t-4\t73\tB6\t622\tJFK\tN547JB\t0\t228\t1428\n2011-09-06 12:00:00\t15\t38\t1538\t2113\t23\t73\tB6\t622\tJFK\tN562JB\t0\t225\t1428\n2011-04-16 12:00:00\t8\t13\t813\t1237\t73\t76\tB6\t620\tJFK\tN183JB\t0\t184\t1428\n2011-08-09 12:00:00\t16\t46\t1646\t2118\t91\t78\tB6\t622\tJFK\tN524JB\t0\t187\t1428\n2011-01-30 12:00:00\t16\t59\t1659\t2118\t84\t78\tB6\t624\tJFK\tN606JB\t0\t176\t1428\n2011-02-13 12:00:00\t8\t9\t809\t1235\t69\t78\tB6\t620\tJFK\tN503JB\t0\t190\t1428\n2011-05-01 12:00:00\t15\t45\t1545\t2009\t14\t8\tB6\t624\tJFK\tN206JB\t0\t191\t1428\n2011-09-26 12:00:00\t7\t2\t702\t1120\t12\t8\tB6\t620\tJFK\tN590JB\t0\t178\t1428\n2011-08-06 12:00:00\t6\t24\t624\t1108\t-6\t8\tB6\t620\tJFK\tN593JB\t0\t193\t1428\n2011-11-10 12:00:00\t16\t29\t1629\t2027\t37\t8\tB6\t622\tJFK\tN623JB\t0\t158\t1428\n2011-09-02 12:00:00\t15\t17\t1517\t2008\t2\t8\tB6\t622\tJFK\tN527JB\t0\t199\t1428\n2011-08-08 12:00:00\t15\t12\t1512\t2008\t-3\t8\tB6\t622\tJFK\tN665JB\t0\t204\t1428\n2011-05-11 12:00:00\t6\t56\t656\t1134\t-4\t8\tB6\t620\tJFK\tN216JB\t0\t197\t1428\n2011-05-28 12:00:00\t6\t56\t656\t1134\t-4\t8\tB6\t620\tJFK\tN274JB\t0\t201\t1428\n2011-06-10 12:00:00\t15\t13\t1513\t2004\t-4\t8\tB6\t622\tJFK\tN283JB\t0\t209\t1428\n2011-12-13 12:00:00\t6\t55\t655\t1111\t15\t8\tB6\t620\tJFK\tN206JB\t0\t179\t1428\n2011-08-25 12:00:00\t6\t27\t627\t1108\t-3\t8\tB6\t620\tJFK\tN638JB\t0\t199\t1428\n2011-06-17 12:00:00\t16\t22\t1622\t2120\t67\t80\tB6\t622\tJFK\tN316JB\t0\t223\t1428\n2011-07-23 12:00:00\t16\t44\t1644\t2120\t89\t80\tB6\t622\tJFK\tN565JB\t0\t192\t1428\n2011-11-23 12:00:00\t17\t0\t1700\t2138\t70\t81\tB6\t622\tJFK\tN179JB\t0\t197\t1428\n2011-10-20 12:00:00\t16\t11\t1611\t2103\t66\t82\tB6\t622\tJFK\tN265JB\t0\t173\t1428\n2011-03-07 12:00:00\t17\t16\t1716\t2128\t101\t82\tB6\t624\tJFK\tN229JB\t0\t174\t1428\n2011-03-02 12:00:00\t16\t57\t1657\t2128\t82\t82\tB6\t624\tJFK\tN298JB\t0\t185\t1428\n2011-10-14 12:00:00\t16\t35\t1635\t2104\t90\t83\tB6\t622\tJFK\tN645JB\t0\t175\t1428\n2011-04-27 12:00:00\t15\t29\t1529\t2124\t-2\t83\tB6\t624\tJFK\tN283JB\t0\t258\t1428\n2011-03-23 12:00:00\t16\t49\t1649\t2130\t74\t84\tB6\t624\tJFK\tN179JB\t0\t186\t1428\n2011-08-20 12:00:00\t16\t46\t1646\t2126\t91\t86\tB6\t622\tJFK\tN509JB\t0\t194\t1428\n2011-09-07 12:00:00\t16\t31\t1631\t2108\t86\t87\tB6\t622\tJFK\tN529JB\t0\t198\t1428\n2011-05-04 12:00:00\t16\t4\t1604\t2123\t47\t87\tB6\t622\tJFK\tN316JB\t0\t170\t1428\n2011-06-14 12:00:00\t16\t59\t1659\t2125\t102\t89\tB6\t622\tJFK\tN178JB\t0\t188\t1428\n2011-06-06 12:00:00\t7\t10\t710\t1135\t10\t9\tB6\t620\tJFK\tN238JB\t0\t193\t1428\n2011-06-03 12:00:00\t6\t55\t655\t1135\t-5\t9\tB6\t620\tJFK\tN236JB\t0\t202\t1428\n2011-04-05 12:00:00\t6\t56\t656\t1130\t-4\t9\tB6\t620\tJFK\tN197JB\t0\t198\t1428\n2011-07-20 12:00:00\t15\t8\t1508\t2009\t-7\t9\tB6\t622\tJFK\tN659JB\t0\t218\t1428\n2011-10-09 12:00:00\t15\t10\t1510\t1950\t5\t9\tB6\t622\tJFK\tN648JB\t0\t192\t1428\n2011-11-06 12:00:00\t15\t52\t1552\t2028\t0\t9\tB6\t622\tJFK\tN570JB\t0\t194\t1428\n2011-12-15 12:00:00\t17\t27\t1727\t2147\t97\t90\tB6\t622\tJFK\tN190JB\t0\t182\t1428\n2011-12-28 12:00:00\t17\t48\t1748\t2147\t118\t90\tB6\t622\tJFK\tN281JB\t0\t168\t1428\n2011-07-28 12:00:00\t8\t0\t800\t1232\t90\t92\tB6\t620\tJFK\tN644JB\t0\t187\t1428\n2011-12-18 12:00:00\t17\t26\t1726\t2149\t96\t92\tB6\t622\tJFK\tN247JB\t0\t184\t1428\n2011-06-24 12:00:00\t17\t5\t1705\t2133\t110\t93\tB6\t622\tJFK\tN266JB\t0\t193\t1428\n2011-09-22 12:00:00\t16\t4\t1604\t2114\t59\t93\tB6\t622\tJFK\tN638JB\t0\t201\t1428\n2011-11-19 12:00:00\t17\t36\t1736\t2150\t106\t93\tB6\t622\tJFK\tN187JB\t0\t178\t1428\n2011-03-21 12:00:00\t17\t0\t1700\t2140\t85\t94\tB6\t624\tJFK\tN317JB\t0\t196\t1428\n2011-01-21 12:00:00\t17\t25\t1725\t2135\t110\t95\tB6\t624\tJFK\tN598JB\t0\t173\t1428\n2011-08-21 12:00:00\t16\t26\t1626\t2135\t71\t95\tB6\t622\tJFK\tN591JB\t0\t229\t1428\n2011-08-02 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN547JB\t1\tNA\t1428\n2011-08-18 12:00:00\t15\t9\t1509\t2226\t-6\tNA\tB6\t622\tJFK\tN563JB\t0\tNA\t1428\n2011-04-20 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN216JB\t1\tNA\t1428\n2011-08-27 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t622\tJFK\tN568JB\t1\tNA\t1428\n2011-03-07 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN190JB\t1\tNA\t1428\n2011-06-18 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN329JB\t1\tNA\t1428\n2011-04-24 12:00:00\t15\t29\t1529\t153\t-2\tNA\tB6\t624\tJFK\tN273JB\t0\tNA\t1428\n2011-08-28 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN606JB\t1\tNA\t1428\n2011-04-17 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN306JB\t1\tNA\t1428\n2011-06-21 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN266JB\t1\tNA\t1428\n2011-08-28 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t622\tJFK\tN606JB\t1\tNA\t1428\n2011-02-01 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN558JB\t1\tNA\t1428\n2011-04-28 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN228JB\t1\tNA\t1428\n2011-08-29 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN653JB\t1\tNA\t1428\n2011-01-27 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN569JB\t1\tNA\t1428\n2011-02-01 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN629JB\t1\tNA\t1428\n2011-04-28 12:00:00\t6\t59\t659\t1726\t-1\tNA\tB6\t620\tJFK\tN229JB\t0\tNA\t1428\n2011-08-29 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t622\tJFK\tN589JB\t1\tNA\t1428\n2011-02-04 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t620\tJFK\tN665JB\t1\tNA\t1428\n2011-02-17 12:00:00\t7\t8\t708\t2058\t8\tNA\tB6\t620\tJFK\tN247JB\t0\tNA\t1428\n2011-01-11 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN537JB\t1\tNA\t1428\n2011-01-19 12:00:00\tNA\tNA\tNA\tNA\tNA\tNA\tB6\t624\tJFK\tN504JB\t1\tNA\t1428\n"
+      },
+      "dateCreated": "Dec 6, 2015 3:16:36 PM",
+      "dateStarted": "Dec 6, 2015 3:53:26 PM",
+      "dateFinished": "Dec 6, 2015 3:53:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 4. Hive Tables",
+      "dateUpdated": "Dec 6, 2015 2:40:29 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449427698897_239114021",
+      "id": "20151206-104818_1431665522",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003e4. Hive Tables\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 6, 2015 10:48:18 AM",
+      "dateStarted": "Dec 6, 2015 2:40:29 PM",
+      "dateFinished": "Dec 6, 2015 2:40:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\n/** Create hive Table called \"src\" */\nsqlContext.sql(\"CREATE TABLE IF NOT EXISTS src (key INT, value STRING)\")",
+      "dateUpdated": "Dec 6, 2015 1:01:46 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449430585640_1484455313",
+      "id": "20151206-113625_879351915",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Could not open client transport with JDBC Uri: jdbc:hive2://localhost:10000: java.net.ConnectException: Connection refused"
+      },
+      "dateCreated": "Dec 6, 2015 11:36:25 AM",
+      "dateStarted": "Dec 6, 2015 1:01:46 PM",
+      "dateFinished": "Dec 6, 2015 1:01:47 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\nsqlContext.sql(\"LOAD DATA LOCAL INPATH \u0027/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/kv1.txt\u0027 INTO TABLE src\")",
+      "dateUpdated": "Dec 6, 2015 1:03:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449435643081_553833385",
+      "id": "20151206-130043_1323634472",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "java.lang.NullPointerException\n\tat org.apache.zeppelin.hive.HiveInterpreter.getConnection(HiveInterpreter.java:171)\n\tat org.apache.zeppelin.hive.HiveInterpreter.getStatement(HiveInterpreter.java:196)\n\tat org.apache.zeppelin.hive.HiveInterpreter.executeSql(HiveInterpreter.java:208)\n\tat org.apache.zeppelin.hive.HiveInterpreter.interpret(HiveInterpreter.java:292)\n\tat org.apache.zeppelin.interpreter.ClassloaderInterpreter.interpret(ClassloaderInterpreter.java:57)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:93)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:300)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:170)\n\tat org.apache.zeppelin.scheduler.ParallelScheduler$JobRunner.run(ParallelScheduler.java:157)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:262)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat java.lang.Thread.run(Thread.java:745)\n"
+      },
+      "dateCreated": "Dec 6, 2015 1:00:43 PM",
+      "dateStarted": "Dec 6, 2015 1:02:46 PM",
+      "dateFinished": "Dec 6, 2015 1:02:46 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\n// Queries are expressed in HiveQL\nsqlContext.sql(\"FROM src SELECT key, value\").collect().foreach(println)",
+      "dateUpdated": "Dec 6, 2015 1:03:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449435755008_840656851",
+      "id": "20151206-130235_85898019",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Could not open client transport with JDBC Uri: jdbc:hive2://localhost:10000: java.net.ConnectException: Connection refused"
+      },
+      "dateCreated": "Dec 6, 2015 1:02:35 PM",
+      "dateStarted": "Dec 6, 2015 1:03:27 PM",
+      "dateFinished": "Dec 6, 2015 1:03:27 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 5. JDBC To Other Databases",
+      "dateUpdated": "Dec 6, 2015 2:40:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449435807360_-1557220888",
+      "id": "20151206-130327_1414705064",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003e5. JDBC To Other Databases\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Dec 6, 2015 1:03:27 PM",
+      "dateStarted": "Dec 6, 2015 2:40:25 PM",
+      "dateFinished": "Dec 6, 2015 2:40:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Load tables from remote databases as a DataFrame or Spark SQL Temporary table\nval jdbcDF \u003d sqlContext.read.format(\"jdbc\").options( \n  Map(\"url\" -\u003e \"jdbc:postgresql:dbserver\",\n  \"dbtable\" -\u003e \"schema.tablename\")).load()",
+      "dateUpdated": "Dec 6, 2015 1:35:00 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449436437026_507015492",
+      "id": "20151206-131357_370041245",
+      "dateCreated": "Dec 6, 2015 1:13:57 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "SparkSQL and DataFrames",
+  "id": "2B65Z357A",
+  "angularObjects": {
+    "2B8PRY86Y": [],
+    "2B6E7G8RC": [],
+    "2B5TVWHH5": [],
+    "2B87T5WMW": [],
+    "2B84E6S56": [],
+    "2B6NMMZHN": [],
+    "2B5NP4RVA": [],
+    "2B5UWQKQH": [],
+    "2B7H7QK35": [],
+    "2B5YJ5RSN": [],
+    "2B7CQFF2V": [],
+    "2B5FC3D7W": [],
+    "2B7DS4VXE": []
+  },
+  "config": {},
+  "info": {}
+}

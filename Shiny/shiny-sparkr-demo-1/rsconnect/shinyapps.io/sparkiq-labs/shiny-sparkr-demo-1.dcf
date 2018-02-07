@@ -1,0 +1,9 @@
+name: shiny-sparkr-demo-1
+account: sparkiq-labs
+server: shinyapps.io
+appId: 69336
+bundleId: 313203
+url: https://sparkiq-labs.shinyapps.io/shiny-sparkr-demo-1
+when: 1447835975.6997
+asMultiple: FALSE
+asStatic: FALSE

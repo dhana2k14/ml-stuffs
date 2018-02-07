@@ -1,0 +1,121 @@
+2016-01-14 10:11:29,270 PST  INFO Domino - ================================================================================
+2016-01-14 10:11:29,275 PST  INFO Domino - starting client
+2016-01-14 10:11:29,276 PST DEBUG Domino - CWD = /home/emaasit/Dropbox/SparkIQ-Labs/Demos
+2016-01-14 10:11:29,277 PST  INFO Domino - executing command: login
+2016-01-14 10:11:29,283 PST DEBUG LoginCommand - logging in to host: https://app.dominodatalab.com
+2016-01-14 10:13:19,509 PST  INFO ClientControllerProxy - getting auth info from https://app.dominodatalab.com/loginFromInstaller
+2016-01-14 10:13:19,550 PST DEBUG DefaultTransport - Issuing request to https://app.dominodatalab.com/loginFromInstaller with proxy detected as DIRECT (full request = Request(POST,<function2>,<function1>,List((username,domino@sparkiq-labs.com), (password,sparkiqlabs2015), (dominoClientSource,API)),List((X-Domino-Api-Key,), (Charset,UTF-8), (Content-Type,application/x-www-form-urlencoded), (content-type,application/x-www-form-urlencoded)),List(<function1>, <function1>, <function1>, <function1>, <function1>),DIRECT,UTF-8,4096))
+2016-01-14 10:13:26,682 PST DEBUG ClientControllerProxy - response from server: {"host":"http://app.dominodatalab.com","user_id":"55d65734e4b05e93799179e8","username":"SparkIQLabs","api_key":"RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu","client_blob_mode":"S3","is_cloud_mode":true,"is_cloud_hosted":true}
+2016-01-14 10:13:27,280 PST DEBUG LoginCommand - response from server: InstallConfig(http://app.dominodatalab.com,55d65734e4b05e93799179e8,SparkIQLabs,RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu,S3,None)
+2016-01-14 10:14:35,615 PST  INFO Domino - ================================================================================
+2016-01-14 10:14:35,619 PST  INFO Domino - starting client
+2016-01-14 10:14:35,620 PST DEBUG Domino - CWD = /home/emaasit/Dropbox/SparkIQ-Labs/Demos
+2016-01-14 10:14:35,622 PST  INFO Domino - executing command: get spatial-analysis
+2016-01-14 10:14:35,865 PST DEBUG DefaultTransport - Issuing request to https://app.dominodatalab.com/project/SparkIQLabs/spatial-analysis with proxy detected as DIRECT (full request = Request(GET,<function2>,<function1>,List(),List((X-Domino-Api-Key,RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu)),List(<function1>, <function1>, <function1>, <function1>, <function1>),DIRECT,UTF-8,4096))
+2016-01-14 10:14:36,568 PST  INFO GetCommand - Cloning project SparkIQLabs/spatial-analysis
+2016-01-14 10:14:36,571 PST  INFO ProjectControllerProxy - getting git host from https://app.dominodatalab.com/gitRepoUri/SparkIQLabs/spatial-analysis
+2016-01-14 10:14:36,572 PST DEBUG DefaultTransport - Issuing request to https://app.dominodatalab.com/gitRepoUri/SparkIQLabs/spatial-analysis with proxy detected as DIRECT (full request = Request(GET,<function2>,<function1>,List(),List((X-Domino-Api-Key,RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu)),List(<function1>, <function1>, <function1>, <function1>, <function1>),DIRECT,UTF-8,4096))
+2016-01-14 10:14:36,638 PST DEBUG ProjectControllerProxy - response from server: https://git.dominoup.com/projectrepos/5697/5697e26c98f4c85d6e75f257.git
+2016-01-14 10:14:36,706 PST  INFO ProjectControllerProxy - getting git host from https://app.dominodatalab.com/gitRepoUri/SparkIQLabs/spatial-analysis
+2016-01-14 10:14:36,706 PST DEBUG DefaultTransport - Issuing request to https://app.dominodatalab.com/gitRepoUri/SparkIQLabs/spatial-analysis with proxy detected as DIRECT (full request = Request(GET,<function2>,<function1>,List(),List((X-Domino-Api-Key,RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu)),List(<function1>, <function1>, <function1>, <function1>, <function1>),DIRECT,UTF-8,4096))
+2016-01-14 10:14:36,762 PST DEBUG ProjectControllerProxy - response from server: https://git.dominoup.com/projectrepos/5697/5697e26c98f4c85d6e75f257.git
+2016-01-14 10:14:36,773 PST  INFO CLIFileSyncClient - Running in cloud mode, so using AnonymousS3BlobStore
+2016-01-14 10:14:38,572 PST DEBUG ProjectCloner - Cloning project SparkIQLabs/spatial-analysis in '/home/emaasit/Dropbox/SparkIQ-Labs/Demos/spatial-analysis/.domino/repo' @ commitId None took 1781 ms
+2016-01-14 10:14:38,576 PST TRACE FileSyncClient - Resetting hard = false local to data structure repo head @ commit = 87051d8d44ba518a976b54819e85db4a6738651d
+2016-01-14 10:14:38,731 PST DEBUG DefaultTransport - Issuing request to https://app.dominodatalab.com/blobs/signedGetUrl/a5f5eb83114b9b51af35b87c00dace198c7db58b with proxy detected as DIRECT (full request = Request(POST,<function2>,<function1>,List(),List((X-Domino-Api-Key,RrhDbogjvXzbxkm15hedptBVYmuBGiGMBGacUuv2jNulfYLHAMxKmDWlHqRVC4Nu), (content-type,application/x-www-form-urlencoded)),List(<function1>, <function1>, <function1>, <function1>, <function1>),DIRECT,UTF-8,4096))
+2016-01-14 10:14:38,908 PST  INFO AnonymousS3SingleProjectBlobStore - Generated signed GET url: https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com/a5f5eb83114b9b51af35b87c00dace198c7db58b?x-amz-security-token=AQoDYXdzEEYa4ANAujuwL8WNKYWn%2BTsBB2aHk1NZ5XENO%2F5dfYIexiYZrSItsSrBQFo0guOhV%2FqwOe73Rw7rUv39Wgm%2BQpRcpO0Xut0n1fsWAFmnPfOexvIsBOi0LH%2F4unKz79D3rL2JOpkIxIfA1v6ymRGfVd6PZaB8TQVCL0vrFwiSyO%2F%2FJl%2B5EqxuKFfm7Pridp2WpfeyoMZG33MPmLRV7I9wVGUC9v6bwiJKM8xdqBNGuJE5ZmeuULcSzhsBVuiq%2BMx%2BxosESWMKhmGJyx%2FAs3BkYgL4xV2jl4W8lijvjdAIIWYf6sdWfhgy4BUnB4Ljw2qEDsOOoRqGZF80lhm3nCZc4ZFUIe3nPSQjdz%2FOK%2B9TwEKgnUcZO1J8ys81ylvDMkCPhmrpKEuFtu2uts4XGVQ3gS1QLsr1PY27KWAtwRQcFcmTMgpBhIpeVoN9FoQi%2FE7DzCy%2FM6OdamVzYNzjlJFfOrS033PVH6e%2BPxzJL%2BWrs4tAlMs%2Bk%2Bb887EGmkZLVNYCUEaJDdc4JoQn65hknJE6zTdZS2mZVSfs0IIgpRfwXlPjy8PyMQmqKMddLAc8vkjQinYZyAx1F%2Ba09kLDA8XCoV%2FFXkziDdxLYJG%2FU5Z8T77QgYigKaUn%2F9OBHiskl8ZCz%2Bz7PpYg36vetAU%3D&AWSAccessKeyId=ASIAJTYY7BZPOELVRPZA&Expires=1452795338&Signature=dLlI%2BX4kP12QVUjZDRtW60qmra0%3D
+2016-01-14 10:14:38,908 PST  INFO AnonymousS3SingleProjectBlobStore - Starting signed GET request
+2016-01-14 10:14:38,966 PST DEBUG Jets3tProperties - s3service.https-only=true
+2016-01-14 10:14:38,966 PST DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-01-14 10:14:38,967 PST DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-01-14 10:14:38,967 PST DEBUG StorageService - Setting recommended DNS caching defaults
+2016-01-14 10:14:38,967 PST DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-01-14 10:14:38,973 PST DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-01-14 10:14:38,973 PST DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-01-14 10:14:38,973 PST DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-01-14 10:14:38,973 PST DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-01-14 10:14:38,973 PST DEBUG Jets3tProperties - httpclient.useragent=null
+2016-01-14 10:14:38,975 PST DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Linux/3.16.0-38-generic; amd64; en; JVM 1.7.0_91)
+2016-01-14 10:14:38,975 PST DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-01-14 10:14:38,975 PST DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-01-14 10:14:38,982 PST DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-01-14 10:14:38,982 PST DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-01-14 10:14:38,982 PST DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-01-14 10:14:38,984 PST DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.7.0_91-b02
+2016-01-14 10:14:38,984 PST DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-01-14 10:14:38,984 PST DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-01-14 10:14:38,984 PST DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-01-14 10:14:38,984 PST DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-01-14 10:14:38,984 PST DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-01-14 10:14:38,984 PST DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-01-14 10:14:38,985 PST DEBUG Jets3tProperties - devpay.user-token=null
+2016-01-14 10:14:38,985 PST DEBUG Jets3tProperties - devpay.product-token=null
+2016-01-14 10:14:38,985 PST DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-01-14 10:14:38,985 PST DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-01-14 10:14:38,986 PST DEBUG RestStorageService - Performing GET request for 'https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com/a5f5eb83114b9b51af35b87c00dace198c7db58b?x-amz-security-token=AQoDYXdzEEYa4ANAujuwL8WNKYWn%2BTsBB2aHk1NZ5XENO%2F5dfYIexiYZrSItsSrBQFo0guOhV%2FqwOe73Rw7rUv39Wgm%2BQpRcpO0Xut0n1fsWAFmnPfOexvIsBOi0LH%2F4unKz79D3rL2JOpkIxIfA1v6ymRGfVd6PZaB8TQVCL0vrFwiSyO%2F%2FJl%2B5EqxuKFfm7Pridp2WpfeyoMZG33MPmLRV7I9wVGUC9v6bwiJKM8xdqBNGuJE5ZmeuULcSzhsBVuiq%2BMx%2BxosESWMKhmGJyx%2FAs3BkYgL4xV2jl4W8lijvjdAIIWYf6sdWfhgy4BUnB4Ljw2qEDsOOoRqGZF80lhm3nCZc4ZFUIe3nPSQjdz%2FOK%2B9TwEKgnUcZO1J8ys81ylvDMkCPhmrpKEuFtu2uts4XGVQ3gS1QLsr1PY27KWAtwRQcFcmTMgpBhIpeVoN9FoQi%2FE7DzCy%2FM6OdamVzYNzjlJFfOrS033PVH6e%2BPxzJL%2BWrs4tAlMs%2Bk%2Bb887EGmkZLVNYCUEaJDdc4JoQn65hknJE6zTdZS2mZVSfs0IIgpRfwXlPjy8PyMQmqKMddLAc8vkjQinYZyAx1F%2Ba09kLDA8XCoV%2FFXkziDdxLYJG%2FU5Z8T77QgYigKaUn%2F9OBHiskl8ZCz%2Bz7PpYg36vetAU%3D&AWSAccessKeyId=ASIAJTYY7BZPOELVRPZA&Expires=1452795338&Signature=dLlI%2BX4kP12QVUjZDRtW60qmra0%3D', expecting response codes: [200]
+2016-01-14 10:14:38,986 PST DEBUG RestStorageService - Headers: []
+2016-01-14 10:14:38,987 PST DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-01-14 10:14:38,987 PST DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-01-14 10:14:39,003 PST DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-01-14 10:14:39,003 PST DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-01-14 10:14:39,004 PST DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-01-14 10:14:39,037 PST DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443, timeout = 0
+2016-01-14 10:14:39,038 PST DEBUG ConnPoolByRoute - [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-01-14 10:14:39,038 PST DEBUG ConnPoolByRoute - No free connections [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443][null]
+2016-01-14 10:14:39,038 PST DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443][null]
+2016-01-14 10:14:39,038 PST DEBUG ConnPoolByRoute - Creating new connection [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443]
+2016-01-14 10:14:39,154 PST DEBUG DefaultClientConnectionOperator - Connecting to com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443
+2016-01-14 10:14:39,644 PST DEBUG RequestAddCookies - CookieSpec selected: default
+2016-01-14 10:14:39,646 PST DEBUG RequestAuthCache - Auth cache not set in the context
+2016-01-14 10:14:39,646 PST DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-01-14 10:14:39,647 PST DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-01-14 10:14:39,647 PST DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-01-14 10:14:39,647 PST DEBUG DefaultClientConnection - Sending request: GET /a5f5eb83114b9b51af35b87c00dace198c7db58b?x-amz-security-token=AQoDYXdzEEYa4ANAujuwL8WNKYWn%2BTsBB2aHk1NZ5XENO%2F5dfYIexiYZrSItsSrBQFo0guOhV%2FqwOe73Rw7rUv39Wgm%2BQpRcpO0Xut0n1fsWAFmnPfOexvIsBOi0LH%2F4unKz79D3rL2JOpkIxIfA1v6ymRGfVd6PZaB8TQVCL0vrFwiSyO%2F%2FJl%2B5EqxuKFfm7Pridp2WpfeyoMZG33MPmLRV7I9wVGUC9v6bwiJKM8xdqBNGuJE5ZmeuULcSzhsBVuiq%2BMx%2BxosESWMKhmGJyx%2FAs3BkYgL4xV2jl4W8lijvjdAIIWYf6sdWfhgy4BUnB4Ljw2qEDsOOoRqGZF80lhm3nCZc4ZFUIe3nPSQjdz%2FOK%2B9TwEKgnUcZO1J8ys81ylvDMkCPhmrpKEuFtu2uts4XGVQ3gS1QLsr1PY27KWAtwRQcFcmTMgpBhIpeVoN9FoQi%2FE7DzCy%2FM6OdamVzYNzjlJFfOrS033PVH6e%2BPxzJL%2BWrs4tAlMs%2Bk%2Bb887EGmkZLVNYCUEaJDdc4JoQn65hknJE6zTdZS2mZVSfs0IIgpRfwXlPjy8PyMQmqKMddLAc8vkjQinYZyAx1F%2Ba09kLDA8XCoV%2FFXkziDdxLYJG%2FU5Z8T77QgYigKaUn%2F9OBHiskl8ZCz%2Bz7PpYg36vetAU%3D&AWSAccessKeyId=ASIAJTYY7BZPOELVRPZA&Expires=1452795338&Signature=dLlI%2BX4kP12QVUjZDRtW60qmra0%3D HTTP/1.1
+2016-01-14 10:14:39,648 PST DEBUG headers - >> GET /a5f5eb83114b9b51af35b87c00dace198c7db58b?x-amz-security-token=AQoDYXdzEEYa4ANAujuwL8WNKYWn%2BTsBB2aHk1NZ5XENO%2F5dfYIexiYZrSItsSrBQFo0guOhV%2FqwOe73Rw7rUv39Wgm%2BQpRcpO0Xut0n1fsWAFmnPfOexvIsBOi0LH%2F4unKz79D3rL2JOpkIxIfA1v6ymRGfVd6PZaB8TQVCL0vrFwiSyO%2F%2FJl%2B5EqxuKFfm7Pridp2WpfeyoMZG33MPmLRV7I9wVGUC9v6bwiJKM8xdqBNGuJE5ZmeuULcSzhsBVuiq%2BMx%2BxosESWMKhmGJyx%2FAs3BkYgL4xV2jl4W8lijvjdAIIWYf6sdWfhgy4BUnB4Ljw2qEDsOOoRqGZF80lhm3nCZc4ZFUIe3nPSQjdz%2FOK%2B9TwEKgnUcZO1J8ys81ylvDMkCPhmrpKEuFtu2uts4XGVQ3gS1QLsr1PY27KWAtwRQcFcmTMgpBhIpeVoN9FoQi%2FE7DzCy%2FM6OdamVzYNzjlJFfOrS033PVH6e%2BPxzJL%2BWrs4tAlMs%2Bk%2Bb887EGmkZLVNYCUEaJDdc4JoQn65hknJE6zTdZS2mZVSfs0IIgpRfwXlPjy8PyMQmqKMddLAc8vkjQinYZyAx1F%2Ba09kLDA8XCoV%2FFXkziDdxLYJG%2FU5Z8T77QgYigKaUn%2F9OBHiskl8ZCz%2Bz7PpYg36vetAU%3D&AWSAccessKeyId=ASIAJTYY7BZPOELVRPZA&Expires=1452795338&Signature=dLlI%2BX4kP12QVUjZDRtW60qmra0%3D HTTP/1.1
+2016-01-14 10:14:39,648 PST DEBUG headers - >> Host: com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com
+2016-01-14 10:14:39,648 PST DEBUG headers - >> Connection: Keep-Alive
+2016-01-14 10:14:39,649 PST DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Linux/3.16.0-38-generic; amd64; en; JVM 1.7.0_91)
+2016-01-14 10:14:39,739 PST DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-01-14 10:14:39,739 PST DEBUG headers - << HTTP/1.1 200 OK
+2016-01-14 10:14:39,739 PST DEBUG headers - << x-amz-id-2: FiTmmoMjANrO0DuDmkQEq9nUUwxlE7cVB1gtlWM/jOo37SGgmp3Ynr72KMCwe4XpjQKQp33qQ5M=
+2016-01-14 10:14:39,739 PST DEBUG headers - << x-amz-request-id: 94D813B181F1E56A
+2016-01-14 10:14:39,739 PST DEBUG headers - << Date: Thu, 14 Jan 2016 18:14:40 GMT
+2016-01-14 10:14:39,739 PST DEBUG headers - << Content-Encoding: gzip
+2016-01-14 10:14:39,740 PST DEBUG headers - << x-amz-meta-domino-original-blob-length: 287
+2016-01-14 10:14:39,740 PST DEBUG headers - << Last-Modified: Fri, 08 May 2015 18:55:30 GMT
+2016-01-14 10:14:39,740 PST DEBUG headers - << ETag: "8f161cd0ea3d75bd9c8f9575b697bb4a"
+2016-01-14 10:14:39,740 PST DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-01-14 10:14:39,740 PST DEBUG headers - << Accept-Ranges: bytes
+2016-01-14 10:14:39,740 PST DEBUG headers - << Content-Type: application/x-gzip
+2016-01-14 10:14:39,740 PST DEBUG headers - << Content-Length: 216
+2016-01-14 10:14:39,740 PST DEBUG headers - << Server: AmazonS3
+2016-01-14 10:14:39,744 PST DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-01-14 10:14:39,762 PST DEBUG RestStorageService - Response for 'GET'. Content-Type: application/x-gzip, Headers: [x-amz-id-2: FiTmmoMjANrO0DuDmkQEq9nUUwxlE7cVB1gtlWM/jOo37SGgmp3Ynr72KMCwe4XpjQKQp33qQ5M=, x-amz-request-id: 94D813B181F1E56A, Date: Thu, 14 Jan 2016 18:14:40 GMT, Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 287, Last-Modified: Fri, 08 May 2015 18:55:30 GMT, ETag: "8f161cd0ea3d75bd9c8f9575b697bb4a", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/x-gzip, Content-Length: 216, Server: AmazonS3]
+2016-01-14 10:14:39,762 PST DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@6a4a1b05
+2016-01-14 10:14:39,762 PST DEBUG RestStorageService - Entity length: 216
+2016-01-14 10:14:39,763 PST DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-01-14 10:14:39,766 PST DEBUG ServiceUtils - Processing REST metadata items
+2016-01-14 10:14:39,766 PST DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-01-14 10:14:39,766 PST DEBUG ServiceUtils - Leaving header item unchanged: ETag="8f161cd0ea3d75bd9c8f9575b697bb4a"
+2016-01-14 10:14:39,766 PST DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-01-14 10:14:39,766 PST DEBUG ServiceUtils - Parsing date string 'Thu, 14 Jan 2016 18:14:40 GMT' into Date object for key: Date
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Leaving header item unchanged: Date=Thu Jan 14 10:14:40 PST 2016
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=216
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Encoding=gzip
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Parsing date string 'Fri, 08 May 2015 18:55:30 GMT' into Date object for key: Last-Modified
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Leaving header item unchanged: Last-Modified=Fri May 08 11:55:30 PDT 2015
+2016-01-14 10:14:39,768 PST DEBUG ServiceUtils - Ignoring metadata item: Accept-Ranges=bytes
+2016-01-14 10:14:39,769 PST DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Type=application/x-gzip
+2016-01-14 10:14:39,769 PST DEBUG ServiceUtils - Removed user metadata header prefix x-amz-meta- from key: x-amz-meta-domino-original-blob-length=>domino-original-blob-length
+2016-01-14 10:14:39,769 PST DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-01-14 10:14:39,867 PST DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-01-14 10:14:39,868 PST DEBUG ConnPoolByRoute - Releasing connection [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443][null]
+2016-01-14 10:14:39,868 PST DEBUG ConnPoolByRoute - Pooling connection [{s}->https://com-cerebro-domino-prod-blobs.s3-us-west-2.amazonaws.com:443][null]; keep alive indefinitely
+2016-01-14 10:14:39,868 PST DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-01-14 10:14:39,868 PST DEBUG HttpMethodReleaseInputStream - Released HttpMethod as its response data stream is closed
+2016-01-14 10:14:39,900 PST TRACE LocalFileDirectory - Starting local data directory processing...
+2016-01-14 10:14:39,902 PST TRACE LocalFileDirectory - Processing update FileUpdate(+ Adding file .dominoignore,None)...
+2016-01-14 10:14:39,906 PST TRACE LocalFileDirectory - Processing update FileUpdate(+ Adding file .dominoignore,None) complete.
+2016-01-14 10:14:39,907 PST DEBUG LocalFileDirectory - Local data directory processing complete.
+2016-01-14 10:14:39,909 PST DEBUG FileSyncClient - Resetting local to data structure repo head complete.

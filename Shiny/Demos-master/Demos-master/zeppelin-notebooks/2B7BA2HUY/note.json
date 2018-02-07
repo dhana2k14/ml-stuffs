@@ -1,0 +1,171 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n### Resilient Distributed Datasets (RDDs)\n#### Fault-tolerant collection of elements that can be operated on in parallel",
+      "dateUpdated": "Dec 6, 2015 2:19:15 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449437831666_-2129832353",
+      "id": "20151206-133711_426622155",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eResilient Distributed Datasets (RDDs)\u003c/h3\u003e\n\u003ch4\u003eFault-tolerant collection of elements that can be operated on in parallel\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Dec 6, 2015 1:37:11 PM",
+      "dateStarted": "Dec 6, 2015 2:19:15 PM",
+      "dateFinished": "Dec 6, 2015 2:19:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Create RDDs by parallelizing exisitng collections\nval data \u003d Array(1 to 1000)\nval dataRDD \u003d sc.parallelize(data)",
+      "dateUpdated": "Dec 6, 2015 4:04:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449440284960_790521236",
+      "id": "20151206-141804_2014718168",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "data: Array[scala.collection.immutable.Range.Inclusive] \u003d Array(Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, ...dataRDD: org.apache.spark.rdd.RDD[scala.collection.immutable.Range.Inclusive] \u003d ParallelCollectionRDD[82] at parallelize at \u003cconsole\u003e:30\n"
+      },
+      "dateCreated": "Dec 6, 2015 2:18:04 PM",
+      "dateStarted": "Dec 6, 2015 4:04:04 PM",
+      "dateFinished": "Dec 6, 2015 4:04:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Reading from external data sources\nval readMeRDD \u003d sc.textFile(\"/home/emaasit/Desktop/Apache/incubator-zeppelin-master/data/README.txt\")",
+      "dateUpdated": "Dec 6, 2015 3:59:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449440619085_-1076250899",
+      "id": "20151206-142339_793986732",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "readMeRDD: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[77] at textFile at \u003cconsole\u003e:29\n"
+      },
+      "dateCreated": "Dec 6, 2015 2:23:39 PM",
+      "dateStarted": "Dec 6, 2015 3:59:04 PM",
+      "dateFinished": "Dec 6, 2015 3:59:04 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Get the line length\nval length \u003d readMeRDD.map(x \u003d\u003e x.length)\nval count \u003d length.reduce((a, b) \u003d\u003e (a + b))",
+      "dateUpdated": "Dec 6, 2015 4:02:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449441254284_572519086",
+      "id": "20151206-143414_668081397",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "length: org.apache.spark.rdd.RDD[Int] \u003d MapPartitionsRDD[81] at map at \u003cconsole\u003e:31\ncount: Int \u003d 1464\n"
+      },
+      "dateCreated": "Dec 6, 2015 2:34:14 PM",
+      "dateStarted": "Dec 6, 2015 4:02:43 PM",
+      "dateFinished": "Dec 6, 2015 4:02:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1449441281373_-1779020218",
+      "id": "20151206-143441_1464213539",
+      "dateCreated": "Dec 6, 2015 2:34:41 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Spark Programming Guide",
+  "id": "2B7BA2HUY",
+  "angularObjects": {
+    "2B8PRY86Y": [],
+    "2B6E7G8RC": [],
+    "2B5TVWHH5": [],
+    "2B87T5WMW": [],
+    "2B84E6S56": [],
+    "2B6NMMZHN": [],
+    "2B5NP4RVA": [],
+    "2B5UWQKQH": [],
+    "2B7H7QK35": [],
+    "2B5YJ5RSN": [],
+    "2B7CQFF2V": [],
+    "2B5FC3D7W": [],
+    "2B7DS4VXE": []
+  },
+  "config": {},
+  "info": {}
+}

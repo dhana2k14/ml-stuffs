@@ -1,0 +1,16 @@
+base
+ggplot2
+dplyr
+tidyr
+lubridate
+readr
+magrittr
+sp
+rgdal
+leaflet
+ggmap
+tmap
+maps
+RColorBrewer
+classInt
+maptools

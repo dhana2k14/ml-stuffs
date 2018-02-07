@@ -1,0 +1,12 @@
+base
+dplyr
+tidyr
+sp
+rgdal
+rgeos
+maptools
+ggplot2
+ggmap
+readxl
+ggrepel
+maps

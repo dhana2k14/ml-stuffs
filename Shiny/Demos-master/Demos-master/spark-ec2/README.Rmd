@@ -1,0 +1,11 @@
+---
+Title: "Starting a SparkR cluster on Amazon Elastic Compute Cloud (EC2) within RStudio"
+Author: "Daniel Emaasit"
+Date: "October 25, 2015"
+---
+
+## Starting a SparkR cluster on Amazon Elastic Compute Cloud (EC2) within RStudio
+
+This demo is a step-by-step tutorial to get you started with **SparkR** on the cloud, particularly on **Amazon Elastic Compute Cloud** (EC2) <https://aws.amazon.com/ec2/>.
+
+The instructions can be found on our blog <http://blog.sparkiq-labs.com/>.
