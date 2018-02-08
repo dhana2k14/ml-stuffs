@@ -1,0 +1,32 @@
+
+* To extract multiple tables with join Query
+
+GET DATA
+  /TYPE=ODBC
+  /CONNECT='DSN=Inv;UID=;Trusted_Connection=Yes;APP=IBM SPSS Products: Statistics '+
+    'Common;WSID=DHANASEKARANP;DATABASE=Inventory;LANGUAGE=us_english'
+  /SQL='SELECT T0.PIN, T0.X, T0.Y, T1.Pin, T1.X AS X1, T1.Y AS Y1 FROM { oj '+
+    'Inventory.dbo.EMMVLRsaNull T0 LEFT OUTER JOIN Inventory.dbo.EmmVLRsaNullUpdate T1 ON T0.PIN = '+
+    'T1.Pin } where T1.Pin is null'
+  /ASSUMEDSTRWIDTH=255.
+VARIABLE LABELS X1 'X'.
+VARIABLE LABELS Y1 'Y'.
+CACHE.
+EXECUTE.
+DATASET NAME DataSet11 WINDOW=FRONT.
+
+
+* To Extract One Table
+
+GET DATA
+  /TYPE=ODBC
+  /CONNECT='DSN=Inv;UID=;Trusted_Connection=Yes;APP=IBM SPSS Products: Statistics '+
+    'Common;WSID=DHANASEKARANP;DATABASE=Inventory;LANGUAGE=us_english'
+  /SQL='SELECT PIN, X, Y FROM Inventory.dbo.[EmmNrRsaNull] where X is not null or Y is not null '+
+    'or X!=0 or Y!=0'
+  /ASSUMEDSTRWIDTH=255.
+
+CACHE.
+EXECUTE.
+DATASET NAME DataSet13 WINDOW=FRONT.
+

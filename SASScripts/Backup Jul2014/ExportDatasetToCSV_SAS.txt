@@ -1,0 +1,31 @@
+	data _null_;
+	set  LIB1.C1RSUB1                                 end=EFIEOD;
+	%let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+	%let _EFIREC_ = 0;     /* clear export record count macro variable */
+	file 'C:\Users\dhanasekaran\Desktop\CompsRateCsv.csv' delimiter=',' DSD DROPOVER lrecl=32767;
+	format InvPin best12. ;
+	format SalePin best12. ;
+	format comp best12. ;
+	if _n_ = 1 then        /* write column names */
+	do;
+		put
+		'InvPin'
+		','
+		'SalePin'
+		','
+		'comp'
+		;
+	end;
+
+	do;
+	EFIOUT + 1;
+	put InvPin @;
+	put SalePin @;
+	put comp ;
+	;
+	end;
+
+if _ERROR_ then call symput('_EFIERR_',1);  /* set ERROR detection macro variable */
+If EFIEOD then call symput('_EFIREC_',EFIOUT);
+run;
+

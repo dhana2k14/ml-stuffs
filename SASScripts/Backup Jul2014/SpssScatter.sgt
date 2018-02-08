@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<template SPSS-Version="1.4" date="2014-05-20" description="Chart template customized for scale" selectPath="2 3 30 97 98 10 12 13 17 19 29 31 33 47 36 37 38 43 45 46 " xmlns="http://www.ibm.com/software/analytics/spss/xml/visualization" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/software/analytics/spss/xml/visualization http://www.ibm.com/software/analytics/spss/xml/visualization/vizml-template-3.5.xsd">
+	<setAxisStyle categorical="false" role="x">
+		<axisLabelStyle>
+			<style color="#000000" color2="transparent" font-size="11pt" font-weight="bold" visible="true"/>
+		</axisLabelStyle>
+		<label>ErfExt</label>
+	</setAxisStyle>
+	<setAxisStyle categorical="false" role="y">
+		<axisLabelStyle>
+			<style color="#000000" color2="transparent" font-size="11pt" font-weight="bold" visible="true"/>
+		</axisLabelStyle>
+		<label>Sale</label>
+	</setAxisStyle>
+	<addFrame count="1" type="visualization">
+		<location bottom="500px" left="0px" right="625px" top="0px"/>
+		<style color="#ffffff" color2="transparent" coordinate="0" number="0" visible="true"/>
+		<style coordinate="1" font-family="SansSerif" font-size="8pt" number="1" pattern="0" stroke-linecap="butt" text-fit="true" visible="true"/>
+	</addFrame>
+	<addFrame count="1" type="graph">
+		<location bottom="99%" left="1%" right="99%" top="1%"/>
+		<style color="transparent" color2="transparent" visible="true"/>
+		<style color="#f0f0f0" color2="#000000" coordinate="1" number="1" visible="true"/>
+	</addFrame>
+	<setAxisOpposite categorical="false" opposite="false" role="x"/>
+	<setAxisOpposite categorical="false" opposite="false" role="y"/>
+	<setTranspose transpose="false"/>
+	<setAxisInterval lowerMapping="exact" min="10.0" role="x" upperMapping="nice"/>
+	<setAxisInterval lowerMapping="exact" min="10000.0" role="y" upperMapping="nice"/>
+	<setAxisScale method="linear" role="x"/>
+	<setAxisScale method="linear" role="y"/>
+	<setTickLabelFormat categorical="false" derived="false" role="x">
+		<format minimumFractionDigits="0" minimumIntegerDigits="0" useGrouping="false"/>
+	</setTickLabelFormat>
+	<setTickLabelAngle categorical="false" derived="false" role="x"/>
+	<setTickLabelFormat categorical="false" derived="false" role="y">
+		<format minimumFractionDigits="0" minimumIntegerDigits="0" useGrouping="false"/>
+	</setTickLabelFormat>
+	<setTickLabelAngle categorical="false" derived="false" role="y"/>
+	<setAxisMajorTicks>
+		<majorTicks categorical="false" delta="250.0" derived="false" position="outside" role="x">
+			<markStyle>
+				<style color="#000000" stroke-width="1pt" visible="true"/>
+			</markStyle>
+			<tickLabelStyle>
+				<style color="#000000" font-size="8pt" visible="true"/>
+			</tickLabelStyle>
+		</majorTicks>
+	</setAxisMajorTicks>
+	<setAxisMajorTicks>
+		<majorTicks categorical="false" delta="100000.0" derived="false" position="outside" role="y">
+			<markStyle>
+				<style color="#000000" stroke-width="1pt" visible="true"/>
+			</markStyle>
+			<tickLabelStyle>
+				<style color="#000000" font-size="8pt" visible="true"/>
+			</tickLabelStyle>
+		</majorTicks>
+	</setAxisMajorTicks>
+	<setAxisMinorTicks>
+		<minorTicks categorical="false" derived="false" number="2" position="outside" role="x">
+			<markStyle>
+				<style color="#000000" visible="false"/>
+			</markStyle>
+		</minorTicks>
+	</setAxisMinorTicks>
+	<setAxisMinorTicks>
+		<minorTicks categorical="false" derived="false" number="2" position="outside" role="y">
+			<markStyle>
+				<style color="#000000" visible="false"/>
+			</markStyle>
+		</minorTicks>
+	</setAxisMinorTicks>
+	<setAxisMargin categorical="false" lowerMargin="5%" role="x" upperMargin="5%"/>
+	<setAxisMargin categorical="false" lowerMargin="5%" role="y" upperMargin="5%"/>
+	<setShowLineMarkers>
+		<style color="transparent" color2="#000000" size="5pt" symbol="circle" visible="true"/>
+	</setShowLineMarkers>
+	<setStyle subtype="simple" type="scatter">
+		<style color="transparent" color2="#000000" coordinate="0" size="5pt" symbol="circle" visible="true"/>
+	</setStyle>
+</template>

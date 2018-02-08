@@ -1,0 +1,17 @@
+theSQL=SQLCon.Find("Ms Access Database")
+theDB="C:\Generic_DCF_Ver 2.accdb"
+theSQL.Login("DBQ="+theDB)
+astring="Select * from Q1"
+theVTab=VTab.MakeSQL(theSQL,astring)
+myTable=Table.Make(theVTab)
+av.GetProject.AddDoc(mytable)
+mytable.GetWin.Open
+theView=av.FindDoc("view1")
+theTheme=theView.FindTheme("westonaria_100120114.shp")
+msgbox.info(theTheme.AsString,"")
+theTab=theTheme.GetFTab
+theField1=theTab.FindField("PIN")
+theTabFromAccess=vTab.MakeSQL(theSQL,astring)
+theFieldToJoin=theTabFromAccess.FindField("PIN")
+theTab.Join(theField1,theTabFromAccess,theFieldToJoin)
+theSQL.Logout

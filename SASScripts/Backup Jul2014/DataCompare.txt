@@ -1,0 +1,28 @@
+select min(Sr_Cond) as MinCond,max(Sr_Cond) as MaxCond,min(Sr_qual) as MaxQual,max(Sr_qual) as MinQual,
+min(sr_Sec) as MinSec,max(Sr_sec) as MaxSec,min(sr_Topo) as MinTopo,max(sr_topo) as MaxTopo,min(Sr_Noise) as MinNoise,max(Sr_Noise) as MaxNoise,
+min(Sr_view) as MinView,max(sr_view) as MaxView from Sales.[dbo].[Coj65Udit]
+
+select 
+a.Pin,b.Pin as Pin_Ian,
+a.Suburb as SubUdit,b.Suburb as SubIan,b.Sublv,
+a.Sr_Rsa as RsaUdit,b.[sr13rsa] as RsaIan,
+a.Sr_View as ViewUdit,
+b.[viewlv] as ViewLvIan,b.[View],
+a.Sr_Sec as SecUdit,b.[seclv] as SecLvIan,b.Sec,
+a.Sr_topo as TopoUdit,b.[topolv] as TopoLvIan,b.Topo,
+a.Sr_Noise as NoiseUdit,b.noiselv as NoiseLvIan,b.Noise,
+a.Erf_Adj as ErfAdjUdit,b.[ErfAdj] as ErfAdjIan,
+a.Sr_Erf_Extent as ErfExtUdit,b.[erfext] as ErfExtIan,
+a.Sr_useCode as UseUdit,b.[PrUseLv] as UseLvIan,b.PrUse,
+a.Sr_Qual as QualUdit,b.Quallv as QualLvIan,b.Qual,
+a.Sr_Cond as CondUdit,b.Condlv as CondLvIan,b.Cond,
+a.Tla_Adj as TlaAdjUdit,b.[TlaAdj] as TlaAdjIan,
+a.Sr_Tla as TlaUdit,b.TLa as TlaIan,
+a.Sr_Gar as GarUdit,b.Gar as GarIan,
+a.Sr_CAR as CpUdit,b.Cp as CpIan,
+a.Sr_Granny as GfUdit,b.Gf as GfIan,
+a.Sr_Servant as SqUdit,b.sq as sqIan,
+a.Sr_Pool as PoolUdit,b.SPool as PoolIan,
+a.[RND(Emv)] as EmvUdit,
+a.Emv as EmvUdit,b.Emv as EmvIan,
+a.Ratio as RatioUdit,b.Ratio as RatioIan from [dbo].[Coj65Udit] as a left join [dbo].[COJReappIan$] as b on a.Pin=b.Pin 

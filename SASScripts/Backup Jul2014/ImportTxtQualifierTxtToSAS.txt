@@ -1,0 +1,316 @@
+
+data WORK.Jhb_1;
+%let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+infile 'C:\JHBERF_20130808.TXT' delimiter=',' MISSOVER DSD lrecl=32767 firstobs=1;
+informat var1 $50.;
+informat var1 $50.;
+informat var2 $50.;
+informat var3 $50.;
+informat var4 $50.;
+informat var5 $50.;
+informat var6 $50.;
+informat var7 $50.;
+informat var8 $50.;
+informat var9 $50.;
+informat var10 $50.;
+informat var11 $50.;
+informat var12 $50.;
+informat var13 $50.;
+informat var14 $50.;
+informat var15 $50.;
+informat var16 $50.;
+informat var17 $50.;
+informat var18 $50.;
+informat var19 $50.;
+informat var20 $50.;
+informat var21 $50.;
+informat var22 $50.;
+informat var23 $50.;
+informat var24 $50.;
+informat var25 $50.;
+informat var26 $50.;
+informat var27 $50.;
+informat var28 $50.;
+informat var29 $50.;
+informat var30 $50.;
+informat var31 $50.;
+informat var32 $50.;
+informat var33 $50.;
+informat var34 $50.;
+informat var35 $50.;
+informat var36 $50.;
+informat var37 $50.;
+informat var38 $50.;
+informat var39 $50.;
+informat var40 $50.;
+informat var41 $50.;
+informat var42 $50.;
+informat var43 $50.;
+informat var44 $50.;
+informat var45 $50.;
+informat var46 $50.;
+informat var47 $50.;
+informat var48 $50.;
+informat var49 $50.;
+informat var50 $50.;
+informat var51 $50.;
+informat var52 $50.;
+informat var53 $50.;
+informat var54 $50.;
+informat var55 $50.;
+informat var56 $50.;
+informat var57 $50.;
+informat var58 $50.;
+informat var59 $50.;
+informat var60 $50.;
+informat var61 $50.;
+informat var62 $50.;
+informat var63 $50.;
+informat var64 $50.;
+informat var65 $50.;
+informat var66 $50.;
+informat var67 $50.;
+informat var68 $50.;
+informat var69 $50.;
+informat var70 $50.;
+informat var71 $50.;
+informat var72 $50.;
+informat var73 $50.;
+informat var74 $50.;
+informat var75 $50.;
+informat var76 $50.;
+informat var77 $50.;
+informat var78 $50.;
+informat var79 $50.;
+informat var80 $50.;
+informat var81 $50.;
+informat var82 $50.;
+informat var83 $50.;
+informat var84 $50.;
+informat var85 $50.;
+informat var86 $50.;
+informat var87 $50.;
+informat var88 $50.;
+informat var89 $50.;
+informat var90 $50.;
+informat var91 $50.;
+informat var92 $50.;
+informat var93 $50.;
+informat var94 $50.;
+informat var95 $50.;
+informat var96 $50.;
+informat var97 $50.;
+informat var98 $50.;
+informat var99 $50.;
+informat var100 $50.;
+informat var101 $50.;
+informat var102 $50.;
+format var1 $50.;
+format var2 $50.;
+format var3 $50.;
+format var4 $50.;
+format var5 $50.;
+format var6 $50.;
+format var7 $50.;
+format var8 $50.;
+format var9 $50.;
+format var10 $50.;
+format var11 $50.;
+format var12 $50.;
+format var13 $50.;
+format var14 $50.;
+format var15 $50.;
+format var16 $50.;
+format var17 $50.;
+format var18 $50.;
+format var19 $50.;
+format var20 $50.;
+format var21 $50.;
+format var22 $50.;
+format var23 $50.;
+format var24 $50.;
+format var25 $50.;
+format var26 $50.;
+format var27 $50.;
+format var28 $50.;
+format var29 $50.;
+format var30 $50.;
+format var31 $50.;
+format var32 $50.;
+format var33 $50.;
+format var34 $50.;
+format var35 $50.;
+format var36 $50.;
+format var37 $50.;
+format var38 $50.;
+format var39 $50.;
+format var40 $50.;
+format var41 $50.;
+format var42 $50.;
+format var43 $50.;
+format var44 $50.;
+format var45 $50.;
+format var46 $50.;
+format var47 $50.;
+format var48 $50.;
+format var49 $50.;
+format var50 $50.;
+format var51 $50.;
+format var52 $50.;
+format var53 $50.;
+format var54 $50.;
+format var55 $50.;
+format var56 $50.;
+format var57 $50.;
+format var58 $50.;
+format var59 $50.;
+format var60 $50.;
+format var61 $50.;
+format var62 $50.;
+format var63 $50.;
+format var64 $50.;
+format var65 $50.;
+format var66 $50.;
+format var67 $50.;
+format var68 $50.;
+format var69 $50.;
+format var70 $50.;
+format var71 $50.;
+format var72 $50.;
+format var73 $50.;
+format var74 $50.;
+format var75 $50.;
+format var76 $50.;
+format var77 $50.;
+format var78 $50.;
+format var79 $50.;
+format var80 $50.;
+format var81 $50.;
+format var82 $50.;
+format var83 $50.;
+format var84 $50.;
+format var85 $50.;
+format var86 $50.;
+format var87 $50.;
+format var88 $50.;
+format var89 $50.;
+format var90 $50.;
+format var91 $50.;
+format var92 $50.;
+format var93 $50.;
+format var94 $50.;
+format var95 $50.;
+format var96 $50.;
+format var97 $50.;
+format var98 $50.;
+format var99 $50.;
+format var100 $50.;
+format var101 $50.;
+format var102 $50.;
+input
+
+var1 $
+var2 $
+var3 $
+var4 $
+var5 $
+var6 $
+var7 $
+var8 $
+var9 $
+var10 $
+var11 $
+var12 $
+var13 $
+var14 $
+var15 $
+var16 $
+var17 $
+var18 $
+var19 $
+var20 $
+var21 $
+var22 $
+var23 $
+var24 $
+var25 $
+var26 $
+var27 $
+var28 $
+var29 $
+var30 $
+var31 $
+var32 $
+var33 $
+var34 $
+var35 $
+var36 $
+var37 $
+var38 $
+var39 $
+var40 $
+var41 $
+var42 $
+var43 $
+var44 $
+var45 $
+var46 $
+var47 $
+var48 $
+var49 $
+var50 $
+var51 $
+var52 $
+var53 $
+var54 $
+var55 $
+var56 $
+var57 $
+var58 $
+var59 $
+var60 $
+var61 $
+var62 $
+var63 $
+var64 $
+var65 $
+var66 $
+var67 $
+var68 $
+var69 $
+var70 $
+var71 $
+var72 $
+var73 $
+var74 $
+var75 $
+var76 $
+var77 $
+var78 $
+var79 $
+var80 $
+var81 $
+var82 $
+var83 $
+var84 $
+var85 $
+var86 $
+var87 $
+var88 $
+var89 $
+var90 $
+var91 $
+var92 $
+var93 $
+var94 $
+var95 $
+var96 $
+var97 $
+var98 $
+var99 $
+var100 $
+var101 $
+var102 $
+;
+       if _ERROR_ then call symput('_EFIERR_',1);  /* set ERROR detection macro variable */
+       run;

@@ -1,0 +1,154 @@
+* Connect to External databases (SQL)  Connection Script *
+
+import sys
+import pyodbc
+connextion_str=pyodbc.connect('DSN=Deeds_RSA_2014')
+/* cursor=connection_str() */
+cursor=connection_str.execute('your sql query goes in here')
+connection.commit()
+your dataframe name=cursor.fetchall()
+
+cnames=['C1','C2','C3','C4','C5','C6','C7','C8','C9','C10','C11','C12','C13','C14']
+
+* Query()  - To slice data *
+
+your dataframe new name=yourdataFrame name.query('C1==6')
+
+your dataframe new name=yourdataFrame name.query('C1!=6')
+
+* To Read multiple CSV/Txt files (same layout) *
+
+import os
+import pandas as pd
+import glob
+os.chdir("C:/")
+txt_files={}
+for file in glob.glob("*.txt"):
+	txt_files[file]=pd.read_table(file,sep='|',names=cnames)
+
+	for dataframe in txt_files.values():
+		alldata=dataframe
+
+
+
+for file in glob.glob("*.txt"):
+	txt_files[file]=pd.read_table(file,sep='|',names=cnames)
+	df=pandas.concat(all_merge,axis=0)
+
+
+
+for filenames in filenames:
+	df=pd.read_table(filenames,index_col=None,names=cnames,chunksize=1000)
+	tot=Series([])
+	for piece in df:
+		tot=tot.add(piece['key'].value_counts(),fill_value=0)
+	list.append(tot)
+	frame=pd.concat(list)
+
+
+for file in file:
+	txt_files[file]=pd.read_table(file,sep='|',names=cnames,
+	dtype={'C1':np.float64,'C2':np.float64,'C3':object,'C4':np.float64,'C5':object,'C6':object,
+	'C7':object,'C8':object,'C9':object,'C10':object,'C11':object,'C12':object,'C13':object,
+	'C14':object})
+
+
+
+Using Chunksize:
+
+for file in glob.glob("*.txt"):
+	chunker=pd.read_table(file,sep='|',names=cnames,chunksize=1000)
+	tot=Series([])
+	for piece in chunker:
+		tot_1=tot.add(piece['C1'].value_counts(),fill_value=0)
+		tot_2=tot_1.append(piece['C2'].value_counts(),fill_value=0)
+
+
+
+
+* using chunk - to test.
+
+txt_file=DataFrame()
+
+
+for file in glob.glob('/*.txt'):
+	chunker=pd.read_table(file,sep='|',names=cnames,chunksize=10000)
+	for chunk in chunker:
+		txt_file=txt_file.append(chunk)
+
+
+txt_files=DataFrame()
+>>> for file in glob.glob('/*.txt'):
+	chunker=pd.read_table(file,sep='|',names=cnames,dtype={'C12':object},chunksize=100000)
+	for chunk in chunker:
+		txt_files=txt_files.append(chunk,ignore_index=False)
+
+* using Pickle *
+		
+for file in glob.glob('/*.txt'):
+	chunker=pd.read_table(file,sep='|',names=cnames,dtype={'C12':object},chunksize=100000)
+	for chunk in chunker:
+		txt_files.append(chunk,ignore_index=False).to_pickle('foo.pk1')
+
+
+
+
+* PDF 
+
+import StringIO
+>>> from pdfminer import converter
+>>> from pdfminer import layout
+>>> from pdfminer import pdfinterp
+>>> from pdfminer import pdfparser
+
+
+def pdf_to_text(pdf):
+	in_buffer=StringIO.StringIO(pdf)
+	out_buffer=StringIO.StringIO()
+	parser=pdfparser.PDFParser(in_buffer)
+	doc=pdfparser.PDFDocument()
+	parser.set_document(doc)
+	doc.set_parser(parser)
+	rsrcmgr=pdfinterp.PDFResourceManager()
+	laparams=layout.LAParams()
+	device=converter.TextCoverter(rsrcmgr,outfp=out_buffer,codec='utf-8',laparams=laparams)
+	interpreter=pdfinterp.PDFPageInterpreter(rsrcmgr,device)
+	for page in doc.get_pages():
+		interpreter.process_page(page)
+		return out_buffer.getvalue()
+
+
+*Reading XLS or XLSX.
+
+
+xls_file=pd.ExcelFile('C:\eValuations\DCoG\Emnambithi\Excel\Python\A01_Combined_Data.xlsx)
+
+for f in files_xls:
+	xls_file=pd.ExcelFile('C:\eValuations\DCoG\Emnambithi\Excel\Python\A01_Combined_Data.xlsx')
+	table=xls_file.parse('A01_Combined_Data')
+	df=df.append(table)
+
+/* for f in files_xls:
+	xls_file=pd.ExcelFile(path+'\\A01_Combined_Data.xlsx')
+	table=xls_file.parse('A01_Combined_Data')
+	df=df.append(table) */
+
+
+import os
+import pandas as pd
+
+path = os.getcwd()
+files = os.listdir(path)
+
+files_xls = [f for f in files if f[-4:] == 'xlsx']
+
+df = pd.DataFrame()
+
+for f in files_xlsx:
+	data=pd.read_excel(f)
+	df=df.append(data)
+
+
+
+
+mpl_ft_4['local_munic','lpicode']=mpl_ft_propdetail.set_index(['ERF','TOWNSHIP','PORTION'])['local_munic','lpicode'].combine_first(mpl_ft_4.set_index(['ERF','TOWNSHIP','PORTION'])(['local_munic','lpicode']).values

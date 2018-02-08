@@ -1,0 +1,12 @@
+select Pin into dbo.NR_LAND_TYPES from [dbo].[COJJunSweepList_NR]
+
+alter table dbo.NR_LAND_DCF add Id int identity not null primary key
+
+update dbo.NR_LAND_TYPES set LandType='Unusable'
+
+
+insert into dbo.Temp1(Pin,LandType) select a.Pin,a.LandType from dbo.NR_LAND_TYPES a
+
+select Top 0 * into dbo.NR_Land_DCF from dbo.Temp1 order by Pin 
+
+insert into dbo.NR_LAND_DCF (Pin,LandType) select a.Pin,a.LandType from dbo.Temp1 a order by a.Pin, a.LandType

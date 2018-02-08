@@ -1,0 +1,3 @@
+To print list of files and folders in a Directory - 
+
+dir /s /b /o:gn

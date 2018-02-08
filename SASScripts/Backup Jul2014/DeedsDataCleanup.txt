@@ -1,0 +1,108 @@
+select C2,Count(*) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] group by C2 order by Count(*) desc
+
+select * from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where C2=508
+
+select * from DeedsProduction.[dbo].[BLMF4]
+
+select Top 100000 * from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where C9_Rec=1
+
+alter table Deeds_RSA_2014.[dbo].[BLM_ERF_2014] add C9_Rec int
+
+with cte as
+(
+select *,dense_rank() over(partition by C2,C9 order by C2,C9) rn from [dbo].[BLM_ERF_2014] where C9='FREESTATE'
+)
+update cte set C9_Rec=rn
+
+
+
+
+DECLARE @DATASET VARCHAR(100)
+DECLARE @P INT
+DECLARE @MAXROW INT
+DECLARE @CODE NVARCHAR(MAX)
+DECLARE @I INT
+SET @DATASET='dbo.BLM_ERF_2014'
+SET @CODE=''
+SET @I=1
+
+WHILE @I <= 2253
+
+BEGIN
+
+SELECT @CODE = @CODE+',MAX(CASE WHEN ROW = '+ CAST(@I AS VARCHAR(7)) + ' THEN ' + QUOTENAME(COLUMN_NAME) + ' END) AS ' + COLUMN_NAME+CAST(@I AS VARCHAR(7))
+FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME =STUFF(@DATASET,1,4,'') AND COLUMN_NAME NOT IN ('C2','C1')
+
+SET @I = @I+1
+
+END
+
+SET @CODE = 'SELECT C2'+@CODE+' FROM (SELECT *,ROW_NUMBER() OVER (PARTITION BY C2 ORDER BY C2) AS ROW FROM DBO.'+STUFF(@DATASET,1,4,'')+') X GROUP BY C2'
+
+PRINT @CODE
+
+EXEC(@CODE)
+
+select distinct(C5) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C5)>0 union
+select distinct(C6) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C6)>0 union
+select distinct(C7) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C7)>0 union
+select distinct(C8) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C8)>0 union
+select distinct(C9) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C9)>0 union
+select distinct(C10) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C10)>0 union
+select distinct(C11) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C11)>0 union
+select distinct(C12) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C12)>0 union
+select distinct(C13) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C13)>0 union
+select distinct(C14) from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where CHARINDEX('LOCAL MUNICIPALITY',C14)>0 
+
+alter table [dbo].[Blm_lst_Munic] add Munic varchar(max)
+select distinct(munic) from [dbo].[Blm_lst_Munic] where CHARINDEX('MATJHABENG',munic)>0 or CHARINDEX('MANGAUNG',munic)>0 or CHARINDEX('DIHLABENG',munic)>0
+
+update [dbo].[Blm_lst_Munic] set Munic=substring(C5,1,CAST(CHARINDEX('Municipality',C5) as int)+12)
+
+
+alter table Deeds_RSA_2014.[dbo].[BLM_ERF_2014] add Munic_Label,Munic_ReLabel nvarchar(max)
+
+select top 1000000 * from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] 
+
+select * from Deeds_RSA_2014.[dbo].[BLM_ERF_2014] where Munic_Relabel=''
+
+update Deeds_RSA_2014.[dbo].[BLM_ERF_2014] set Munic_Label= Case when 
+																	(CAST(CHARINDEX('MUNICIPALITY',C5) as int)>0 or 
+																	  CAST(CHARINDEX('MUNICIPA',C5) as int)>0 or
+																	  CAST(CHARINDEX('MUNICIP',C5) as int)>0) then C5 
+																 when (CAST(CHARINDEX('MUNICIPALITY',C6) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C6) as int)>0
+																	   CAST(CHARINDEX('MUNICIP',C6) as int)>0) then C6
+																 when (CAST(CHARINDEX('MUNICIPALITY',C7) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C7) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C7) as int)>0) then C7
+																 when (CAST(CHARINDEX('MUNICIPALITY',C8) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C8) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C8) as int)>0) then C8
+																 when (CAST(CHARINDEX('MUNICIPALITY',C9) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C9) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C9) as int)>0) then C9
+																 when (CAST(CHARINDEX('MUNICIPALITY',C10) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C10) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C10) as int)>0) then C10
+																 when (CAST(CHARINDEX('MUNICIPALITY',C11) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C11) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C11) as int)>0) then C11 
+																 when (CAST(CHARINDEX('MUNICIPALITY',C12) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C12) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C12) as int)>0) then C12 
+																 when (CAST(CHARINDEX('MUNICIPALITY',C13) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C13) as int)>0 or
+																	   CAST(CHARINDEX('MUNICIP',C13) as int)>0) then C13
+																 when (CAST(CHARINDEX('MUNICIPALITY',C14) as int)>0 or 
+																	   CAST(CHARINDEX('MUNICIPA',C14) as int)>0 or
+																       CAST(CHARINDEX('MUNICIP',C14) as int)>0) then C14
+															 else ''
+end
+
+with cte as
+(
+select *,last_value(Munic_Label) over(partition by C2,C3 order by Munic_Label rows between current row AND unbounded following) MunGroup 
+from [dbo].[BLM_ERF_2014]
+)
+update cte set Munic_ReLabel=MunGroup

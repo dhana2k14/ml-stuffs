@@ -1,0 +1,48 @@
+options noxwait;
+%macro ReadXls (dir=);
+%sysexec cd &dir; %sysexec dir *.xls /b/o:n > flist.txt;
+data _indexfile;
+length filen $200;
+infile "&dir./flist.txt";
+input filen $;
+run;
+
+proc sql noprint;
+select count(filen) into :cntfile from _indexfile;
+%if &cntfile>=1 %then %do;
+select filen into :filen1-:filen%left(&cntfile)
+from _indexfile;
+%end;
+quit;
+%do i=1 %to &cntfile;
+libname excellib excel "&dir.\&&filen&i";
+proc sql noprint;
+create table sheetname as
+select tranwrd(memname, "''", "'") as sheetname
+from sashelp.vstabvw
+where libname="EXCELLIB";
+select count(DISTINCT sheetname) into :cnt_sht
+from sheetname;
+select DISTINCT sheetname into :sheet1 - :sheet%left(&cnt_sht)
+from sheetname;
+quit;
+%do j=1 %to &cnt_sht;
+proc import datafile="&dir.\&&filen&i"
+out=sheet&j replace;
+sheet="&&sheet&j";
+getnames=yes;
+run;
+
+data sheet&j;
+length _excelfilename $100 _sheetname $32;
+set sheet&j;
+_excelfilename="&&filen&z";
+_sheetname="&&sheet&j";
+run;
+proc append base=de.master data=sheet&j force;
+run;
+%end;
+libname excellib clear;
+%end;
+%mend ReadXls;
+%readxls (dir=C:\New folder)

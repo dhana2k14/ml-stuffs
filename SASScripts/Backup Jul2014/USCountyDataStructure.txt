@@ -1,0 +1,77 @@
+county_name||apn||Apn_Seq||Site_House_Number_Prefix||Site_House_Number||Site_House_Number_Suffix||Site_Direction||Site_Street_Name||Site_Post_Direct||Site_Unit||Site_city_State||Site_Zip||Site_Zip4||Municipality_Name||Latitude||Longitude||Census_Tract||Property_Class||School_Dist||Water_Front_Flag||Land_Square_Feet||Lot_Area||Building_Sqft||Gla||half_baths||full_baths||Num_Baths||Condition||Year_Built||Assd_Total_Val||Assd_Land_Val||Assd_Imp_Val||Mkt_Total_Val||Mkt_Land_Val||Mkt_Imp_Val||Sale_Date||Sale_Amount||id||valid||quality||fips_code||zoning||grid_east||grid_north||views||frontage||depth||garage||garage_sqft||basement_type||basement_sqft||basement_finish||pool_flag||stories||building_style||ext_wall||heating||ac||fireplace_flag||num_bedrooms||total_rooms||tax_year||eff_year_built||const_type||pool_type||fireplace_type||fireplace_num||stories_type||improvements||first_owner_name||sale_code||multi_apn||partial_interest_ind||ownership_trans_perct||owner
+
+NV_Clark - County_name
+00103211009 - apn
+001 - Apn_Seq
+Missing - Site_House_Number
+1427 - Site_House_Number
+Missing - Site_House_Number_Suffix
+Missing - Site_Direction
+CHAPARRAL DR - Site_Street_Name
+Missing - Site_Post_Direct
+Missing - Site_unit
+MESQUITE NV - Site_City_State
+89027 - SiteZip
+2205 - SiteSip4
+MESQUITE - MuicipalityName
+36.835342 - latitude
+-114.052131 - Langitude
+0059011000 - CensusTract
+SFR - PropertyClass
+Missing -Schooldist
+N - Water_front_flag
+6969 - land_square_Feet
+0 - Lot_Area 
+2714 - Building_sqft
+2233 - Gla
+0 - halfbaths
+3 - Fullbaths
+3 - Numbaths
+Missing - Condition
+2005 - Yearbuilt
+101607 - AssdtotalValue
+28000- Assdlandvalue
+73607 - AssdImpval
+290306 - mkttotvalue
+80000 - mktlandval
+210306 - Mktimpval
+19JAN2005:00:00:00.000 - Saledate
+306017 - Saleamount
+3200300000103211009 - Id
+Y - Valid
+AVERAGE - Quality
+32003 -Fipscode
+Missing - Zoning
+0-Girdeast
+0 - Gridnorth
+10 - Views
+5030 - Frontage
+0 - depth
+ATTACHED - Garage 
+481 -Garagesqft
+Missing - BasementType
+0 - BasementSqft
+0-Basementfinish
+1 - Poolflag
+missing - stories
+FRAME/STUCCO - buildingstyle
+FORCED AIR - extwall
+AC.CENTRAL - Heating
+Missing - ac
+missing - firplaceflag
+3 -numbed
+6 - totalrooms
+2006 - taxyear
+0 -effyearbuilt
+missing-const_type
+missing - pooltype
+missing - firplacetype
+0 -fireplacenum
+1 - storiestype
+misssing - imporovements
+JACOBS TIFFANI - firstownername
+missing - salecode
+missing - multapn
+missing - partialind
+0 - ownershiptransperct
+ENCE BROS CONSTRUCTION - owner

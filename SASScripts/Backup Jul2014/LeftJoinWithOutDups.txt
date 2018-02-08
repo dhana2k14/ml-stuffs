@@ -1,0 +1,17 @@
+SELECT A.ID, 
+           A.variable1, 
+           A.variable2, 
+           B.ID, 
+           B.variable1, 
+           B.variable2
+FROM 
+          A 
+          LEFT JOIN (
+                          select B .*, 
+                                   RowNumber() over (partition by ID order by variable1,variable2) RN
+                          from B) Bnew
+          ON A.ID = BNew.ID
+WHERE
+          BNew.RN=1 or
+          Bnew.RN is null
+ORDER BY A.variable1;

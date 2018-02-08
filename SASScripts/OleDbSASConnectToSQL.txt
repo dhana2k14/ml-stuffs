@@ -1,0 +1,9 @@
+proc sql;
+connect to oledb
+(init_string="Provider=DHANASEKARANP;Password=123456;User ID=Ekurhuleni\dhanasekaranp;
+Data Source=Inventory;Persist Security Info=True");
+create table temp as
+select * from connection to oledb
+(select * from CojNrAggSectRevWithGBA21Aug13);
+quit;
+run;
